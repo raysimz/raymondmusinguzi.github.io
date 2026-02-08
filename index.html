@@ -1,27 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
 <head>
+    <!-- Character Encoding -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raymond Musinguzi | Ugandan Tech Entrepreneur & Founder of Raysimz</title>
-    <meta name="description" content="Raymond Musinguzi is a Ugandan tech entrepreneur, software developer, architecture engineer, and founder of Raysimz.">
     
-    <!-- Minimal inline CSS to ensure it works -->
+    <!-- Viewport for Mobile Responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page Title (Most Important SEO Element) -->
+    <title>Raymond Musinguzi - Ugandan Tech Entrepreneur & Founder of Raysimz | Software Developer | Architecture Engineer</title>
+    
+    <!-- Meta Description (Appears in Search Results) -->
+    <meta name="description" content="Raymond Musinguzi is a leading Ugandan tech entrepreneur, software developer, and architecture engineer. Founder of Raysimz - creating innovative software solutions, robotics training, and structural designs across Africa.">
+    
+    <!-- Keywords (Still Used by Some Search Engines) -->
+    <meta name="keywords" content="Raymond Musinguzi, Ugandan tech entrepreneur, Uganda software developer, Raysimz founder, African technology, software development Uganda, robotics training Uganda, architecture engineer Uganda, construction engineer, digital innovation Africa, tech startup Uganda, RentEase Uganda, hospital records system, STEM education Uganda">
+    
+    <!-- Author Information -->
+    <meta name="author" content="Raymond Musinguzi">
+    <meta name="copyright" content="Raymond Musinguzi">
+    
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://raymondmusinguzi.com/">
+    <meta property="og:title" content="Raymond Musinguzi | Ugandan Tech Entrepreneur & Founder of Raysimz">
+    <meta property="og:description" content="Ugandan tech entrepreneur and architecture engineer building innovative digital solutions and structural designs through Raysimz.">
+    <meta property="og:image" content="https://raymondmusinguzi.com/images/raymond-musinguzi-profile.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Raymond Musinguzi - Ugandan Tech Entrepreneur">
+    <meta property="og:site_name" content="Raymond Musinguzi Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@raymondmusinguzi">
+    <meta name="twitter:creator" content="@raymondmusinguzi">
+    <meta name="twitter:title" content="Raymond Musinguzi | Founder & Tech Entrepreneur">
+    <meta name="twitter:description" content="Ugandan tech entrepreneur and architecture engineer building innovative digital solutions and structural designs.">
+    <meta name="twitter:image" content="https://raymondmusinguzi.com/images/raymond-musinguzi-twitter.jpg">
+    
+    <!-- Canonical URL (Prevents Duplicate Content Issues) -->
+    <link rel="canonical" href="https://raymondmusinguzi.com">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts (Improved Readability) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Inline CSS for Fastest Loading -->
     <style>
-        /* Reset and Base Styles */
+        /* ===== CSS RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
         
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        
+        .highlight {
+            color: #2563eb;
+            font-weight: 700;
+        }
+        
+        /* ===== LAYOUT ===== */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -29,28 +131,62 @@
             padding: 0 20px;
         }
         
-        /* Navigation */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            color: #64748b;
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* ===== NAVIGATION ===== */
         nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
-            width: 100%;
             top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
+            padding: 1rem 0;
         }
         
         .nav-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
         }
         
         .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
             text-decoration: none;
-            color: #333;
+        }
+        
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        
+        .logo-subtext {
+            font-size: 0.875rem;
+            color: #64748b;
+            font-weight: 500;
         }
         
         .nav-menu {
@@ -61,24 +197,58 @@
         
         .nav-link {
             text-decoration: none;
-            color: #555;
+            color: #475569;
             font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
         }
         
         .nav-link:hover {
             color: #2563eb;
         }
         
-        /* Hero Section */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* ===== HERO SECTION ===== */
         .hero-section {
-            padding: 120px 0 60px;
+            padding: 140px 0 80px;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            opacity: 0.05;
+            clip-path: polygon(100% 0, 100% 100%, 0 0);
         }
         
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 3rem;
+            align-items: center;
         }
         
         @media (min-width: 768px) {
@@ -87,26 +257,26 @@
             }
         }
         
-        .hero-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
         
-        .highlight {
-            color: #2563eb;
+        .hero-title {
+            margin-bottom: 1.5rem;
         }
         
         .hero-subtitle {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            color: #475569;
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
         
         .hero-badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.75rem;
             margin-bottom: 2rem;
         }
         
@@ -114,96 +284,126 @@
             background: #e0f2fe;
             color: #0369a1;
             padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border: 1px solid #bae6fd;
         }
         
         .btn {
             display: inline-block;
             background: #2563eb;
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 0.875rem 2rem;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
             border: none;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
         
         .btn:hover {
             background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
         }
         
         .image-frame {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
             border-radius: 20px;
             padding: 2rem;
             color: white;
             text-align: center;
-            min-height: 300px;
+            min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
         }
         
-        /* Sections */
-        section {
-            padding: 60px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title {
+        .placeholder-content h3 {
+            color: white;
             font-size: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
         
-        .section-subtitle {
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* About Section */
+        /* ===== ABOUT SECTION ===== */
         .about-content {
             display: grid;
-            gap: 2rem;
+            gap: 3rem;
         }
         
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             .about-content {
                 grid-template-columns: 2fr 1fr;
             }
         }
         
+        .about-text h3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .founder-quote {
+            background: rgba(37, 99, 235, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #2563eb;
+            margin-top: 2rem;
+        }
+        
+        .founder-quote blockquote {
+            font-style: italic;
+            font-size: 1.25rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .founder-quote cite {
+            font-weight: 600;
+            color: #64748b;
+            font-style: normal;
+        }
+        
         .about-highlights {
             display: grid;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         
         .highlight-card {
             background: white;
             padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
         
-        /* Skills Section */
+        .highlight-card h4 {
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ===== SKILLS SECTION ===== */
         .skills-categories {
             display: grid;
             gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
         
         .category {
             background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .category h3 {
+            color: #2563eb;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e0f2fe;
         }
         
         .skills-list {
@@ -211,11 +411,16 @@
         }
         
         .skills-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
         }
         
-        /* Projects Section */
+        .skills-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* ===== PROJECTS SECTION ===== */
         .projects-grid {
             display: grid;
             gap: 2rem;
@@ -224,9 +429,26 @@
         
         .project-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
         }
         
         .project-content {
@@ -234,47 +456,320 @@
         }
         
         .project-title {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 0.5rem;
         }
         
-        /* Footer */
+        .project-subtitle {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-description {
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* ===== FOOTER ===== */
         footer {
             background: #1e293b;
             color: white;
-            padding: 3rem 0;
+            padding: 60px 0 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .footer-brand h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-tagline {
+            color: #cbd5e1;
+            font-size: 1.125rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .footer-nav h4, .footer-company h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+        }
+        
+        .footer-nav ul, .footer-company ul {
+            list-style: none;
+        }
+        
+        .footer-nav li, .footer-company li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-nav a, .footer-company a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-nav a:hover, .footer-company a:hover {
+            color: white;
+            padding-left: 4px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
             text-align: center;
         }
         
-        /* Responsive Design */
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .seo-text {
+            color: #cbd5e1;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
             
             .hero-title {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             .hero-section {
-                padding: 100px 0 40px;
+                padding: 120px 0 60px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-header {
+                margin-bottom: 40px;
+            }
+            
+            .hero-badges {
+                gap: 0.5rem;
+            }
+            
+            .badge {
+                font-size: 0.75rem;
+                padding: 0.375rem 0.75rem;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ===== ACCESSIBILITY ===== */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #2563eb;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 1001;
+            border-radius: 4px;
+        }
+        
+        .skip-to-content:focus {
+            top: 10px;
+        }
+        
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            nav, .btn, .hero-cta, footer {
+                display: none;
+            }
+            
+            body {
+                font-size: 12pt;
+                color: #000;
+                background: #fff;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            section {
+                padding: 1rem 0;
+                page-break-inside: avoid;
+            }
+            
+            h1, h2, h3 {
+                page-break-after: avoid;
             }
         }
     </style>
+    
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://raymondmusinguzi.com/#person",
+        "name": "Raymond Musinguzi",
+        "url": "https://raymondmusinguzi.com",
+        "image": "https://raymondmusinguzi.com/images/raymond-musinguzi-profile.jpg",
+        "jobTitle": "Tech Entrepreneur, Software Developer, Architecture Engineer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Raysimz",
+            "url": "https://raysimz.com",
+            "description": "International software company providing web development, mobile apps, robotics training, and digital solutions",
+            "foundingDate": "2020",
+            "founder": "Raymond Musinguzi",
+            "location": "Uganda, Africa"
+        },
+        "alumniOf": [
+            {
+                "@type": "EducationalOrganization",
+                "name": "Ntare School",
+                "location": "Mbarara, Uganda"
+            },
+            {
+                "@type": "EducationalOrganization",
+                "name": "Mbarara Municipal School",
+                "location": "Mbarara, Uganda"
+            }
+        ],
+        "knowsAbout": [
+            "Software Development",
+            "Web Application Development",
+            "Mobile Application Development",
+            "Robotics Training",
+            "Digital Innovation",
+            "Architecture Engineering",
+            "Construction Planning",
+            "Structural Design",
+            "System Architecture",
+            "Database Management",
+            "API Integration"
+        ],
+        "sameAs": [
+            "https://github.com/raymondmusinguzi",
+            "https://linkedin.com/in/raymondmusinguzi",
+            "https://twitter.com/raymondmusinguzi",
+            "https://instagram.com/raymondmusinguzi"
+        ],
+        "description": "Raymond Musinguzi is a Ugandan tech entrepreneur, architecture engineer and founder of Raysimz. He specializes in software development, robotics training, architecture engineering, and digital innovation.",
+        "nationality": "Ugandan",
+        "birthPlace": "Uganda",
+        "gender": "male",
+        "award": [
+            "Founder of Raysimz",
+            "Creator of RentEase Platform",
+            "Developer of Hospital Records System"
+        ],
+        "knowsLanguage": ["English", "Swahili", "Runyankole"]
+    }
+    </script>
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://raymondmusinguzi.com/#organization",
+        "name": "Raymond Musinguzi Portfolio",
+        "url": "https://raymondmusinguzi.com",
+        "logo": "https://raymondmusinguzi.com/logo.png",
+        "description": "Portfolio website of Raymond Musinguzi - Ugandan tech entrepreneur and founder of Raysimz",
+        "founder": {
+            "@type": "Person",
+            "name": "Raymond Musinguzi"
+        },
+        "sameAs": [
+            "https://github.com/raymondmusinguzi",
+            "https://linkedin.com/in/raymondmusinguzi"
+        ]
+    }
+    </script>
+    
+    <!-- Website Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://raymondmusinguzi.com/#website",
+        "url": "https://raymondmusinguzi.com",
+        "name": "Raymond Musinguzi Portfolio",
+        "description": "Portfolio of Raymond Musinguzi - Ugandan tech entrepreneur and founder of Raysimz",
+        "publisher": {
+            "@id": "https://raymondmusinguzi.com/#organization"
+        },
+        "inLanguage": "en-US"
+    }
+    </script>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
+    <!-- Skip to Content for Accessibility -->
+    <a href="#main-content" class="skip-to-content" aria-label="Skip to main content">Skip to main content</a>
+    
     <!-- Navigation -->
-    <nav>
+    <nav aria-label="Main navigation">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="/" class="logo">Raymond Musinguzi</a>
-                <ul class="nav-menu">
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#education" class="nav-link">Education</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#architecture" class="nav-link">Architecture</a></li>
-                    <li><a href="#raysimz" class="nav-link">Raysimz</a></li>
+                <a href="/" class="logo" aria-label="Raymond Musinguzi homepage">
+                    <span class="logo-text" itemprop="name">Raymond Musinguzi</span>
+                    <span class="logo-subtext">Founder, Raysimz</span>
+                </a>
+                
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="#education" class="nav-link" role="menuitem">Education</a></li>
+                    <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+                    <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+                    <li role="none"><a href="#architecture" class="nav-link" role="menuitem">Architecture</a></li>
+                    <li role="none"><a href="#raysimz" class="nav-link" role="menuitem">Raysimz</a></li>
                 </ul>
             </div>
         </div>
@@ -285,24 +780,25 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <h1 class="hero-title">
-                        <span class="highlight">Raymond Musinguzi</span><br>
+                    <h1 class="hero-title" itemprop="headline">
+                        <span class="highlight" itemprop="name">Raymond Musinguzi</span><br>
                         Tech Entrepreneur & Founder
                     </h1>
-                    <p class="hero-subtitle">
+                    <p class="hero-subtitle" itemprop="description">
                         Ugandan software developer, robotics trainer, architecture engineer, and founder of <strong>Raysimz</strong> – building innovative digital solutions and structural designs that transform industries across Africa and beyond.
                     </p>
                     <div class="hero-badges">
-                        <span class="badge">Founder</span>
-                        <span class="badge">Software Developer</span>
-                        <span class="badge">Digital Innovator</span>
-                        <span class="badge">Robotics Trainer</span>
-                        <span class="badge">Architecture Engineer</span>
+                        <span class="badge" itemprop="jobTitle">Founder</span>
+                        <span class="badge" itemprop="jobTitle">Software Developer</span>
+                        <span class="badge" itemprop="jobTitle">Digital Innovator</span>
+                        <span class="badge" itemprop="jobTitle">Robotics Trainer</span>
+                        <span class="badge" itemprop="jobTitle">Architecture Engineer</span>
+                        <span class="badge" itemprop="jobTitle">Construction Planner</span>
                     </div>
-                    <a href="#projects" class="btn">View My Projects</a>
+                    <a href="#projects" class="btn" aria-label="View my projects">View My Projects</a>
                 </div>
                 <div class="hero-image">
-                    <div class="image-frame">
+                    <div class="image-frame" role="img" aria-label="Profile image of Raymond Musinguzi">
                         <div class="placeholder-content">
                             <h3>Raymond Musinguzi</h3>
                             <p>Founder & Technical Lead</p>
@@ -315,7 +811,7 @@
 
     <main>
         <!-- About Section -->
-        <section id="about" class="about-section">
+        <section id="about" class="about-section" itemscope itemtype="https://schema.org/AboutPage">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">About <span class="highlight">Raymond Musinguzi</span></h2>
@@ -325,9 +821,22 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h3>From Uganda to Global Tech & Architecture Innovation</h3>
-                        <p>
+                        <p itemprop="description">
                             <strong>Raymond Musinguzi</strong> is a Ugandan tech entrepreneur, software developer, and architecture engineer who combines technical expertise with structural design knowledge to create impactful digital and physical solutions. As the founder and technical lead of <strong>Raysimz</strong>, he leads an international team delivering cutting-edge software, robotics training, architecture planning, and digital transformation services.
                         </p>
+                        <p>
+                            His journey in technology and engineering began during his early education in Uganda, where he developed a passion for solving real-world problems through code, innovation, and structural design. Today, Raymond Musinguzi is recognized for his hands-on approach to software architecture, his expertise in construction planning, his commitment to STEM education through robotics training, and his ability to bridge the gap between technology, architecture, and practical business applications.
+                        </p>
+                        <p>
+                            Beyond technical development, Raymond Musinguzi applies his engineering skills to architecture and construction projects, designing residential complexes and estate layouts while maintaining his involvement in event hosting, digital branding initiatives, bringing technology, creativity, and youth empowerment together to foster the next generation of African innovators.
+                        </p>
+                        
+                        <div class="founder-quote">
+                            <blockquote itemprop="quote">
+                                "Technology is not just about writing code—it's about creating solutions that improve lives, empower communities, and drive meaningful progress. Architecture is about building functional, sustainable spaces. Through Raysimz, we're building Africa's digital and physical future."
+                            </blockquote>
+                            <cite>— <span itemprop="name">Raymond Musinguzi</span>, Founder of Raysimz</cite>
+                        </div>
                     </div>
                     
                     <div class="about-highlights">
@@ -343,63 +852,174 @@
                             <h4>Architecture Engineer</h4>
                             <p>Structural design and construction planning for residential and commercial projects</p>
                         </div>
+                        <div class="highlight-card">
+                            <h4>Robotics Trainer</h4>
+                            <p>Training the next generation in robotics and programming</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
+        <!-- Education Journey -->
+        <section id="education" class="education-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Education & <span class="highlight">Journey</span></h2>
+                    <p class="section-subtitle">The academic foundation behind the innovation</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item" itemscope itemtype="https://schema.org/EducationEvent">
+                        <div class="timeline-date">Current</div>
+                        <div class="timeline-content">
+                            <h3 itemprop="name">Higher Education & Entrepreneurship</h3>
+                            <p itemprop="description">Continuing advanced studies in technology and engineering while leading Raysimz and developing multiple technology platforms including RentEase, Hospital Records Platform, and architectural design projects.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" itemscope itemtype="https://schema.org/EducationEvent">
+                        <div class="timeline-date">O'Level</div>
+                        <div class="timeline-content">
+                            <h3 itemprop="educationalOrganization">Ntare School</h3>
+                            <p itemprop="description">Developed foundational skills in sciences, mathematics, and technical drawing, sparking interest in technology, engineering, and problem-solving through computational and structural thinking.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" itemscope itemtype="https://schema.org/EducationEvent">
+                        <div class="timeline-date">Primary</div>
+                        <div class="timeline-content">
+                            <h3 itemprop="educationalOrganization">Mbarara Municipal School</h3>
+                            <p itemprop="description">Early education where curiosity in technology and building first emerged, laying the groundwork for future innovation in software development and structural engineering.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-note">
+                    <h4>Continuous Learning Philosophy</h4>
+                    <p>Raymond Musinguzi believes in continuous education through hands-on projects, industry collaboration, and self-directed learning—combining formal education with practical implementation to stay at the forefront of technology innovation and architectural engineering.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Expertise -->
         <section id="skills" class="skills-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
+                    <h2 class="section-title">Technical <span class="highlight">Skills</span> & Expertise</h2>
                     <p class="section-subtitle">Comprehensive capabilities across software development, architecture, and digital innovation</p>
                 </div>
                 
                 <div class="skills-categories">
                     <div class="category">
-                        <h3>Software Development</h3>
+                        <h3 class="category-title">Software Development</h3>
                         <ul class="skills-list">
                             <li>Full-Stack Web Development</li>
                             <li>Mobile Application Development</li>
                             <li>API Design & Integration</li>
                             <li>System Architecture</li>
+                            <li>Database Management</li>
+                            <li>Software Maintenance</li>
                         </ul>
                     </div>
                     
                     <div class="category">
-                        <h3>Architecture & Construction</h3>
+                        <h3 class="category-title">Architecture & Construction</h3>
                         <ul class="skills-list">
                             <li>Structural Design & Planning</li>
                             <li>Residential House Design</li>
                             <li>Estate Layout Planning</li>
                             <li>Construction Project Management</li>
+                            <li>CAD & 3D Modeling</li>
+                            <li>Building Code Compliance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="category">
+                        <h3 class="category-title">Digital Solutions</h3>
+                        <ul class="skills-list">
+                            <li>E-commerce Platform Development</li>
+                            <li>Payment System Integration</li>
+                            <li>School Management Systems</li>
+                            <li>Hospital Records Platforms</li>
+                            <li>Property Management Systems</li>
+                            <li>System Automation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="category">
+                        <h3 class="category-title">Leadership & Training</h3>
+                        <ul class="skills-list">
+                            <li>Robotics Training</li>
+                            <li>Programming Education</li>
+                            <li>STEM Mentorship</li>
+                            <li>Technology Workshops</li>
+                            <li>Team Leadership</li>
+                            <li>Project Management</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
+        <!-- Projects & Innovations -->
+        <section id="projects" class="projects-section" itemscope itemtype="https://schema.org/ItemList">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Key <span class="highlight">Projects</span></h2>
+                    <h2 class="section-title">Key <span class="highlight">Projects</span> & Innovations</h2>
                     <p class="section-subtitle">Hands-on development and leadership in transformative digital solutions</p>
                 </div>
                 
                 <div class="projects-grid">
-                    <div class="project-card">
+                    <div class="project-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
+                        <div class="project-image" style="background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);">
+                            RentEase
+                        </div>
                         <div class="project-content">
-                            <h3 class="project-title">RentEase Platform</h3>
-                            <p>Digital rental discovery and housing access platform for Uganda</p>
+                            <h3 class="project-title" itemprop="name">RentEase Platform</h3>
+                            <p class="project-subtitle" itemprop="alternativeHeadline">Digital Rental & Property Management System</p>
+                            <p class="project-description" itemprop="description">
+                                RentEase is a rental discovery and housing access platform built with the goal of simplifying how tenants find rental homes in Uganda. It focuses on helping users discover affordable rentals in different locations without unnecessary movement, high transport expenses, or reliance on brokers.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag" itemprop="keywords">Web Development</span>
+                                <span class="tech-tag" itemprop="keywords">Payment Integration</span>
+                                <span class="tech-tag" itemprop="keywords">Database Design</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="project-card">
+                    <div class="project-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
+                        <div class="project-image" style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);">
+                            Hospital System
+                        </div>
                         <div class="project-content">
-                            <h3 class="project-title">Hospital Records Platform</h3>
-                            <p>Electronic medical records system for healthcare facilities</p>
+                            <h3 class="project-title" itemprop="name">Hospital Records Platform</h3>
+                            <p class="project-subtitle" itemprop="alternativeHeadline">Electronic Medical Records System</p>
+                            <p class="project-description" itemprop="description">
+                                An innovative healthcare solution developed to improve medical data management, patient record accessibility, and healthcare delivery efficiency across medical facilities in Uganda.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag" itemprop="keywords">Healthcare Tech</span>
+                                <span class="tech-tag" itemprop="keywords">Data Security</span>
+                                <span class="tech-tag" itemprop="keywords">System Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
+                        <div class="project-image" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                            School System
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title" itemprop="name">School Management System</h3>
+                            <p class="project-subtitle" itemprop="alternativeHeadline">Comprehensive Educational Administration Platform</p>
+                            <p class="project-description" itemprop="description">
+                                A full-featured system streamlining school operations, student management, academic tracking, and communication between educators, students, and parents across Uganda.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag" itemprop="keywords">Education Tech</span>
+                                <span class="tech-tag" itemprop="keywords">Administration</span>
+                                <span class="tech-tag" itemprop="keywords">Communication</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -410,18 +1030,57 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; <span id="current-year"></span> Raymond Musinguzi. All rights reserved.</p>
-            <p>Founder and Technical Lead of Raysimz International</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 itemprop="name">Raymond Musinguzi</h3>
+                    <p>Tech Entrepreneur & Founder</p>
+                    <p class="footer-tagline" itemprop="description">Building Africa's digital and structural future through innovation, education, and entrepreneurship.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-nav">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#about">About Raymond</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#education">Education</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-company">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="mailto:contact@raymondmusinguzi.com" itemprop="email">Email</a></li>
+                            <li><a href="https://linkedin.com/in/raymondmusinguzi" target="_blank" rel="noopener">LinkedIn</a></li>
+                            <li><a href="https://twitter.com/raymondmusinguzi" target="_blank" rel="noopener">Twitter</a></li>
+                            <li><a href="https://github.com/raymondmusinguzi" target="_blank" rel="noopener">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; <span id="current-year"></span> Raymond Musinguzi. All rights reserved.</p>
+                    <p>Founder and Technical Lead of Raysimz International</p>
+                </div>
+                <div class="footer-seo">
+                    <p class="seo-text">
+                        <strong>Raymond Musinguzi</strong> – Ugandan tech entrepreneur, software developer, architecture engineer, robotics trainer, and founder of Raysimz, an international software, engineering, and digital solutions company based in Uganda, Africa. Specializing in custom software development, robotics training, architecture planning, and digital transformation services for businesses across Africa.
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Simple JavaScript -->
+    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year
             document.getElementById('current-year').textContent = new Date().getFullYear();
             
-            // Smooth scrolling for anchor links
+            // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -437,9 +1096,68 @@
                             top: targetPosition,
                             behavior: 'smooth'
                         });
+                        
+                        // Update URL without page jump
+                        history.pushState(null, null, targetId);
                     }
                 });
             });
+            
+            // Add active class to current section in navigation
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            function updateActiveNav() {
+                const scrollPosition = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveNav);
+            updateActiveNav(); // Initial call
+            
+            // Log page view (optional analytics)
+            console.log('Raymond Musinguzi Portfolio loaded successfully.');
+            console.log('Site optimized for SEO with Schema.org markup.');
+            
+            // Lazy loading for future images
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+        });
+        
+        // Track outbound links
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a');
+            if (link && link.href && link.hostname !== window.location.hostname) {
+                console.log('Outbound link clicked:', link.href);
+                // You can add Google Analytics tracking here
+            }
         });
     </script>
 </body>
