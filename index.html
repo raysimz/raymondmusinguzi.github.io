@@ -1,1500 +1,273 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Primary Meta Tags -->
     <title>Raymond Musinguzi | Ugandan Tech Entrepreneur & Founder of Raysimz</title>
-    <meta name="description" content="Raymond Musinguzi is a Ugandan tech entrepreneur, software developer, architecture engineer, and founder of Raysimz - an international software company specializing in web development, mobile apps, robotics training, and digital innovation.">
-    <meta name="keywords" content="Raymond Musinguzi, Ugandan tech entrepreneur, Raysimz founder, software developer Uganda, robotics trainer, digital innovator, construction engineer, architecture engineer, RentEase creator, hospital records platform, Nasdan collaborator, Wit Technologies">
-    <meta name="author" content="Raymond Musinguzi">
+    <meta name="description" content="Raymond Musinguzi is a Ugandan tech entrepreneur, software developer, architecture engineer, and founder of Raysimz.">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://raymondmusinguzi.com/">
-    <meta property="og:title" content="Raymond Musinguzi | Founder & Tech Entrepreneur">
-    <meta property="og:description" content="Ugandan tech entrepreneur and architecture engineer building innovative digital solutions and structural designs through Raysimz.">
-    <meta property="og:image" content="https://raymondmusinguzi.com/assets/images/hero/raymond-hero.jpg">
-    <meta property="og:image:alt" content="Raymond Musinguzi - Tech Entrepreneur">
-    <meta property="og:site_name" content="Raymond Musinguzi Portfolio">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://raymondmusinguzi.com/">
-    <meta property="twitter:title" content="Raymond Musinguzi | Founder & Tech Entrepreneur">
-    <meta property="twitter:description" content="Ugandan tech entrepreneur and architecture engineer building innovative digital solutions and structural designs.">
-    <meta property="twitter:image" content="https://raymondmusinguzi.com/assets/images/hero/raymond-hero.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://raymondmusinguzi.com">
-    
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Inline CSS Styles -->
+    <!-- Minimal inline CSS to ensure it works -->
     <style>
-        /* ===== BASE STYLES ===== */
-        :root {
-            /* Color Palette */
-            --primary-color: #2563eb;
-            --primary-dark: #1d4ed8;
-            --primary-light: #3b82f6;
-            --secondary-color: #7c3aed;
-            --accent-color: #f59e0b;
-            --dark-color: #1e293b;
-            --dark-gray: #334155;
-            --gray-color: #64748b;
-            --light-gray: #e2e8f0;
-            --light-color: #f8fafc;
-            --white: #ffffff;
-            
-            /* Typography */
-            --font-heading: 'Poppins', 'Segoe UI', sans-serif;
-            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-            
-            /* Spacing */
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 2rem;
-            --space-lg: 3rem;
-            --space-xl: 4rem;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
-            
-            /* Border Radius */
-            --radius-sm: 4px;
-            --radius-md: 8px;
-            --radius-lg: 12px;
-            --radius-xl: 16px;
-            
-            /* Transitions */
-            --transition-fast: 0.2s ease;
-            --transition-base: 0.3s ease;
-            --transition-slow: 0.5s ease;
-        }
-
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
-
+        
         body {
-            font-family: var(--font-body);
-            color: var(--dark-color);
-            background-color: var(--light-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
+            color: #333;
+            background-color: #f8f9fa;
         }
-
+        
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--space-md);
+            padding: 0 20px;
         }
-
-        /* ===== TYPOGRAPHY ===== */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: var(--space-sm);
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-        }
-
-        h3 {
-            font-size: 1.75rem;
-        }
-
-        h4 {
-            font-size: 1.25rem;
-        }
-
-        p {
-            margin-bottom: var(--space-sm);
-            font-size: 1.125rem;
-        }
-
-        .highlight {
-            color: var(--primary-color);
-            position: relative;
-            display: inline-block;
-        }
-
-        .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background-color: rgba(37, 99, 235, 0.2);
-            z-index: -1;
-            border-radius: 2px;
-        }
-
-        .section {
-            padding: var(--space-xl) 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: var(--space-xl);
-        }
-
-        .section-title {
-            margin-bottom: var(--space-sm);
-        }
-
-        .section-subtitle {
-            color: var(--gray-color);
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* ===== BUTTONS ===== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.875rem 2rem;
-            border-radius: var(--radius-md);
-            font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all var(--transition-base);
-            border: 2px solid transparent;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(37, 99, 235, 0.05);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        /* ===== NAVIGATION ===== */
-        .main-nav {
+        
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow-sm);
-            padding: 1rem 0;
         }
-
+        
         .nav-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 0;
         }
-
+        
         .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
             text-decoration: none;
-            color: var(--dark-color);
+            color: #333;
         }
-
-        .logo-text {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 700;
-            display: block;
-        }
-
-        .logo-subtext {
-            font-size: 0.875rem;
-            color: var(--gray-color);
-            font-weight: 500;
-        }
-
+        
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: var(--space-md);
+            gap: 2rem;
         }
-
+        
         .nav-link {
             text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 0.5rem 0;
-            position: relative;
-            transition: color var(--transition-base);
+            color: #555;
+            font-weight: 500;
         }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: width var(--transition-base);
+        
+        .nav-link:hover {
+            color: #2563eb;
         }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-        }
-
-        .menu-toggle span {
-            display: block;
-            height: 3px;
-            width: 100%;
-            background-color: var(--dark-color);
-            border-radius: 3px;
-            transition: all var(--transition-base);
-        }
-
-        .skip-to-content {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--primary-color);
-            color: white;
-            padding: 8px 16px;
-            text-decoration: none;
-            z-index: 1001;
-            border-radius: var(--radius-sm);
-        }
-
-        .skip-to-content:focus {
-            top: 10px;
-        }
-
-        /* ===== HERO SECTION ===== */
+        
+        /* Hero Section */
         .hero-section {
-            padding: 10rem 0 6rem;
-            background: linear-gradient(135deg, 
-                rgba(240, 249, 255, 0.9) 0%, 
-                rgba(224, 242, 254, 0.9) 100%);
-            position: relative;
-            overflow: hidden;
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
         }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            opacity: 0.05;
-            clip-path: polygon(100% 0, 100% 100%, 0 0);
-        }
-
+        
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            align-items: center;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
-
+        
+        @media (min-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
         .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: var(--space-sm);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
-
+        
+        .highlight {
+            color: #2563eb;
+        }
+        
         .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--dark-gray);
-            margin-bottom: var(--space-md);
-            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
         }
-
+        
         .hero-badges {
             display: flex;
-            gap: var(--space-sm);
             flex-wrap: wrap;
-            margin-bottom: var(--space-md);
+            gap: 0.5rem;
+            margin-bottom: 2rem;
         }
-
+        
         .badge {
-            background-color: var(--light-gray);
-            color: var(--dark-color);
+            background: #e0f2fe;
+            color: #0369a1;
             padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            border: 1px solid var(--light-gray);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
-
-        .badge:nth-child(1) {
-            background-color: rgba(37, 99, 235, 0.1);
-            color: var(--primary-color);
-            border-color: rgba(37, 99, 235, 0.2);
+        
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
         }
-
-        .badge:nth-child(2) {
-            background-color: rgba(124, 58, 237, 0.1);
-            color: var(--secondary-color);
-            border-color: rgba(124, 58, 237, 0.2);
+        
+        .btn:hover {
+            background: #1d4ed8;
         }
-
-        .badge:nth-child(3) {
-            background-color: rgba(245, 158, 11, 0.1);
-            color: var(--accent-color);
-            border-color: rgba(245, 158, 11, 0.2);
-        }
-
-        .badge:nth-child(4) {
-            background-color: rgba(16, 185, 129, 0.1);
-            color: #10b981;
-            border-color: rgba(16, 185, 129, 0.2);
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: var(--space-sm);
-            flex-wrap: wrap;
-        }
-
+        
         .image-frame {
-            position: relative;
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        }
-
-        .placeholder-image {
-            aspect-ratio: 3/4;
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            text-align: center;
+            min-height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            padding: var(--space-md);
         }
-
-        .placeholder-content {
+        
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-header {
             text-align: center;
+            margin-bottom: 3rem;
         }
-
-        .placeholder-content h3 {
-            color: white;
+        
+        .section-title {
             font-size: 2rem;
-            margin-bottom: var(--space-xs);
+            margin-bottom: 1rem;
         }
-
-        .placeholder-content p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.125rem;
+        
+        .section-subtitle {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
         }
-
-        /* ===== ABOUT SECTION ===== */
+        
+        /* About Section */
         .about-content {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: var(--space-xl);
-            align-items: start;
+            gap: 2rem;
         }
-
-        .about-text h3 {
-            color: var(--dark-color);
-            margin-bottom: var(--space-md);
+        
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: 2fr 1fr;
+            }
         }
-
-        .about-text p {
-            margin-bottom: var(--space-md);
-            font-size: 1.125rem;
-            line-height: 1.7;
-        }
-
-        .founder-quote {
-            margin-top: var(--space-lg);
-            padding: var(--space-md);
-            background-color: rgba(37, 99, 235, 0.05);
-            border-left: 4px solid var(--primary-color);
-            border-radius: var(--radius-md);
-        }
-
-        .founder-quote blockquote {
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--dark-color);
-            margin-bottom: var(--space-sm);
-            line-height: 1.6;
-        }
-
-        .founder-quote cite {
-            font-weight: 600;
-            color: var(--gray-color);
-            font-style: normal;
-        }
-
+        
         .about-highlights {
             display: grid;
-            gap: var(--space-md);
+            gap: 1rem;
         }
-
+        
         .highlight-card {
-            background-color: var(--white);
-            padding: var(--space-md);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            transition: transform var(--transition-base);
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
-        .highlight-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .highlight-icon {
-            font-size: 2rem;
-            margin-bottom: var(--space-sm);
-        }
-
-        .highlight-card h4 {
-            color: var(--dark-color);
-            margin-bottom: var(--space-xs);
-        }
-
-        .highlight-card p {
-            color: var(--gray-color);
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        /* ===== EDUCATION SECTION ===== */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto var(--space-xl);
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 30px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: var(--light-gray);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 80px;
-            margin-bottom: var(--space-xl);
-        }
-
-        .timeline-date {
-            position: absolute;
-            left: 0;
-            top: 0;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            font-size: 0.875rem;
-            min-width: 80px;
-            text-align: center;
-        }
-
-        .timeline-content {
-            background-color: var(--white);
-            padding: var(--space-md);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .timeline-content h3 {
-            color: var(--dark-color);
-            margin-bottom: var(--space-xs);
-        }
-
-        .timeline-content p {
-            color: var(--gray-color);
-            margin-bottom: 0;
-        }
-
-        .education-note {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .education-note h4 {
-            color: var(--dark-color);
-            margin-bottom: var(--space-sm);
-        }
-
-        .education-note p {
-            color: var(--dark-gray);
-            font-size: 1.125rem;
-            margin-bottom: 0;
-        }
-
-        /* ===== SKILLS SECTION ===== */
+        
+        /* Skills Section */
         .skills-categories {
             display: grid;
+            gap: 2rem;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-lg);
-            max-width: 1200px;
-            margin: 0 auto;
         }
-
+        
         .category {
-            background-color: var(--white);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            transition: transform var(--transition-base);
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
-        .category:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .category-title {
-            color: var(--primary-color);
-            margin-bottom: var(--space-md);
-            font-size: 1.5rem;
-            position: relative;
-            padding-bottom: var(--space-sm);
-        }
-
-        .category-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
-        }
-
+        
         .skills-list {
             list-style: none;
         }
-
+        
         .skills-list li {
-            margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--dark-gray);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
         }
-
-        .skills-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* ===== PROJECTS SECTION ===== */
+        
+        /* Projects Section */
         .projects-grid {
             display: grid;
+            gap: 2rem;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-lg);
-            max-width: 1200px;
-            margin: 0 auto;
         }
-
+        
         .project-card {
-            background-color: var(--white);
-            border-radius: var(--radius-lg);
+            background: white;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-base);
-            border: 1px solid var(--light-gray);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-light);
-        }
-
-        .project-card.featured {
-            grid-column: span 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .project-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .project-card.featured .project-image {
-            height: 100%;
-        }
-
-        .image-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-color) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .image-placeholder.rentease::after {
-            content: 'RentEase';
-        }
-
-        .image-placeholder.hospital::after {
-            content: 'Hospital Records';
-        }
-
-        .image-placeholder.school::after {
-            content: 'School System';
-        }
-
-        .image-placeholder.api::after {
-            content: 'API Framework';
-        }
-
+        
         .project-content {
-            padding: var(--space-md);
+            padding: 1.5rem;
         }
-
+        
         .project-title {
-            color: var(--dark-color);
-            margin-bottom: var(--space-xs);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
         }
-
-        .project-subtitle {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: var(--space-sm);
-            font-size: 1rem;
-        }
-
-        .project-description {
-            color: var(--gray-color);
-            margin-bottom: var(--space-sm);
-            font-size: 1rem;
-        }
-
-        .project-role {
-            color: var(--dark-gray);
-            font-size: 0.95rem;
-            margin-bottom: var(--space-sm);
-            padding: var(--space-sm);
-            background-color: rgba(37, 99, 235, 0.05);
-            border-radius: var(--radius-md);
-        }
-
-        .project-tech {
-            display: flex;
-            gap: var(--space-xs);
-            flex-wrap: wrap;
-        }
-
-        .tech-tag {
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .tech-tag:nth-child(1) {
-            background-color: rgba(37, 99, 235, 0.1);
-            color: var(--primary-color);
-        }
-
-        .tech-tag:nth-child(2) {
-            background-color: rgba(124, 58, 237, 0.1);
-            color: var(--secondary-color);
-        }
-
-        .tech-tag:nth-child(3) {
-            background-color: rgba(245, 158, 11, 0.1);
-            color: var(--accent-color);
-        }
-
-        /* ===== RAYSIMZ SECTION ===== */
-        .raysimz-intro {
-            max-width: 800px;
-            margin: 0 auto var(--space-xl);
-            text-align: center;
-        }
-
-        .raysimz-intro h3 {
-            color: var(--dark-color);
-            margin-bottom: var(--space-md);
-        }
-
-        .raysimz-intro p {
-            color: var(--dark-gray);
-            font-size: 1.125rem;
-            line-height: 1.7;
-        }
-
-        .services-showcase {
-            margin-bottom: var(--space-xl);
-        }
-
-        .services-showcase h4 {
-            text-align: center;
-            color: var(--dark-color);
-            margin-bottom: var(--space-lg);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-md);
-        }
-
-        .service-item {
-            background-color: var(--white);
-            padding: var(--space-md);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--light-gray);
-            transition: all var(--transition-base);
-        }
-
-        .service-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-color);
-        }
-
-        .service-item h5 {
-            color: var(--primary-color);
-            margin-bottom: var(--space-xs);
-        }
-
-        .service-item p {
-            color: var(--gray-color);
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        .founder-mission {
-            background: linear-gradient(135deg, 
-                rgba(37, 99, 235, 0.05) 0%, 
-                rgba(124, 58, 237, 0.05) 100%);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .mission-statement h4 {
-            color: var(--dark-color);
-            margin-bottom: var(--space-md);
-            text-align: center;
-        }
-
-        .mission-statement blockquote {
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--dark-color);
-            line-height: 1.6;
-            margin-bottom: var(--space-sm);
-            text-align: center;
-            position: relative;
-            padding: 0 var(--space-lg);
-        }
-
-        .mission-statement blockquote::before,
-        .mission-statement blockquote::after {
-            content: '"';
-            font-size: 3rem;
-            color: var(--primary-color);
-            opacity: 0.3;
-            position: absolute;
-            line-height: 1;
-        }
-
-        .mission-statement blockquote::before {
-            top: -10px;
-            left: 0;
-        }
-
-        .mission-statement blockquote::after {
-            bottom: -20px;
-            right: 0;
-        }
-
-        .mission-author {
-            text-align: center;
-            color: var(--gray-color);
-            font-weight: 600;
-            margin-bottom: 0;
-        }
-
-        /* ===== COLLABORATIONS SECTION ===== */
-        .collaborations-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .company-collab {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: var(--space-lg);
-            align-items: start;
-            background-color: var(--white);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            margin-bottom: var(--space-lg);
-        }
-
-        .company-logo {
-            width: 100px;
-            height: 100px;
-        }
-
-        .logo-placeholder {
-            width: 100%;
-            height: 100%;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
             color: white;
-            font-weight: 600;
-            font-size: 1.25rem;
-        }
-
-        .logo-placeholder.nasdan {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-        }
-
-        .logo-placeholder.nasdan::after {
-            content: 'Nasdan';
-        }
-
-        .logo-placeholder.wit {
-            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
-        }
-
-        .logo-placeholder.wit::after {
-            content: 'Wit Tech';
-        }
-
-        .company-details h3 {
-            color: var(--dark-color);
-            margin-bottom: var(--space-xs);
-        }
-
-        .collab-role {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: var(--space-sm);
-        }
-
-        .company-details p {
-            color: var(--dark-gray);
-            margin-bottom: var(--space-sm);
-        }
-
-        .collab-tech {
-            display: flex;
-            gap: var(--space-xs);
-        }
-
-        .collab-tag {
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .collab-tag:nth-child(1) {
-            background-color: rgba(37, 99, 235, 0.1);
-            color: var(--primary-color);
-        }
-
-        .collab-tag:nth-child(2) {
-            background-color: rgba(124, 58, 237, 0.1);
-            color: var(--secondary-color);
-        }
-
-        .experience-highlights {
-            background-color: var(--white);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-
-        .experience-highlights h4 {
-            color: var(--dark-color);
-            margin-bottom: var(--space-md);
-        }
-
-        .experience-list {
-            list-style: none;
-        }
-
-        .experience-list li {
-            margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--dark-gray);
-        }
-
-        .experience-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* ===== FOOTER ===== */
-        .main-footer {
-            background-color: var(--dark-color);
-            color: var(--white);
-            padding: var(--space-xl) 0;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            margin-bottom: var(--space-xl);
-        }
-
-        .footer-brand h3 {
-            color: var(--white);
-            margin-bottom: var(--space-xs);
-        }
-
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 0;
-        }
-
-        .footer-tagline {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.125rem;
-            margin-top: var(--space-sm);
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-lg);
-        }
-
-        .footer-nav h4,
-        .footer-company h4 {
-            color: var(--white);
-            margin-bottom: var(--space-md);
-            font-size: 1.125rem;
-        }
-
-        .footer-nav ul,
-        .footer-company ul {
-            list-style: none;
-        }
-
-        .footer-nav li,
-        .footer-company li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-nav a,
-        .footer-company a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color var(--transition-base);
-        }
-
-        .footer-nav a:hover,
-        .footer-company a:hover {
-            color: var(--white);
-            padding-left: 4px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: var(--space-lg);
-        }
-
-        .copyright {
-            text-align: center;
-            margin-bottom: var(--space-md);
-        }
-
-        .copyright p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: var(--space-xs);
-            font-size: 0.95rem;
-        }
-
-        .footer-seo {
+            padding: 3rem 0;
             text-align: center;
         }
-
-        .seo-text {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .seo-text strong {
-            color: var(--white);
-            font-weight: 600;
-        }
-
-        /* ===== RESPONSIVE STYLES ===== */
-        /* Large screens (1200px and above) */
-        @media (min-width: 1200px) {
-            .container {
-                max-width: 1200px;
-            }
-            
-            .hero-title {
-                font-size: 4rem;
-            }
-        }
-
-        /* Tablets and small desktops (992px to 1199px) */
-        @media (max-width: 1199px) {
-            .container {
-                max-width: 100%;
-                padding: 0 2rem;
-            }
-            
-            h1 {
-                font-size: 3rem;
-            }
-            
-            h2 {
-                font-size: 2.25rem;
-            }
-            
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Tablets (768px to 991px) */
-        @media (max-width: 991px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-            
-            .section {
-                padding: 4rem 0;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            h3 {
-                font-size: 1.5rem;
-            }
-            
-            .hero-section {
-                padding: 8rem 0 4rem;
-            }
-            
-            .hero-grid {
-                gap: 2rem;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.125rem;
-            }
-            
-            .about-content {
-                gap: 2rem;
-            }
-            
-            .skills-categories {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .project-card.featured {
-                grid-template-columns: 1fr;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                gap: 2rem;
-            }
-        }
-
-        /* Mobile Landscape (576px to 767px) */
-        @media (max-width: 767px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .section {
-                padding: 3rem 0;
-            }
-            
-            .section-header {
-                margin-bottom: 2rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1.125rem;
-            }
-            
-            .hero-section {
-                padding: 7rem 0 3rem;
-            }
-            
-            .hero-title {
-                font-size: 2.25rem;
-            }
-            
-            .hero-badges {
-                gap: 0.5rem;
-            }
-            
-            .badge {
-                font-size: 0.75rem;
-                padding: 0.375rem 0.75rem;
-            }
-            
-            .hero-cta {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-            
-            .hero-cta .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .highlight-card {
-                padding: 1.5rem;
-            }
-            
-            .timeline::before {
-                left: 20px;
-            }
-            
-            .timeline-item {
-                padding-left: 60px;
-            }
-            
-            .timeline-date {
-                min-width: 60px;
-                padding: 0.375rem 0.75rem;
-                font-size: 0.75rem;
-            }
-            
-            .skills-categories {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .category {
-                padding: 1.5rem;
-            }
-            
-            .project-card {
-                margin-bottom: 1.5rem;
-            }
-            
-            .project-image {
-                height: 180px;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-            
-            .footer-links {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            /* Mobile Navigation */
-            .nav-wrapper {
-                padding: 0.5rem 0;
-            }
-            
-            .logo-text {
-                font-size: 1.25rem;
-            }
-            
-            .logo-subtext {
-                font-size: 0.75rem;
-            }
-            
-            .menu-toggle {
-                width: 24px;
-                height: 18px;
-            }
-            
-            .menu-toggle span {
-                height: 2px;
-            }
-            
-            .nav-menu.active {
-                top: 60px;
-                height: calc(100vh - 60px);
-            }
-        }
-
-        /* Mobile Portrait (up to 575px) */
-        @media (max-width: 575px) {
-            .container {
-                padding: 0 0.75rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.75rem;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1rem;
-            }
-            
-            .btn {
-                padding: 0.75rem 1.5rem;
-                font-size: 0.875rem;
-            }
-            
-            .founder-quote {
-                padding: 1rem;
-            }
-            
-            .founder-quote blockquote {
-                font-size: 1.125rem;
-            }
-            
-            .education-note {
-                padding: 1.5rem;
-            }
-            
-            .company-collab {
-                padding: 1.5rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .footer-tagline {
-                font-size: 1rem;
-            }
-            
-            .seo-text {
-                font-size: 0.875rem;
-            }
-        }
-
-        /* Small mobile devices (up to 375px) */
-        @media (max-width: 375px) {
-            .hero-title {
-                font-size: 1.75rem;
-            }
-            
-            .hero-badges {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .badge {
-                width: fit-content;
-            }
-            
-            .skills-categories {
-                gap: 1rem;
-            }
-            
-            .category {
-                padding: 1.25rem;
-            }
-            
-            .project-content {
-                padding: 1.25rem;
-            }
-        }
-
-        /* Tablet and Mobile Navigation */
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero-grid,
-            .about-content,
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .project-card.featured {
-                grid-column: span 1;
-                grid-template-columns: 1fr;
-            }
-            
-            .company-collab {
-                grid-template-columns: 1fr;
-            }
-            
             .nav-menu {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                flex-direction: column;
-                background-color: var(--white);
-                width: 80%;
-                max-width: 300px;
-                height: calc(100vh - 70px);
-                padding: var(--space-lg);
-                box-shadow: var(--shadow-lg);
-                transition: right var(--transition-base);
+                display: none;
             }
             
-            .nav-menu.active {
-                right: 0;
+            .hero-title {
+                font-size: 2rem;
             }
             
-            .menu-toggle {
-                display: flex;
+            .hero-section {
+                padding: 100px 0 40px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Skip to Content (Accessibility) -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
-    
     <!-- Navigation -->
-    <nav class="main-nav">
+    <nav>
         <div class="container">
             <div class="nav-wrapper">
-                <a href="/" class="logo">
-                    <span class="logo-text">Raymond Musinguzi</span>
-                    <span class="logo-subtext">Founder, Raysimz</span>
-                </a>
-                
-                <button class="menu-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                
+                <a href="/" class="logo">Raymond Musinguzi</a>
                 <ul class="nav-menu">
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#education" class="nav-link">Education</a></li>
@@ -1502,7 +275,6 @@
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#architecture" class="nav-link">Architecture</a></li>
                     <li><a href="#raysimz" class="nav-link">Raysimz</a></li>
-                    <li><a href="#collaborations" class="nav-link">Collaborations</a></li>
                 </ul>
             </div>
         </div>
@@ -1526,20 +298,14 @@
                         <span class="badge">Digital Innovator</span>
                         <span class="badge">Robotics Trainer</span>
                         <span class="badge">Architecture Engineer</span>
-                        <span class="badge">Construction Planner</span>
                     </div>
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary">View My Projects</a>
-                    </div>
+                    <a href="#projects" class="btn">View My Projects</a>
                 </div>
                 <div class="hero-image">
                     <div class="image-frame">
-                        <!-- Profile image would go here -->
-                        <div class="placeholder-image">
-                            <div class="placeholder-content">
-                                <h3>Raymond Musinguzi</h3>
-                                <p>Founder & Technical Lead</p>
-                            </div>
+                        <div class="placeholder-content">
+                            <h3>Raymond Musinguzi</h3>
+                            <p>Founder & Technical Lead</p>
                         </div>
                     </div>
                 </div>
@@ -1549,7 +315,7 @@
 
     <main>
         <!-- About Section -->
-        <section id="about" class="section about-section">
+        <section id="about" class="about-section">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">About <span class="highlight">Raymond Musinguzi</span></h2>
@@ -1562,410 +328,79 @@
                         <p>
                             <strong>Raymond Musinguzi</strong> is a Ugandan tech entrepreneur, software developer, and architecture engineer who combines technical expertise with structural design knowledge to create impactful digital and physical solutions. As the founder and technical lead of <strong>Raysimz</strong>, he leads an international team delivering cutting-edge software, robotics training, architecture planning, and digital transformation services.
                         </p>
-                        <p>
-                            His journey in technology and engineering began during his early education in Uganda, where he developed a passion for solving real-world problems through code, innovation, and structural design. Today, Raymond Musinguzi is recognized for his hands-on approach to software architecture, his expertise in construction planning, his commitment to STEM education through robotics training, and his ability to bridge the gap between technology, architecture, and practical business applications.
-                        </p>
-                        <p>
-                            Beyond technical development, Raymond Musinguzi applies his engineering skills to architecture and construction projects, designing residential complexes and estate layouts while maintaining his involvement in event hosting, digital branding initiatives, bringing technology, creativity, and youth empowerment together to foster the next generation of African innovators.
-                        </p>
-                        
-                        <div class="founder-quote">
-                            <blockquote>
-                                "Technology is not just about writing code—it's about creating solutions that improve lives, empower communities, and drive meaningful progress. Architecture is about building functional, sustainable spaces. Through Raysimz, we're building Africa's digital and physical future."
-                            </blockquote>
-                            <cite>— Raymond Musinguzi, Founder of Raysimz</cite>
-                        </div>
                     </div>
                     
                     <div class="about-highlights">
                         <div class="highlight-card">
-                            <div class="highlight-icon">🏆</div>
                             <h4>Founder & CEO</h4>
                             <p>Founded and leads Raysimz, an international software and engineering company</p>
                         </div>
                         <div class="highlight-card">
-                            <div class="highlight-icon">💻</div>
                             <h4>Full-Stack Developer</h4>
                             <p>Hands-on development of complex web and mobile applications</p>
                         </div>
                         <div class="highlight-card">
-                            <div class="highlight-icon">🏗️</div>
                             <h4>Architecture Engineer</h4>
                             <p>Structural design and construction planning for residential and commercial projects</p>
                         </div>
-                        <div class="highlight-card">
-                            <div class="highlight-icon">🤖</div>
-                            <h4>Robotics Trainer</h4>
-                            <p>Training the next generation in robotics and programming</p>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education Journey -->
-        <section id="education" class="section education-section">
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Education & <span class="highlight">Journey</span></h2>
-                    <p class="section-subtitle">The academic foundation behind the innovation</p>
-                </div>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">Current</div>
-                        <div class="timeline-content">
-                            <h3>Higher Education & Entrepreneurship</h3>
-                            <p>Continuing advanced studies in technology and engineering while leading Raysimz and developing multiple technology platforms including RentEase, Hospital Records Platform, and architectural design projects.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">O'Level</div>
-                        <div class="timeline-content">
-                            <h3>Ntare School</h3>
-                            <p>Developed foundational skills in sciences, mathematics, and technical drawing, sparking interest in technology, engineering, and problem-solving through computational and structural thinking.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">Primary</div>
-                        <div class="timeline-content">
-                            <h3>Mbarara Municipal School</h3>
-                            <p>Early education where curiosity in technology and building first emerged, laying the groundwork for future innovation in software development and structural engineering.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="education-note">
-                    <h4>Continuous Learning Philosophy</h4>
-                    <p>Raymond Musinguzi believes in continuous education through hands-on projects, industry collaboration, and self-directed learning—combining formal education with practical implementation to stay at the forefront of technology innovation and architectural engineering.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills & Expertise -->
-        <section id="skills" class="section skills-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Technical <span class="highlight">Skills</span> & Expertise</h2>
+                    <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
                     <p class="section-subtitle">Comprehensive capabilities across software development, architecture, and digital innovation</p>
                 </div>
                 
                 <div class="skills-categories">
                     <div class="category">
-                        <h3 class="category-title">Software Development</h3>
+                        <h3>Software Development</h3>
                         <ul class="skills-list">
                             <li>Full-Stack Web Development</li>
                             <li>Mobile Application Development</li>
                             <li>API Design & Integration</li>
                             <li>System Architecture</li>
-                            <li>Database Management</li>
-                            <li>Software Maintenance</li>
                         </ul>
                     </div>
                     
                     <div class="category">
-                        <h3 class="category-title">Architecture & Construction</h3>
+                        <h3>Architecture & Construction</h3>
                         <ul class="skills-list">
                             <li>Structural Design & Planning</li>
                             <li>Residential House Design</li>
                             <li>Estate Layout Planning</li>
                             <li>Construction Project Management</li>
-                            <li>CAD & 3D Modeling</li>
-                            <li>Building Code Compliance</li>
-                            <li>Material Science & Selection</li>
-                            <li>Sustainable Building Practices</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="category">
-                        <h3 class="category-title">Digital Solutions</h3>
-                        <ul class="skills-list">
-                            <li>E-commerce Platform Development</li>
-                            <li>Payment System Integration</li>
-                            <li>School Management Systems</li>
-                            <li>Hospital Records Platforms</li>
-                            <li>Property Management Systems</li>
-                            <li>System Automation</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="category">
-                        <h3 class="category-title">Leadership & Training</h3>
-                        <ul class="skills-list">
-                            <li>Robotics Training</li>
-                            <li>Programming Education</li>
-                            <li>STEM Mentorship</li>
-                            <li>Technology Workshops</li>
-                            <li>Team Leadership</li>
-                            <li>Project Management</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects & Innovations -->
-        <section id="projects" class="section projects-section">
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Key <span class="highlight">Projects</span> & Innovations</h2>
+                    <h2 class="section-title">Key <span class="highlight">Projects</span></h2>
                     <p class="section-subtitle">Hands-on development and leadership in transformative digital solutions</p>
                 </div>
                 
                 <div class="projects-grid">
-                    <div class="project-card featured">
-                        <div class="project-image">
-                            <div class="image-placeholder rentease"></div>
-                        </div>
+                    <div class="project-card">
                         <div class="project-content">
                             <h3 class="project-title">RentEase Platform</h3>
-                            <p class="project-subtitle">Digital Rental & Property Management System</p>
-                            <p class="project-description">
-                            RentEase is a rental discovery and housing access platform built by Raymond Musinguzi with the goal of simplifying how tenants find rental homes in Uganda. It focuses on helping users discover affordable rentals in different locations without unnecessary movement, high transport expenses, or reliance on brokers. By centralizing rental information digitally, RentEase saves time, reduces costs, and improves access to housing opportunities. The platform demonstrates Raymond's ability to identify real societal problems and design practical tech-based solutions for local markets.
-                            </p>
-                            <div class="project-role">
-                                <strong>Role:</strong> Founder, Lead Developer & System Architect
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">Web Development</span>
-                                <span class="tech-tag">Payment Integration</span>
-                                <span class="tech-tag">Database Design</span>
-                            </div>
+                            <p>Digital rental discovery and housing access platform for Uganda</p>
                         </div>
                     </div>
                     
-                    <div class="project-card featured">
-                        <div class="project-image">
-                            <div class="image-placeholder hospital"></div>
-                        </div>
+                    <div class="project-card">
                         <div class="project-content">
                             <h3 class="project-title">Hospital Records Platform</h3>
-                            <p class="project-subtitle">Electronic Medical Records System</p>
-                            <p class="project-description">
-                                An innovative healthcare solution developed by Raymond Musinguzi to improve medical data management, patient record accessibility, and healthcare delivery efficiency across medical facilities.
-                            </p>
-                            <div class="project-role">
-                                <strong>Role:</strong> System Architect & Lead Developer
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">Healthcare Tech</span>
-                                <span class="tech-tag">Data Security</span>
-                                <span class="tech-tag">System Integration</span>
-                            </div>
+                            <p>Electronic medical records system for healthcare facilities</p>
                         </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="image-placeholder school"></div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">School Management System</h3>
-                            <p class="project-subtitle">Comprehensive Educational Administration Platform</p>
-                            <p class="project-description">
-                                A full-featured system streamlining school operations, student management, academic tracking, and communication between educators, students, and parents.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Education Tech</span>
-                                <span class="tech-tag">Administration</span>
-                                <span class="tech-tag">Communication</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="image-placeholder api"></div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">API Integration Framework</h3>
-                            <p class="project-subtitle">Custom Integration Solutions for Businesses</p>
-                            <p class="project-description">
-                                Development of robust API frameworks enabling seamless integration between diverse business systems, payment platforms, and third-party services.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">API Development</span>
-                                <span class="tech-tag">System Integration</span>
-                                <span class="tech-tag">Middleware</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Architecture & Construction Section -->
-        <section id="architecture" class="section architecture-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Architecture & <span class="highlight">Construction Engineering</span></h2>
-                    <p class="section-subtitle">Blending structural design with digital innovation</p>
-                </div>
-                
-                <div class="architecture-content">
-                    <div class="architecture-intro">
-                        <h3>Structural Design Meets Technical Precision</h3>
-                        <p>
-                            Beyond software development, <strong>Raymond Musinguzi</strong> applies his engineering expertise to architecture and construction projects. His approach combines traditional structural planning with modern digital tools, creating efficient, sustainable building designs and estate layouts.
-                        </p>
-                        <p>
-                            With a comprehensive understanding of construction principles, material science, and building codes, Raymond contributes to residential and commercial projects, ensuring structural integrity, compliance, and innovative space utilization while integrating technology solutions for smart building management.
-                        </p>
-                    </div>
-                    
-                    <div class="architecture-services">
-                        <h4>Architectural Services & Expertise</h4>
-                        <div class="services-grid">
-                            <div class="service-item">
-                                <div class="service-icon">🏠</div>
-                                <h5>Residential House Design</h5>
-                                <p>Complete architectural plans for residential buildings including floor plans, elevations, and structural calculations</p>
-                            </div>
-                            <div class="service-item">
-                                <div class="service-icon">🏢</div>
-                                <h5>Estate Planning & Layout</h5>
-                                <p>Master planning for housing estates including road networks, utilities, and community space allocation</p>
-                            </div>
-                            <div class="service-item">
-                                <div class="service-icon">📐</div>
-                                <h5>Structural Engineering</h5>
-                                <p>Load calculations, foundation design, and structural integrity assessment for buildings</p>
-                            </div>
-                            <div class="service-item">
-                                <div class="service-icon">💻</div>
-                                <h5>Digital Construction Planning</h5>
-                                <p>Using CAD software and 3D modeling for precise construction documentation</p>
-                            </div>
-                            <div class="service-item">
-                                <div class="service-icon">🌿</div>
-                                <h5>Sustainable Design</h5>
-                                <p>Eco-friendly building designs incorporating energy efficiency and sustainable materials</p>
-                            </div>
-                            <div class="service-item">
-                                <div class="service-icon">📊</div>
-                                <h5>Construction Project Management</h5>
-                                <p>Overseeing construction projects from planning through completion</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Raysimz Section -->
-        <section id="raysimz" class="section raysimz-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Founder of <span class="highlight">Raysimz</span></h2>
-                    <p class="section-subtitle">Leading an international software, digital solutions, and engineering company</p>
-                </div>
-                
-                <div class="raysimz-content">
-                    <div class="raysimz-intro">
-                        <h3>Visionary Leadership in Technology & Engineering</h3>
-                        <p>
-                            <strong>Raymond Musinguzi</strong> founded <strong>Raysimz</strong> with a vision to create a world-class technology and engineering company that delivers innovative digital and structural solutions while fostering talent and driving technological advancement in Uganda and across Africa.
-                        </p>
-                        <p>
-                            As both founder and technical lead, Raymond Musinguzi ensures that Raysimz maintains excellence in software development while expanding its impact through robotics training, digital marketing, architecture engineering, and comprehensive IT consultancy services.
-                        </p>
-                    </div>
-                    
-                    <div class="services-showcase">
-                        <h4>Services Under Raymond's Leadership</h4>
-                        <div class="services-grid">
-                            <div class="service-item">
-                                <h5>Custom Software Development</h5>
-                                <p>Web & mobile applications tailored to business needs</p>
-                            </div>
-                            <div class="service-item">
-                                <h5>Architecture & Construction Planning</h5>
-                                <p>Structural design, estate planning, and construction management</p>
-                            </div>
-                            <div class="service-item">
-                                <h5>Digital Marketing & SEO</h5>
-                                <p>Comprehensive online visibility and growth strategies</p>
-                            </div>
-                            <div class="service-item">
-                                <h5>Robotics & Programming Training</h5>
-                                <p>STEM education and technology workshops</p>
-                            </div>
-                            <div class="service-item">
-                                <h5>System Integration & Automation</h5>
-                                <p>Streamlining business processes through technology</p>
-                            </div>
-                            <div class="service-item">
-                                <h5>IT & Engineering Consultancy</h5>
-                                <p>Strategic technology and construction planning</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="founder-mission">
-                        <div class="mission-statement">
-                            <h4>Founder's Mission Statement</h4>
-                            <blockquote>
-                                "At Raysimz, we don't just build software—we build capabilities and structures. Under my leadership, we're committed to creating technology that solves real problems, designing buildings that serve communities, empowering African businesses, and developing the next generation of tech and engineering innovators through hands-on training and mentorship."
-                            </blockquote>
-                            <p class="mission-author">— Raymond Musinguzi, Founder & Technical Lead</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Collaborations & Experience -->
-        <section id="collaborations" class="section collaborations-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Industry <span class="highlight">Collaborations</span></h2>
-                    <p class="section-subtitle">Professional partnerships and project experience</p>
-                </div>
-                
-                <div class="collaborations-content">
-                    <div class="company-collab">
-                        <div class="company-logo">
-                            <div class="logo-placeholder nasdan"></div>
-                        </div>
-                        <div class="company-details">
-                            <h3>Nasdan</h3>
-                            <p class="collab-role">Software Development Collaboration</p>
-                            <p>
-                                Raymond Musinguzi collaborated with Nasdan on software development projects, contributing to digital systems and technical solutions that enhanced operational efficiency and user experience.
-                            </p>
-                            <div class="collab-tech">
-                                <span class="collab-tag">Software Development</span>
-                                <span class="collab-tag">System Enhancement</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="company-collab">
-                        <div class="company-logo">
-                            <div class="logo-placeholder wit"></div>
-                        </div>
-                        <div class="company-details">
-                            <h3>Wit Technologies</h3>
-                            <p class="collab-role">Technical Innovation Partnership</p>
-                            <p>
-                                Partnership with Wit Technologies involved collaborative work on innovative technology solutions, system architecture design, and implementation of cutting-edge digital platforms.
-                            </p>
-                            <div class="collab-tech">
-                                <span class="collab-tag">Technical Innovation</span>
-                                <span class="collab-tag">System Architecture</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="experience-highlights">
-                        <h4>Additional Experience & Initiatives</h4>
-                        <ul class="experience-list">
-                            <li>Architecture and construction consulting for residential projects</li>
-                            <li>Event hosting and digital branding for technology conferences</li>
-                            <li>Youth-focused tech and engineering initiatives</li>
-                            <li>STEM education workshops and robotics competitions</li>
-                            <li>Technical consultation for startups and enterprises</li>
-                            <li>Public speaking on technology innovation and entrepreneurship</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -1973,777 +408,39 @@
     </main>
 
     <!-- Footer -->
-    <footer class="main-footer">
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <h3>Raymond Musinguzi</h3>
-                        <p>Tech Entrepreneur & Founder</p>
-                    </div>
-                    <p class="footer-tagline">Building Africa's digital and structural future through innovation, education, and entrepreneurship.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-nav">
-                        <h4>Navigation</h4>
-                        <ul>
-                            <li><a href="#about">About Raymond</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#architecture">Architecture</a></li>
-                            <li><a href="#raysimz">Raysimz</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-company">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#projects">Project Portfolio</a></li>
-                            <li><a href="#collaborations">Collaborations</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <p>&copy; <span id="current-year"></span> Raymond Musinguzi. All rights reserved.</p>
-                    <p>Founder and Technical Lead of Raysimz International</p>
-                </div>
-                <div class="footer-seo">
-                    <p class="seo-text">
-                        <strong>Raymond Musinguzi</strong> – Ugandan tech entrepreneur, software developer, architecture engineer, robotics trainer, and founder of Raysimz, an international software, engineering, and digital solutions company.
-                    </p>
-                </div>
-            </div>
+            <p>&copy; <span id="current-year"></span> Raymond Musinguzi. All rights reserved.</p>
+            <p>Founder and Technical Lead of Raysimz International</p>
         </div>
     </footer>
 
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Raymond Musinguzi",
-        "url": "https://raymondmusinguzi.com",
-        "image": "https://raymondmusinguzi.com/assets/images/founder/raymond-musinguzi-profile.jpg",
-        "jobTitle": "Tech Entrepreneur, Software Developer & Architecture Engineer",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Raysimz",
-            "url": "https://raysimz.com",
-            "description": "International software and digital solutions company"
-        },
-        "alumniOf": [
-            {
-                "@type": "EducationalOrganization",
-                "name": "Ntare School"
-            },
-            {
-                "@type": "EducationalOrganization",
-                "name": "Mbarara Municipal School"
-            }
-        ],
-        "knowsAbout": [
-            "Software Development",
-            "Web Application Development",
-            "Mobile Application Development",
-            "Robotics Training",
-            "Digital Innovation",
-            "Architecture Engineering",
-            "Construction Planning",
-            "Structural Design",
-            "System Architecture",
-            "Database Management",
-            "API Integration"
-        ],
-        "sameAs": [
-            "https://github.com/raymondmusinguzi",
-            "https://linkedin.com/in/raymondmusinguzi",
-            "https://twitter.com/raymondmusinguzi",
-            "https://instagram.com/raymondmusinguzi"
-        ],
-        "description": "Raymond Musinguzi is a Ugandan tech entrepreneur, architecture engineer and founder of Raysimz. He specializes in software development, robotics training, architecture engineering, and digital innovation.",
-        "nationality": "Ugandan"
-    }
-    </script>
-
-    <!-- Inline JavaScript -->
+    <!-- Simple JavaScript -->
     <script>
-        // Main JavaScript for Raymond Musinguzi Portfolio
-        
         document.addEventListener('DOMContentLoaded', function() {
-            // Set current year in footer
+            // Set current year
             document.getElementById('current-year').textContent = new Date().getFullYear();
             
-            // Initialize mobile navigation
-            initMobileNav();
-            
-            // Initialize smooth scrolling
-            initSmoothScroll();
-            
-            // Initialize intersection observer for animations
-            initAnimations();
-            
-            // Initialize form validation
-            initFormValidation();
-            
-            // Highlight active nav link on scroll
-            initActiveNav();
-        });
-        
-        // Mobile Navigation Toggle
-        function initMobileNav() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            if (!menuToggle || !navMenu) return;
-            
-            menuToggle.addEventListener('click', function() {
-                const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                
-                // Toggle menu visibility
-                this.classList.toggle('active');
-                navMenu.classList.toggle('active');
-                
-                // Update ARIA attributes
-                this.setAttribute('aria-expanded', !isExpanded);
-                navMenu.setAttribute('aria-hidden', isExpanded);
-                
-                // Toggle hamburger to X
-                const spans = this.querySelectorAll('span');
-                if (!isExpanded) {
-                    spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-                    spans[1].style.opacity = '0';
-                    spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-                } else {
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                }
-            });
-            
-            // Close menu when clicking a link
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    menuToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    navMenu.setAttribute('aria-hidden', 'true');
-                    
-                    // Reset hamburger icon
-                    const spans = menuToggle.querySelectorAll('span');
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', (event) => {
-                if (!menuToggle.contains(event.target) && !navMenu.contains(event.target)) {
-                    menuToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    navMenu.setAttribute('aria-hidden', 'true');
-                    
-                    // Reset hamburger icon
-                    const spans = menuToggle.querySelectorAll('span');
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                }
-            });
-        }
-        
-        // Smooth Scrolling
-        function initSmoothScroll() {
+            // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
                     
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        const headerHeight = document.querySelector('.main-nav').offsetHeight;
+                        const headerHeight = document.querySelector('nav').offsetHeight;
                         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                         
                         window.scrollTo({
                             top: targetPosition,
                             behavior: 'smooth'
                         });
-                        
-                        // Update URL without page jump
-                        history.pushState(null, null, targetId);
                     }
                 });
             });
-        }
-        
-        // Intersection Observer for Animations
-        function initAnimations() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-in');
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe elements for animation
-            const animateElements = document.querySelectorAll(
-                '.timeline-item, .category, .project-card, .service-item, .highlight-card'
-            );
-            
-            animateElements.forEach(el => {
-                el.classList.add('animate-on-scroll');
-                observer.observe(el);
-            });
-        }
-        
-        // Form Validation
-        function initFormValidation() {
-            const contactForm = document.getElementById('contactForm');
-            if (!contactForm) return;
-            
-            // Form elements
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            const subjectSelect = document.getElementById('subject');
-            const messageTextarea = document.getElementById('message');
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            
-            // Form state
-            let formData = {
-                name: '',
-                email: '',
-                subject: '',
-                message: ''
-            };
-            
-            // Load saved form data from localStorage
-            loadSavedFormData();
-            
-            // Input event listeners
-            if (nameInput) {
-                nameInput.addEventListener('input', (e) => {
-                    formData.name = e.target.value.trim();
-                    saveFormData();
-                    validateName();
-                });
-            }
-            
-            if (emailInput) {
-                emailInput.addEventListener('input', (e) => {
-                    formData.email = e.target.value.trim();
-                    saveFormData();
-                    validateEmail();
-                });
-            }
-            
-            if (subjectSelect) {
-                subjectSelect.addEventListener('change', (e) => {
-                    formData.subject = e.target.value;
-                    saveFormData();
-                    validateSubject();
-                });
-            }
-            
-            if (messageTextarea) {
-                messageTextarea.addEventListener('input', (e) => {
-                    formData.message = e.target.value.trim();
-                    saveFormData();
-                    validateMessage();
-                });
-            }
-            
-            // Form submission
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                if (validateForm()) {
-                    await submitForm();
-                }
-            });
-            
-            // Form validation functions
-            function validateName() {
-                const name = formData.name;
-                const isValid = name.length >= 2;
-                
-                updateValidationUI(nameInput, isValid, 'Please enter a valid name (at least 2 characters)');
-                return isValid;
-            }
-            
-            function validateEmail() {
-                const email = formData.email;
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                const isValid = emailRegex.test(email);
-                
-                updateValidationUI(emailInput, isValid, 'Please enter a valid email address');
-                return isValid;
-            }
-            
-            function validateSubject() {
-                const subject = formData.subject;
-                const isValid = subject !== '';
-                
-                updateValidationUI(subjectSelect, isValid, 'Please select a subject');
-                return isValid;
-            }
-            
-            function validateMessage() {
-                const message = formData.message;
-                const isValid = message.length >= 10;
-                
-                updateValidationUI(messageTextarea, isValid, 'Please enter a message (at least 10 characters)');
-                return isValid;
-            }
-            
-            function validateForm() {
-                const isNameValid = validateName();
-                const isEmailValid = validateEmail();
-                const isSubjectValid = validateSubject();
-                const isMessageValid = validateMessage();
-                
-                return isNameValid && isEmailValid && isSubjectValid && isMessageValid;
-            }
-            
-            // Save form data to localStorage
-            function saveFormData() {
-                try {
-                    localStorage.setItem('raymond_contact_form', JSON.stringify(formData));
-                } catch (e) {
-                    console.warn('Could not save form data to localStorage');
-                }
-            }
-            
-            // Load saved form data
-            function loadSavedFormData() {
-                try {
-                    const savedData = localStorage.getItem('raymond_contact_form');
-                    if (savedData) {
-                        formData = JSON.parse(savedData);
-                        
-                        // Populate form fields
-                        if (nameInput) nameInput.value = formData.name;
-                        if (emailInput) emailInput.value = formData.email;
-                        if (subjectSelect) subjectSelect.value = formData.subject;
-                        if (messageTextarea) messageTextarea.value = formData.message;
-                    }
-                } catch (e) {
-                    console.warn('Could not load saved form data');
-                }
-            }
-        }
-        
-        // Update validation UI
-        function updateValidationUI(element, isValid, errorMessage) {
-            if (!element) return;
-            const formGroup = element.closest('.form-group');
-            if (!formGroup) return;
-            
-            // Remove existing error/success classes
-            element.classList.remove('error', 'success');
-            
-            // Remove existing error message
-            const existingError = formGroup.querySelector('.error-message');
-            if (existingError) {
-                existingError.remove();
-            }
-            
-            // Remove existing success message
-            const existingSuccess = formGroup.querySelector('.success-message');
-            if (existingSuccess) {
-                existingSuccess.remove();
-            }
-            
-            if (isValid) {
-                // Add success state
-                element.classList.add('success');
-                
-                // Add success message for important fields
-                if (element.id === 'email' || element.id === 'message') {
-                    const successMsg = document.createElement('div');
-                    successMsg.className = 'success-message';
-                    successMsg.textContent = '✓ Valid';
-                    successMsg.style.cssText = `
-                        color: #10b981;
-                        font-size: 0.875rem;
-                        margin-top: 0.5rem;
-                        font-weight: 500;
-                    `;
-                    formGroup.appendChild(successMsg);
-                }
-            } else if (element.value.trim() !== '') {
-                // Only show error if field is not empty
-                element.classList.add('error');
-                
-                const errorMsg = document.createElement('div');
-                errorMsg.className = 'error-message';
-                errorMsg.textContent = errorMessage;
-                errorMsg.style.cssText = `
-                    color: #ef4444;
-                    font-size: 0.875rem;
-                    margin-top: 0.5rem;
-                `;
-                formGroup.appendChild(errorMsg);
-            }
-        }
-        
-        // Form Submission
-        async function submitForm() {
-            const contactForm = document.getElementById('contactForm');
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            
-            // Disable form and show loading
-            contactForm.querySelectorAll('input, select, textarea, button').forEach(el => {
-                el.disabled = true;
-            });
-            
-            submitButton.textContent = 'Sending...';
-            submitButton.classList.add('loading');
-            
-            try {
-                // Simulate API call - Replace with actual API endpoint
-                const response = await simulateAPICall(getFormData());
-                
-                if (response.success) {
-                    // Show success message
-                    showNotification('Message sent successfully! Raymond will respond within 24 hours.', 'success');
-                    
-                    // Clear form and saved data
-                    contactForm.reset();
-                    clearSavedFormData();
-                    
-                    // Reset form state
-                    const formData = {
-                        name: '',
-                        email: '',
-                        subject: '',
-                        message: ''
-                    };
-                    
-                    // Remove validation states
-                    contactForm.querySelectorAll('input, select, textarea').forEach(el => {
-                        el.classList.remove('error', 'success');
-                        const formGroup = el.closest('.form-group');
-                        const errorMsg = formGroup.querySelector('.error-message');
-                        const successMsg = formGroup.querySelector('.success-message');
-                        if (errorMsg) errorMsg.remove();
-                        if (successMsg) successMsg.remove();
-                    });
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            } catch (error) {
-                // Show error message
-                showNotification('Failed to send message. Please try again or email directly at raymond@raysimz.com', 'error');
-            } finally {
-                // Re-enable form
-                contactForm.querySelectorAll('input, select, textarea, button').forEach(el => {
-                    el.disabled = false;
-                });
-                
-                submitButton.textContent = originalText;
-                submitButton.classList.remove('loading');
-            }
-        }
-        
-        // Simulate API Call (Replace with actual fetch)
-        async function simulateAPICall(formData) {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve({
-                        success: true,
-                        message: 'Message sent successfully',
-                        timestamp: new Date().toISOString()
-                    });
-                }, 1500);
-            });
-        }
-        
-        // Get form data
-        function getFormData() {
-            const contactForm = document.getElementById('contactForm');
-            const formData = new FormData(contactForm);
-            const data = {};
-            
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
-            }
-            
-            // Add metadata
-            data.timestamp = new Date().toISOString();
-            data.pageUrl = window.location.href;
-            data.userAgent = navigator.userAgent;
-            data.referrer = document.referrer;
-            
-            return data;
-        }
-        
-        // Clear saved form data
-        function clearSavedFormData() {
-            try {
-                localStorage.removeItem('raymond_contact_form');
-            } catch (e) {
-                console.warn('Could not clear saved form data');
-            }
-        }
-        
-        // Notification System
-        function showNotification(message, type = 'info') {
-            // Remove existing notification
-            const existingNotification = document.querySelector('.notification');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-            
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.className = `notification notification-${type}`;
-            
-            // Add icon based on type
-            let icon = 'ℹ️';
-            if (type === 'success') icon = '✅';
-            if (type === 'error') icon = '❌';
-            if (type === 'warning') icon = '⚠️';
-            
-            notification.innerHTML = `
-                <div class="notification-content">
-                    <span class="notification-icon">${icon}</span>
-                    <span class="notification-message">${message}</span>
-                </div>
-                <button class="notification-close" aria-label="Close notification">×</button>
-            `;
-            
-            // Add styles
-            const style = document.createElement('style');
-            style.textContent = `
-                .notification {
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    padding: 1rem 1.5rem;
-                    border-radius: 12px;
-                    color: white;
-                    font-weight: 500;
-                    z-index: 10000;
-                    transform: translateX(120%);
-                    opacity: 0;
-                    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
-                                opacity 0.3s ease;
-                    max-width: 400px;
-                    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 1rem;
-                    backdrop-filter: blur(10px);
-                }
-                
-                .notification.show {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-                
-                .notification-success {
-                    background: linear-gradient(135deg, #10b981, #059669);
-                    border-left: 4px solid #047857;
-                }
-                
-                .notification-error {
-                    background: linear-gradient(135deg, #ef4444, #dc2626);
-                    border-left: 4px solid #b91c1c;
-                }
-                
-                .notification-info {
-                    background: linear-gradient(135deg, #3b82f6, #2563eb);
-                    border-left: 4px solid #1d4ed8;
-                }
-                
-                .notification-warning {
-                    background: linear-gradient(135deg, #f59e0b, #d97706);
-                    border-left: 4px solid #b45309;
-                }
-                
-                .notification-content {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.75rem;
-                    flex: 1;
-                }
-                
-                .notification-icon {
-                    font-size: 1.2rem;
-                }
-                
-                .notification-message {
-                    font-size: 0.95rem;
-                    line-height: 1.4;
-                }
-                
-                .notification-close {
-                    background: rgba(255,255,255,0.2);
-                    border: none;
-                    color: white;
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 50%;
-                    font-size: 1.2rem;
-                    cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transition: background 0.2s ease;
-                }
-                
-                .notification-close:hover {
-                    background: rgba(255,255,255,0.3);
-                }
-            `;
-            document.head.appendChild(style);
-            
-            document.body.appendChild(notification);
-            
-            // Show with animation
-            requestAnimationFrame(() => {
-                notification.classList.add('show');
-            });
-            
-            // Close button
-            const closeBtn = notification.querySelector('.notification-close');
-            closeBtn.addEventListener('click', () => {
-                notification.classList.remove('show');
-                setTimeout(() => notification.remove(), 300);
-            });
-            
-            // Auto-remove after delay
-            setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => notification.remove(), 300);
-            }, 5000);
-        }
-        
-        // Active Navigation on Scroll
-        function initActiveNav() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            function updateActiveNav() {
-                const scrollPosition = window.scrollY + 100;
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
-                    
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${sectionId}`) {
-                                link.classList.add('active');
-                            }
-                        });
-                    }
-                });
-            }
-            
-            // Throttle scroll events for performance
-            let scrollTimeout;
-            window.addEventListener('scroll', () => {
-                if (scrollTimeout) {
-                    window.cancelAnimationFrame(scrollTimeout);
-                }
-                
-                scrollTimeout = window.requestAnimationFrame(updateActiveNav);
-            });
-            
-            // Initial call
-            updateActiveNav();
-        }
-        
-        // Add notification styles dynamically
-        const notificationStyles = document.createElement('style');
-        notificationStyles.textContent = `
-            .notification {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 1rem 1.5rem;
-                border-radius: 8px;
-                color: white;
-                font-weight: 500;
-                z-index: 10000;
-                transform: translateX(100%);
-                opacity: 0;
-                transition: transform 0.3s ease, opacity 0.3s ease;
-                max-width: 400px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            }
-            
-            .notification.show {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            
-            .notification-success {
-                background-color: #10b981;
-                border-left: 4px solid #059669;
-            }
-            
-            .notification-error {
-                background-color: #ef4444;
-                border-left: 4px solid #dc2626;
-            }
-            
-            .loading {
-                position: relative;
-                pointer-events: none;
-            }
-            
-            .loading::after {
-                content: '';
-                position: absolute;
-                right: 1rem;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 1rem;
-                height: 1rem;
-                border: 2px solid rgba(255,255,255,0.3);
-                border-top-color: white;
-                border-radius: 50%;
-                animation: spin 0.6s linear infinite;
-            }
-            
-            .error-message {
-                color: #ef4444;
-                font-size: 0.875rem;
-                margin-top: 0.5rem;
-            }
-            
-            input.error,
-            textarea.error,
-            select.error {
-                border-color: #ef4444 !important;
-                box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
-            }
-            
-            @keyframes spin {
-                to { transform: translateY(-50%) rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(notificationStyles);
+        });
     </script>
 </body>
 </html>
