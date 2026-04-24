@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://raymondmusinguzi.com/">
     <meta property="og:title" content="Raymond Musinguzi – I built RentEase to fix Uganda’s broken rental market">
     <meta property="og:description" content="As a founder of Raysimz, I created RentEase – a rental marketplace where tenants pay only to unlock landlord contacts, reducing scams by 60%. Read my story.">
-    <meta property="og:image" content="https://raymondmusinguzi.com/assets/images/hero/raymond-hero.jpg">
+    <meta property="og:image" content="https://i.postimg.cc/cHP2gvwn/Raymond.webp">
     <meta property="og:image:alt" content="Raymond Musinguzi – Tech Entrepreneur">
     <meta property="og:site_name" content="Raymond Musinguzi Portfolio">
     
@@ -26,7 +26,7 @@
     <meta name="twitter:url" content="https://raymondmusinguzi.com/">
     <meta name="twitter:title" content="Raymond Musinguzi – Creator of RentEase">
     <meta name="twitter:description" content="Learn how I built RentEase, Uganda’s first payment‑gated rental platform that protects tenants and empowers landlords.">
-    <meta name="twitter:image" content="https://raymondmusinguzi.com/assets/images/hero/raymond-hero.jpg">
+    <meta name="twitter:image" content="https://i.postimg.cc/cHP2gvwn/Raymond.webp">
     
     <!-- Canonical URL (update when you have a domain) -->
     <link rel="canonical" href="https://raymondmusinguzi.com">
@@ -42,7 +42,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Styles (unchanged from original) -->
+    <!-- Styles (Your original design, preserved) -->
     <style>
         /* ===== BASE STYLES ===== */
         :root {
@@ -127,12 +127,9 @@
         .badge:nth-child(4) { background-color: rgba(16, 185, 129, 0.1); color: #10b981; border-color: rgba(16, 185, 129, 0.2); }
         .hero-cta { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
         .image-frame { position: relative; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl); background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); min-height: 400px; }
-        #profile-image-container { width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-color) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; min-height: 400px; }
-        /* Replace the background with your image: */
-        /* #profile-image-container { background: none; } */
-        /* #profile-image-container img { width: 100%; height: 100%; object-fit: cover; } */
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
         
-        /* About, Skills, Projects, etc. (same as original) */
+        /* About, Skills, Projects, etc. */
         .about-content { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-xl); align-items: start; }
         .about-text h3 { color: var(--dark-color); margin-bottom: var(--space-md); }
         .about-text p { margin-bottom: var(--space-md); font-size: 1.125rem; line-height: 1.7; }
@@ -146,7 +143,17 @@
         .highlight-card h4 { color: var(--dark-color); margin-bottom: var(--space-xs); }
         .highlight-card p { color: var(--gray-color); font-size: 0.95rem; margin-bottom: 0; }
         
-        /* Timeline, Skills, Projects, Architecture, Raysimz, Collaborations – all unchanged from original (preserved) */
+        /* Timeline */
+        .timeline { position: relative; max-width: 800px; margin: 0 auto var(--space-xl); }
+        .timeline::before { content: ''; position: absolute; left: 30px; top: 0; bottom: 0; width: 2px; background-color: var(--light-gray); }
+        .timeline-item { position: relative; padding-left: 80px; margin-bottom: var(--space-xl); }
+        .timeline-date { position: absolute; left: 0; top: 0; background-color: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-md); font-weight: 600; font-size: 0.875rem; min-width: 80px; text-align: center; }
+        .timeline-content { background-color: var(--white); padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color); }
+        .timeline-content h3 { color: var(--dark-color); margin-bottom: var(--space-xs); }
+        .timeline-content p { color: var(--gray-color); margin-bottom: 0; }
+        .education-note { background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%); padding: var(--space-lg); border-radius: var(--radius-lg); max-width: 800px; margin: 0 auto; }
+        
+        /* Skills Categories */
         .skills-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-lg); max-width: 1200px; margin: 0 auto; }
         .category { background-color: var(--white); padding: var(--space-lg); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: transform var(--transition-base); }
         .category:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
@@ -156,6 +163,7 @@
         .skills-list li { margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative; color: var(--dark-gray); }
         .skills-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary-color); font-weight: bold; }
         
+        /* Projects Grid */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg); max-width: 1200px; margin: 0 auto; }
         .project-card { background-color: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); transition: all var(--transition-base); border: 1px solid var(--light-gray); }
         .project-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--primary-light); }
@@ -174,36 +182,72 @@
         .project-role { color: var(--dark-gray); font-size: 0.95rem; margin-bottom: var(--space-sm); padding: var(--space-sm); background-color: rgba(37, 99, 235, 0.05); border-radius: var(--radius-md); }
         .project-tech { display: flex; gap: var(--space-xs); flex-wrap: wrap; }
         .tech-tag { background-color: var(--light-gray); color: var(--dark-gray); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.875rem; font-weight: 500; }
-        .tech-tag:nth-child(1) { background-color: rgba(37, 99, 235, 0.1); color: var(--primary-color); }
-        .tech-tag:nth-child(2) { background-color: rgba(124, 58, 237, 0.1); color: var(--secondary-color); }
-        .tech-tag:nth-child(3) { background-color: rgba(245, 158, 11, 0.1); color: var(--accent-color); }
         
+        /* Architecture & Services */
+        .architecture-content { max-width: 1200px; margin: 0 auto; }
+        .architecture-intro { text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
         .service-item { background-color: var(--white); padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--light-gray); transition: all var(--transition-base); text-align: center; }
         .service-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary-color); }
         .service-item h5 { color: var(--primary-color); margin-bottom: var(--space-xs); }
         
+        /* Raysimz */
+        .raysimz-intro { max-width: 800px; margin: 0 auto var(--space-xl); text-align: center; }
+        .founder-mission { background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%); padding: var(--space-xl); border-radius: var(--radius-lg); max-width: 800px; margin: 0 auto; }
+        .mission-statement blockquote { font-size: 1.25rem; font-style: italic; text-align: center; }
+        
+        /* Collaborations */
+        .collaborations-content { max-width: 800px; margin: 0 auto; }
+        .company-collab { display: grid; grid-template-columns: auto 1fr; gap: var(--space-lg); align-items: start; background-color: var(--white); padding: var(--space-lg); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); margin-bottom: var(--space-lg); }
+        .company-logo { width: 100px; height: 100px; }
+        .logo-placeholder { width: 100%; height: 100%; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.25rem; }
+        .logo-placeholder.nasdan { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
+        .logo-placeholder.nasdan::after { content: 'Nasdan'; }
+        .logo-placeholder.wit { background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); }
+        .logo-placeholder.wit::after { content: 'Wit Tech'; }
+        .experience-highlights { background-color: var(--white); padding: var(--space-lg); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+        .experience-list { list-style: none; }
+        .experience-list li { margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative; color: var(--dark-gray); }
+        .experience-list li::before { content: '→'; position: absolute; left: 0; color: var(--primary-color); font-weight: bold; }
+        
+        /* Footer */
         .footer { background-color: var(--dark-color); color: var(--white); padding: var(--space-xl) 0; }
         .footer-content { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-xl); }
         .footer-brand h3 { color: var(--white); margin-bottom: var(--space-xs); }
         .footer-brand p { color: rgba(255, 255, 255, 0.7); }
         .footer-tagline { color: rgba(255, 255, 255, 0.8); font-size: 1.125rem; margin-top: var(--space-sm); }
+        .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+        .footer-nav h4, .footer-company h4 { color: var(--white); margin-bottom: var(--space-md); font-size: 1.125rem; }
         .footer-nav ul, .footer-company ul { list-style: none; }
         .footer-nav li, .footer-company li { margin-bottom: 0.75rem; }
         .footer-nav a, .footer-company a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-base); }
-        .footer-nav a:hover, .footer-company a:hover { color: var(--white); padding-left: 4px; }
+        .footer-nav a:hover, .footer-company a:hover { color: var(--white); }
         .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--space-lg); text-align: center; }
         .copyright p { color: rgba(255, 255, 255, 0.7); margin-bottom: var(--space-xs); font-size: 0.95rem; }
         .seo-text { color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; max-width: 800px; margin: 0 auto; }
         
-        /* Responsive (shortened for brevity, same as original) */
+        /* Responsive */
         @media (max-width: 991px) {
             .menu-toggle { display: flex; }
-            .nav-menu { position: fixed; top: 70px; right: -100%; flex-direction: column; background-color: var(--white); width: 80%; max-width: 300px; height: calc(100vh - 70px); padding: var(--space-lg); box-shadow: var(--shadow-lg); transition: right var(--transition-base); }
+            .nav-menu { position: fixed; top: 70px; right: -100%; flex-direction: column; background-color: var(--white); width: 80%; max-width: 300px; height: calc(100vh - 70px); padding: var(--space-lg); box-shadow: var(--shadow-lg); transition: right var(--transition-base); z-index: 999; }
             .nav-menu.active { right: 0; }
-            .hero-grid, .about-content, .project-card.featured { grid-template-columns: 1fr; }
+            .hero-grid, .about-content, .project-card.featured, .company-collab, .footer-content { grid-template-columns: 1fr; }
+            .company-collab { text-align: center; }
+            .company-logo { margin: 0 auto; }
+            .footer-links { grid-template-columns: 1fr; gap: 1.5rem; }
         }
-        @media (max-width: 576px) { .hero-title { font-size: 2rem; } }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .container { padding: 0 1rem; }
+            .timeline::before { left: 20px; }
+            .timeline-item { padding-left: 60px; }
+        }
+        @media (max-width: 576px) {
+            .hero-title { font-size: 2rem; }
+            .hero-badges { gap: 0.5rem; }
+            .badge { font-size: 0.75rem; }
+        }
         .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .animate-in { opacity: 1; transform: translateY(0); }
     </style>
@@ -223,10 +267,12 @@
                 </button>
                 <ul class="nav-menu">
                     <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#rentease" class="nav-link">RentEase</a></li>
+                    <li><a href="#architecture" class="nav-link">Architecture</a></li>
                     <li><a href="#raysimz" class="nav-link">Raysimz</a></li>
+                    <li><a href="#collaborations" class="nav-link">Collaborations</a></li>
                 </ul>
             </div>
         </div>
@@ -248,14 +294,7 @@
                 </div>
                 <div class="hero-image">
                     <div class="image-frame">
-                        <!-- 👇 REPLACE THIS DIV WITH YOUR ACTUAL IMAGE -->
-                        <!-- Option 1: Use background image -->
-                        <div id="profile-image-container" style="width:100%; height:100%; background: linear-gradient(135deg, var(--primary-light), var(--secondary-color)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; min-height: 450px;">
-                            https://i.postimg.cc/cHP2gvwn/Raymond.webp
-                        </div>
-                        <!-- Option 2: Uncomment and use <img> tag
-                        <img src="your-photo.jpg" alt="Raymond Musinguzi" style="width:100%; height:100%; object-fit:cover;">
-                        -->
+                        <img src="https://i.postimg.cc/cHP2gvwn/Raymond.webp" alt="Raymond Musinguzi - Founder of Raysimz">
                     </div>
                 </div>
             </div>
@@ -263,7 +302,7 @@
     </header>
 
     <main>
-        <!-- About Section (condensed, but full text remains) -->
+        <!-- About Section (Full original content) -->
         <section id="about" class="section">
             <div class="container">
                 <div class="section-header">
@@ -273,73 +312,67 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h3>From Uganda to Global Tech & Architecture Innovation</h3>
-                        <p><strong>Raymond Musinguzi</strong> is a Ugandan tech entrepreneur, software developer, and architecture engineer. As the founder of <strong>Raysimz</strong>, he leads an international team delivering software, robotics training, and digital transformation.</p>
-                        <p>His journey began during his education in Uganda, where he developed a passion for solving real-world problems through code. Today, he is known for his hands‑on approach to software architecture, construction planning, and STEM education.</p>
+                        <p><strong>Raymond Musinguzi</strong> is a Ugandan tech entrepreneur, software developer, and architecture engineer who combines technical expertise with structural design knowledge to create impactful digital and physical solutions. As the founder and technical lead of <strong>Raysimz</strong>, he leads an international team delivering cutting-edge software, robotics training, architecture planning, and digital transformation services.</p>
+                        <p>His journey in technology and engineering began during his early education in Uganda, where he developed a passion for solving real-world problems through code, innovation, and structural design. Today, Raymond Musinguzi is recognized for his hands-on approach to software architecture, his expertise in construction planning, his commitment to STEM education through robotics training, and his ability to bridge the gap between technology, architecture, and practical business applications.</p>
+                        <p>Beyond technical development, Raymond Musinguzi applies his engineering skills to architecture and construction projects, designing residential complexes and estate layouts while maintaining his involvement in event hosting, digital branding initiatives, bringing technology, creativity, and youth empowerment together to foster the next generation of African innovators.</p>
                         <div class="founder-quote">
-                            <blockquote>"Technology is not just about writing code—it's about creating solutions that improve lives. Architecture is about building functional spaces. Through Raysimz, we're building Africa's digital and physical future."</blockquote>
-                            <cite>— Raymond Musinguzi</cite>
+                            <blockquote>"Technology is not just about writing code—it's about creating solutions that improve lives, empower communities, and drive meaningful progress. Architecture is about building functional, sustainable spaces. Through Raysimz, we're building Africa's digital and physical future."</blockquote>
+                            <cite>— Raymond Musinguzi, Founder of Raysimz</cite>
                         </div>
                     </div>
                     <div class="about-highlights">
-                        <div class="highlight-card"><div class="highlight-icon">🏆</div><h4>Founder & CEO</h4><p>Leads Raysimz, an international software and engineering company</p></div>
+                        <div class="highlight-card"><div class="highlight-icon">🏆</div><h4>Founder & CEO</h4><p>Founded and leads Raysimz, an international software and engineering company</p></div>
                         <div class="highlight-card"><div class="highlight-icon">💻</div><h4>Full-Stack Developer</h4><p>Hands-on development of complex web and mobile applications</p></div>
+                        <div class="highlight-card"><div class="highlight-icon">🏗️</div><h4>Architecture Engineer</h4><p>Structural design and construction planning for residential and commercial projects</p></div>
                         <div class="highlight-card"><div class="highlight-icon">🤖</div><h4>Robotics Trainer</h4><p>Training the next generation in robotics and programming</p></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
+        <!-- Education Journey (Full original) -->
+        <section id="education" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Education & <span class="highlight">Journey</span></h2>
+                    <p class="section-subtitle">The academic foundation behind the innovation</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item"><div class="timeline-date">Current</div><div class="timeline-content"><h3>Higher Education at Mbarara High School & Entrepreneurship</h3><p>Continuing advanced studies in technology and engineering while leading Raysimz and developing multiple technology platforms including RentEase, Hospital Records Platform, and architectural design projects.</p></div></div>
+                    <div class="timeline-item"><div class="timeline-date">O'Level</div><div class="timeline-content"><h3>Ntare School & Muntuyera High School-Kitunga</h3><p>Developed foundational skills in sciences, mathematics, and technical drawing, sparking interest in technology, engineering, and problem-solving through computational and structural thinking.</p></div></div>
+                    <div class="timeline-item"><div class="timeline-date">Primary</div><div class="timeline-content"><h3>Mbarara Municipal School</h3><p>Early education where curiosity in technology and building first emerged, laying the groundwork for future innovation in software development and structural engineering.</p></div></div>
+                </div>
+                <div class="education-note"><h4>Continuous Learning Philosophy</h4><p>Raymond Musinguzi believes in continuous education through hands-on projects, industry collaboration, and self-directed learning—combining formal education with practical implementation to stay at the forefront of technology innovation and architectural engineering.</p></div>
+            </div>
+        </section>
+
+        <!-- Skills & Expertise (Full original) -->
         <section id="skills" class="section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Technical <span class="highlight">Skills</span> & Expertise</h2>
-                </div>
+                <div class="section-header"><h2 class="section-title">Technical <span class="highlight">Skills</span> & Expertise</h2><p class="section-subtitle">Comprehensive capabilities across software development, architecture, and digital innovation</p></div>
                 <div class="skills-categories">
-                    <div class="category"><h3 class="category-title">Software Development</h3><ul class="skills-list"><li>Full-Stack Web Development</li><li>Mobile App Development</li><li>API Design & Integration</li><li>System Architecture</li></ul></div>
-                    <div class="category"><h3 class="category-title">Architecture & Construction</h3><ul class="skills-list"><li>Structural Design & Planning</li><li>Residential House Design</li><li>Estate Layout Planning</li><li>Construction Project Management</li></ul></div>
-                    <div class="category"><h3 class="category-title">Digital Solutions</h3><ul class="skills-list"><li>E‑commerce Platforms</li><li>Payment System Integration</li><li>School/Hospital Management Systems</li><li>Property Management Systems</li></ul></div>
-                    <div class="category"><h3 class="category-title">Leadership & Training</h3><ul class="skills-list"><li>Robotics Training</li><li>Programming Education</li><li>STEM Mentorship</li><li>Team Leadership</li></ul></div>
+                    <div class="category"><h3 class="category-title">Software Development</h3><ul class="skills-list"><li>Full-Stack Web Development</li><li>Mobile Application Development</li><li>API Design & Integration</li><li>System Architecture</li><li>Database Management</li><li>Software Maintenance</li></ul></div>
+                    <div class="category"><h3 class="category-title">Architecture & Construction</h3><ul class="skills-list"><li>Structural Design & Planning</li><li>Residential House Design</li><li>Estate Layout Planning</li><li>Construction Project Management</li><li>CAD & 3D Modeling</li><li>Building Code Compliance</li><li>Material Science & Selection</li><li>Sustainable Building Practices</li></ul></div>
+                    <div class="category"><h3 class="category-title">Digital Solutions</h3><ul class="skills-list"><li>E-commerce Platform Development</li><li>Payment System Integration</li><li>School Management Systems</li><li>Hospital Records Platforms</li><li>Property Management Systems</li><li>System Automation</li></ul></div>
+                    <div class="category"><h3 class="category-title">Leadership & Training</h3><ul class="skills-list"><li>Robotics Training</li><li>Programming Education</li><li>STEM Mentorship</li><li>Technology Workshops</li><li>Team Leadership</li><li>Project Management</li></ul></div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section (including RentEase featured) -->
+        <!-- Projects & Innovations (Full original) -->
         <section id="projects" class="section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Key <span class="highlight">Projects</span> & Innovations</h2>
-                    <p class="section-subtitle">Designing digital solutions that solve real problems</p>
-                </div>
+                <div class="section-header"><h2 class="section-title">Key <span class="highlight">Projects</span> & Innovations</h2><p class="section-subtitle">Hands-on development and leadership in transformative digital solutions</p></div>
                 <div class="projects-grid">
-                    <!-- RentEase featured card -->
-                    <div class="project-card featured">
-                        <div class="project-image"><div class="image-placeholder rentease"></div></div>
-                        <div class="project-content">
-                            <h3 class="project-title">RentEase Platform</h3>
-                            <p class="project-subtitle">Digital Rental & Property Management System</p>
-                            <p class="project-description">RentEase is a rental discovery and housing access platform that helps tenants find affordable rentals in Uganda without unnecessary movement, high transport costs, or brokers. It centralizes rental information digitally, saving time and reducing scams.</p>
-                            <div class="project-role"><strong>Role:</strong> Founder, Lead Developer & System Architect</div>
-                            <div class="project-tech"><span class="tech-tag">Web Development</span><span class="tech-tag">Payment Integration</span><span class="tech-tag">Database Design</span></div>
-                        </div>
-                    </div>
-                    <!-- Hospital Records -->
-                    <div class="project-card featured">
-                        <div class="project-image"><div class="image-placeholder hospital"></div></div>
-                        <div class="project-content">
-                            <h3 class="project-title">Hospital Records Platform</h3>
-                            <p class="project-subtitle">Electronic Medical Records System</p>
-                            <p class="project-description">A healthcare solution to improve medical data management, patient record accessibility, and healthcare delivery efficiency.</p>
-                            <div class="project-tech"><span class="tech-tag">Healthcare Tech</span><span class="tech-tag">Data Security</span><span class="tech-tag">System Integration</span></div>
-                        </div>
-                    </div>
-                    <div class="project-card"><div class="project-image"><div class="image-placeholder school"></div></div><div class="project-content"><h3 class="project-title">School Management System</h3><p class="project-subtitle">Educational Administration Platform</p><p class="project-description">Streamlining school operations, student management, and academic tracking.</p><div class="project-tech"><span class="tech-tag">Education Tech</span><span class="tech-tag">Administration</span></div></div></div>
-                    <div class="project-card"><div class="project-image"><div class="image-placeholder api"></div></div><div class="project-content"><h3 class="project-title">API Integration Framework</h3><p class="project-subtitle">Custom Integration Solutions</p><p class="project-description">Robust API frameworks enabling seamless integration between business systems and payment platforms.</p><div class="project-tech"><span class="tech-tag">API Development</span><span class="tech-tag">Middleware</span></div></div></div>
+                    <div class="project-card featured"><div class="project-image"><div class="image-placeholder rentease"></div></div><div class="project-content"><h3 class="project-title">RentEase Platform</h3><p class="project-subtitle">Digital Rental & Property Management System</p><p class="project-description">RentEase is a rental discovery and housing access platform built by Raymond Musinguzi with the goal of simplifying how tenants find rental homes in Uganda. It focuses on helping users discover affordable rentals in different locations without unnecessary movement, high transport expenses, or reliance on brokers. By centralizing rental information digitally, RentEase saves time, reduces costs, and improves access to housing opportunities. The platform demonstrates Raymond's ability to identify real societal problems and design practical tech-based solutions for local markets.</p><div class="project-role"><strong>Role:</strong> Founder, Lead Developer & System Architect</div><div class="project-tech"><span class="tech-tag">Web Development</span><span class="tech-tag">Payment Integration</span><span class="tech-tag">Database Design</span></div></div></div>
+                    <div class="project-card featured"><div class="project-image"><div class="image-placeholder hospital"></div></div><div class="project-content"><h3 class="project-title">Hospital Records Platform</h3><p class="project-subtitle">Electronic Medical Records System</p><p class="project-description">An innovative healthcare solution developed by Raymond Musinguzi to improve medical data management, patient record accessibility, and healthcare delivery efficiency across medical facilities.</p><div class="project-role"><strong>Role:</strong> System Architect & Lead Developer</div><div class="project-tech"><span class="tech-tag">Healthcare Tech</span><span class="tech-tag">Data Security</span><span class="tech-tag">System Integration</span></div></div></div>
+                    <div class="project-card"><div class="project-image"><div class="image-placeholder school"></div></div><div class="project-content"><h3 class="project-title">School Management System</h3><p class="project-subtitle">Comprehensive Educational Administration Platform</p><p class="project-description">A full-featured system streamlining school operations, student management, academic tracking, and communication between educators, students, and parents.</p><div class="project-tech"><span class="tech-tag">Education Tech</span><span class="tech-tag">Administration</span><span class="tech-tag">Communication</span></div></div></div>
+                    <div class="project-card"><div class="project-image"><div class="image-placeholder api"></div></div><div class="project-content"><h3 class="project-title">API Integration Framework</h3><p class="project-subtitle">Custom Integration Solutions for Businesses</p><p class="project-description">Development of robust API frameworks enabling seamless integration between diverse business systems, payment platforms, and third-party services.</p><div class="project-tech"><span class="tech-tag">API Development</span><span class="tech-tag">System Integration</span><span class="tech-tag">Middleware</span></div></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- Dedicated RentEase Section (Impact, Innovation, Difference) -->
+        <!-- Enhanced RentEase Section (Detailed Impact & Difference) -->
         <section id="rentease" class="section" style="background-color: var(--white);">
             <div class="container">
                 <div class="section-header">
@@ -349,11 +382,11 @@
                 <div class="about-content" style="grid-template-columns: 1fr 1fr;">
                     <div>
                         <h3>The Problem with Traditional Rental Sites</h3>
-                        <p>Most classifieds list landlord contacts for free – attracting scammers, fake ads, and wasted time. Tenants end up calling dozens of numbers only to find properties already rented or non‑existent.</p>
+                        <p>Most classifieds list landlord contacts for free – attracting scammers, fake ads, and wasted time. Tenants end up calling dozens of numbers only to find properties already rented or non‑existent. Landlords receive hundreds of spam inquiries, making it hard to find serious tenants.</p>
                         <h3>The RentEase Innovation</h3>
-                        <p><strong>Payment‑gated contact unlock</strong> – Tenants pay a small fee (UGX 5,000) to reveal the landlord’s phone, WhatsApp, and location map. This simple filter eliminates fake inquiries and ensures only serious tenants connect.</p>
+                        <p><strong>Payment‑gated contact unlock</strong> – Tenants pay a small fee (UGX 5,000) to reveal the landlord’s phone, WhatsApp, and location map. This simple filter eliminates fake inquiries and ensures only serious tenants connect. Landlords post for free, get verified tenants, and manage their listings through a dashboard. Every payment is tracked.</p>
                         <h3>Real Impact</h3>
-                        <p>Since launch, RentEase has reduced rental scams by over 60% in pilot areas. Landlords post for free, get verified tenants, and manage their listings through a dashboard. Tenants save time and money, and every payment is tracked.</p>
+                        <p>Since its pilot launch, RentEase has reduced rental scams by over 60% in tested areas. Tenants save time and transport money by viewing accurate property details and maps before paying. Landlords receive qualified leads only. The platform also includes a review system, fraud detection, and an admin panel for verification requests.</p>
                     </div>
                     <div>
                         <h3>What Makes RentEase Different</h3>
@@ -364,9 +397,11 @@
                             <li>✅ Google Maps location picker for exact property position</li>
                             <li>✅ Email OTP verification and password reset</li>
                             <li>✅ Admin dashboard for oversight and verification requests</li>
+                            <li>✅ No brokers – direct tenant‑landlord connection</li>
+                            <li>✅ Mobile‑responsive design for all devices</li>
                         </ul>
                         <div class="founder-quote" style="margin-top: 0;">
-                            <blockquote>“RentEase isn’t just another listing site – it’s a complete rental ecosystem that protects both tenants and landlords. We built trust into every step.”</blockquote>
+                            <blockquote>“RentEase isn’t just another listing site – it’s a complete rental ecosystem that protects both tenants and landlords. We built trust into every step, from payments to chat to reviews.”</blockquote>
                             <cite>— Raymond Musinguzi, Creator of RentEase</cite>
                         </div>
                     </div>
@@ -374,25 +409,37 @@
             </div>
         </section>
 
-        <!-- Raysimz Section (unchanged) -->
+        <!-- Architecture & Construction Section (Full original) -->
+        <section id="architecture" class="section">
+            <div class="container">
+                <div class="section-header"><h2 class="section-title">Architecture & <span class="highlight">Construction Engineering</span></h2><p class="section-subtitle">Blending structural design with digital innovation</p></div>
+                <div class="architecture-content">
+                    <div class="architecture-intro"><h3>Structural Design Meets Technical Precision</h3><p>Beyond software development, <strong>Raymond Musinguzi</strong> applies his engineering expertise to architecture and construction projects. His approach combines traditional structural planning with modern digital tools, creating efficient, sustainable building designs and estate layouts.</p><p>With a comprehensive understanding of construction principles, material science, and building codes, Raymond contributes to residential and commercial projects, ensuring structural integrity, compliance, and innovative space utilization while integrating technology solutions for smart building management.</p></div>
+                    <div class="architecture-services"><h4>Architectural Services & Expertise</h4><div class="services-grid"><div class="service-item"><div class="service-icon">🏠</div><h5>Residential House Design</h5><p>Complete architectural plans for residential buildings including floor plans, elevations, and structural calculations</p></div><div class="service-item"><div class="service-icon">🏢</div><h5>Estate Planning & Layout</h5><p>Master planning for housing estates including road networks, utilities, and community space allocation</p></div><div class="service-item"><div class="service-icon">📐</div><h5>Structural Engineering</h5><p>Load calculations, foundation design, and structural integrity assessment for buildings</p></div><div class="service-item"><div class="service-icon">💻</div><h5>Digital Construction Planning</h5><p>Using CAD software and 3D modeling for precise construction documentation</p></div><div class="service-item"><div class="service-icon">🌿</div><h5>Sustainable Design</h5><p>Eco-friendly building designs incorporating energy efficiency and sustainable materials</p></div><div class="service-item"><div class="service-icon">📊</div><h5>Construction Project Management</h5><p>Overseeing construction projects from planning through completion</p></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Raysimz Section (Full original) -->
         <section id="raysimz" class="section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Founder of <span class="highlight">Raysimz</span></h2>
-                    <p class="section-subtitle">Leading an international software, digital solutions, and engineering company</p>
+                <div class="section-header"><h2 class="section-title">Founder of <span class="highlight">Raysimz</span></h2><p class="section-subtitle">Leading an international software, digital solutions, and engineering company</p></div>
+                <div class="raysimz-content">
+                    <div class="raysimz-intro"><h3>Visionary Leadership in Technology & Engineering</h3><p><strong>Raymond Musinguzi</strong> founded <strong>Raysimz</strong> with a vision to create a world-class technology and engineering company that delivers innovative digital and structural solutions while fostering talent and driving technological advancement in Uganda and across Africa.</p><p>As both founder and technical lead, Raymond Musinguzi ensures that Raysimz maintains excellence in software development while expanding its impact through robotics training, digital marketing, architecture engineering, and comprehensive IT consultancy services.</p></div>
+                    <div class="services-showcase"><h4>Services Under Raymond's Leadership</h4><div class="services-grid"><div class="service-item"><h5>Custom Software Development</h5><p>Web & mobile applications tailored to business needs</p></div><div class="service-item"><h5>Architecture & Construction Planning</h5><p>Structural design, estate planning, and construction management</p></div><div class="service-item"><h5>Digital Marketing & SEO</h5><p>Comprehensive online visibility and growth strategies</p></div><div class="service-item"><h5>Robotics & Programming Training</h5><p>STEM education and technology workshops</p></div><div class="service-item"><h5>System Integration & Automation</h5><p>Streamlining business processes through technology</p></div><div class="service-item"><h5>IT & Engineering Consultancy</h5><p>Strategic technology and construction planning</p></div></div></div>
+                    <div class="founder-mission"><div class="mission-statement"><h4>Founder's Mission Statement</h4><blockquote>"At Raysimz, we don't just build software—we build capabilities and structures. Under my leadership, we're committed to creating technology that solves real problems, designing buildings that serve communities, empowering African businesses, and developing the next generation of tech and engineering innovators through hands-on training and mentorship."</blockquote><p class="mission-author">— Raymond Musinguzi, Founder & Technical Lead</p></div></div>
                 </div>
-                <div class="raysimz-intro">
-                    <p><strong>Raysimz</strong> is a global technology and engineering company founded by Raymond Musinguzi. It delivers custom software, robotics training, digital marketing, and architecture planning services across Africa and beyond.</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-item"><h5>Custom Software Development</h5><p>Web & mobile apps tailored to business needs</p></div>
-                    <div class="service-item"><h5>Architecture & Construction</h5><p>Structural design, estate planning, construction management</p></div>
-                    <div class="service-item"><h5>Digital Marketing & SEO</h5><p>Comprehensive online visibility strategies</p></div>
-                    <div class="service-item"><h5>Robotics & Programming Training</h5><p>STEM education and technology workshops</p></div>
-                </div>
-                <div class="founder-mission" style="background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(124,58,237,0.05)); padding: var(--space-lg); border-radius: var(--radius-lg); margin-top: var(--space-xl); text-align: center;">
-                    <blockquote style="font-size: 1.25rem; font-style: italic;">“At Raysimz, we don't just build software—we build capabilities and structures. We're committed to solving real problems, empowering African businesses, and developing the next generation of innovators.”</blockquote>
-                    <p class="mission-author" style="margin-top: var(--space-sm);">— Raymond Musinguzi, Founder & Technical Lead</p>
+            </div>
+        </section>
+
+        <!-- Collaborations & Experience (Full original) -->
+        <section id="collaborations" class="section">
+            <div class="container">
+                <div class="section-header"><h2 class="section-title">Industry <span class="highlight">Collaborations</span></h2><p class="section-subtitle">Professional partnerships and project experience</p></div>
+                <div class="collaborations-content">
+                    <div class="company-collab"><div class="company-logo"><div class="logo-placeholder nasdan"></div></div><div class="company-details"><h3>Nasdan</h3><p class="collab-role">Software Development Collaboration</p><p>Raymond Musinguzi collaborated with Nasdan on software development projects, contributing to digital systems and technical solutions that enhanced operational efficiency and user experience.</p><div class="collab-tech"><span class="collab-tag">Software Development</span><span class="collab-tag">System Enhancement</span></div></div></div>
+                    <div class="company-collab"><div class="company-logo"><div class="logo-placeholder wit"></div></div><div class="company-details"><h3>Wit Technologies</h3><p class="collab-role">Technical Innovation Partnership</p><p>Partnership with Wit Technologies involved collaborative work on innovative technology solutions, system architecture design, and implementation of cutting-edge digital platforms.</p><div class="collab-tech"><span class="collab-tag">Technical Innovation</span><span class="collab-tag">System Architecture</span></div></div></div>
+                    <div class="experience-highlights"><h4>Additional Experience & Initiatives</h4><ul class="experience-list"><li>Architecture and construction consulting for residential projects</li><li>Event hosting and digital branding for technology conferences</li><li>Youth-focused tech and engineering initiatives</li><li>STEM education workshops and robotics competitions</li><li>Technical consultation for startups and enterprises</li><li>Public speaking on technology innovation and entrepreneurship</li></ul></div>
                 </div>
             </div>
         </section>
@@ -401,18 +448,15 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Raymond Musinguzi</h3>
-                    <p>Tech Entrepreneur & Founder</p>
-                    <p class="footer-tagline">Building Africa's digital and structural future through innovation, education, and entrepreneurship.</p>
-                </div>
+                <div class="footer-brand"><h3>Raymond Musinguzi</h3><p>Tech Entrepreneur & Founder</p><p class="footer-tagline">Building Africa's digital and structural future through innovation, education, and entrepreneurship.</p></div>
                 <div class="footer-links">
-                    <div class="footer-nav"><h4>Navigation</h4><ul><li><a href="#about">About Raymond</a></li><li><a href="#projects">Projects</a></li><li><a href="#rentease">RentEase</a></li><li><a href="#raysimz">Raysimz</a></li></ul></div>
+                    <div class="footer-nav"><h4>Navigation</h4><ul><li><a href="#about">About Raymond</a></li><li><a href="#projects">Projects</a></li><li><a href="#architecture">Architecture</a></li><li><a href="#raysimz">Raysimz</a></li></ul></div>
+                    <div class="footer-company"><h4>Company</h4><ul><li><a href="#projects">Project Portfolio</a></li><li><a href="#collaborations">Collaborations</a></li></ul></div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <div class="copyright"><p>&copy; <span id="current-year"></span> Raymond Musinguzi. All rights reserved.</p><p>Founder and Technical Lead of Raysimz International</p></div>
-                <div class="footer-seo"><p class="seo-text"><strong>Raymond Musinguzi</strong> – Ugandan tech entrepreneur, creator of RentEase, software developer, architecture engineer, and founder of Raysimz.</p></div>
+                <div class="footer-seo"><p class="seo-text"><strong>Raymond Musinguzi</strong> – Ugandan tech entrepreneur, software developer, architecture engineer, robotics trainer, and founder of Raysimz, an international software, engineering, and digital solutions company.</p></div>
             </div>
         </div>
     </footer>
@@ -423,6 +467,7 @@
         "@type": "Person",
         "name": "Raymond Musinguzi",
         "url": "https://raymondmusinguzi.com",
+        "image": "https://i.postimg.cc/cHP2gvwn/Raymond.webp",
         "jobTitle": "Tech Entrepreneur, Software Developer & Architecture Engineer",
         "worksFor": {"@type": "Organization", "name": "Raysimz"},
         "knowsAbout": ["Software Development", "Robotics Training", "Architecture Engineering", "Rental Platform", "Digital Innovation"],
@@ -460,7 +505,7 @@
                         const headerHeight = document.querySelector('.main-nav').offsetHeight;
                         const pos = target.getBoundingClientRect().top + window.scrollY - headerHeight;
                         window.scrollTo({ top: pos, behavior: 'smooth' });
-                        if (menu.classList.contains('active')) {
+                        if (menu && menu.classList.contains('active')) {
                             menu.classList.remove('active');
                             const spans = toggle.querySelectorAll('span');
                             spans[0].style.transform = 'none';
@@ -475,8 +520,8 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('animate-in'); });
             }, { threshold: 0.1 });
+            document.querySelectorAll('.category, .project-card, .service-item, .highlight-card, .timeline-item, .company-collab').forEach(el => el.classList.add('animate-on-scroll'));
             document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-            document.querySelectorAll('.category, .project-card, .service-item, .highlight-card').forEach(el => el.classList.add('animate-on-scroll'));
         });
     </script>
 </body>
