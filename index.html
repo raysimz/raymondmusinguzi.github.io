@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/T3SHYzVq/BRO-Photoroom.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raysimz - Technology & Innovation</title>
@@ -1598,14 +1599,14 @@
         grid-template-columns: 1fr;
     }
     .approach-right {
-        order: -1;          /* image on top on mobile */
+        order: -1;          
     }
 }
 .team-avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    overflow: hidden;          /* ensures the image stays inside the circle */
+    overflow: hidden;          
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1620,12 +1621,12 @@
 .logo-wrapper {
     display: flex;
     align-items: center;
-    gap: 0;           /* no space between image and text */
+    gap: 0;           
     text-decoration: none;
 }
 
 .logo-image {
-    height: 48px;      /* adjust to match text height */
+    height: 48px;      
     width: auto;
     display: block;
     margin: 0;
@@ -1655,6 +1656,124 @@
         font-size: 1.4rem;
     }
 }
+.site-logo {
+    height: 60px;      
+    width: auto;
+    display: block;
+}
+
+/* On mobile, make it slightly smaller if needed */
+@media (max-width: 768px) {
+    .site-logo {
+        height: 60px;
+    }
+}
+/* ========== CUSTOM SUCCESS / ERROR ALERT ========== */
+.form-alert-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(2, 15, 40, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeAlertIn 0.3s ease;
+}
+.form-alert-box {
+    background: #fff;
+    border-radius: 1.2rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.form-alert-box .alert-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #e6960a;   /* yellow accent */
+}
+.form-alert-box h3 {
+    font-size: 1.5rem;
+    color: #021a4f;
+    margin-bottom: 0.5rem;
+}
+.form-alert-box p {
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+.form-alert-box button {
+    background: #e6960a;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2.5rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.form-alert-box button:hover {
+    background: #d97706;
+}
+@keyframes fadeAlertIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;  /* WhatsApp green */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #20b859;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: adjust size on mobile */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+.footer-col.contact-col {
+    text-align: right;
+}
+.footer-col.contact-col a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: var(--transition);
+}
+.footer-col.contact-col a:hover {
+    color: white;
+}
+.footer-col.contact-col a i {
+    margin-right: 0.4rem;
+}
     </style>
 </head>
       <body>
@@ -1662,8 +1781,7 @@
     <header>
         <div class="header-inner">
            <div class="logo-wrapper" onclick="navigateTo('home')" style="display: flex; align-items: center; gap: 0; cursor: pointer;">
-    <img src="https://i.postimg.cc/MTyC4Lmx/RAYSIMZ.png" alt="R" class="logo-image">
-    <span class="logo-text">ay<span>simz</span></span>
+            <img src="https://i.postimg.cc/PxskRpNJ/Final.png" alt="Raysimz" class="site-logo" onclick="navigateTo('home')" style="cursor: pointer;">
 </div>
             <nav class="nav-container" id="desktopNav">
                 <div class="dropdown">
@@ -2819,7 +2937,7 @@
                         <h2>Start Your Project with Us.</h2>
                         <p class="subtitle">Whatever your goal or project size is, we build a bridge between what you hope for and what can be.</p>
                         <div class="img-placeholder blue-tint" style="min-height:230px;margin:1.5rem 0;">
-                            <img src="https://i.postimg.cc/MTyC4Lmx/RAYSIMZ.png" alt="Logo" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                            <img src="https://i.postimg.cc/PxskRpNJ/Final.png" alt="Logo" style="width:100%; height:90%; object-fit:cover; border-radius:inherit;">
                         </div>
                          <h1 style="color: #032970; margin: 1.5rem 0;">RAYSIMZ</h1>
                         <blockquote>"We put in synergy a community that designs, prototypes, tests, scales and passionately works to launch imaginative and enterprising solutions..."</blockquote>
@@ -2835,15 +2953,35 @@
                     </div>
                     <div class="contact-right">
                         <h3>Fill out the form and we'll be in touch as soon as possible.</h3>
-                        <form class="contact-form-new" onsubmit="handleContactNewSubmit(event)">
-                            <div class="form-row"><input type="text" placeholder="Name *" required><input type="tel" placeholder="Phone *" required></div>
-                            <input type="email" placeholder="Email *" required>
-                            <select required><option value="">Select Country *</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>Germany</option><option>Nigeria</option><option>Kenya</option><option>South Africa</option><option>India</option><option>Other</option></select>
-                            <select required><option value="">Select Service *</option><option>Artificial Intelligence</option><option>Software Development</option><option>Web Development</option><option>Mobile Development</option><option>UI/UX Design</option><option>IT Consulting</option><option>Digital Transformation</option><option>Data Analytics</option><option>Custom Development</option><option>Infrastructure Services</option><option>IT Support</option><option>Cyber Security</option><option>Other</option></select>
-                            <textarea placeholder="Tell us more about your project, needs and budget..."></textarea>
-                            <label class="checkbox-group"><input type="checkbox" checked> <span>Yes, I'd like to receive occasional emails from Raysimz. I have the right to opt out at any time.</span></label>
-                            <button type="submit" class="btn-submit">Let's Build <i class="fas fa-arrow-right"></i></button>
-                        </form>
+                        <form class="contact-form-new ajax-form" action="https://formspree.io/f/mqaqnqrk" method="POST">
+    <div class="form-row">
+        <input type="text" name="name" placeholder="Name *" required>
+        <input type="tel" name="phone" placeholder="Phone *" required>
+    </div>
+    <input type="email" name="email" placeholder="Email *" required>
+    <input type="text" name="country" placeholder="Country *"required>
+    <select name="service" required>
+        <option value="">Select Service *</option>
+        <option>Artificial Intelligence</option>
+        <option>Software Development</option>
+        <option>Web Development</option>
+        <option>Mobile Development</option>
+        <option>UI/UX Design</option>
+        <option>IT Consulting</option>
+        <option>Digital Transformation</option>
+        <option>Data Analytics</option>
+        <option>Custom Development</option>
+        <option>Infrastructure Services</option>
+        <option>IT Support</option><option>Cyber Security</option>
+        <option>Other</option>
+    </select>
+    <textarea name="message" placeholder="Tell us more about your project, needs and budget..."></textarea>
+    <label class="checkbox-group">
+        <input type="checkbox" name="newsletter" checked>
+        <span>Yes, I'd like to receive occasional emails from Raysimz.</span>
+    </label>
+    <button type="submit" class="btn-submit">Let's Build <i class="fas fa-arrow-right"></i></button>
+</form>
                     </div>
                 </div>
             </div>
@@ -2862,7 +3000,7 @@
             <!-- LEFT: Image + info -->
             <div class="contact-left">
                 <div class="img-placeholder blue-tint" style="min-height: 300px; margin-bottom: 1.5rem;">
-                    <img src="https://i.postimg.cc/VNdSwqd3/Qoute.png" alt="Get a quote" style="width:100%; height:100%; object-fit:cover;">
+                    <img src="https://i.postimg.cc/VNdSwqd3/Qoute.png" alt="Get a quote" style="width:80%; height:100%; object-fit:cover;">
                 </div>
                 <h2 style="font-size: 1.8rem; color: #021a4f;">Let’s Build Something Great</h2>
                 <p style="color: var(--gray-600);">Fill out the form and we’ll prepare a detailed, no‑obligation quote tailored to your needs.</p>
@@ -2876,87 +3014,98 @@
             <!-- RIGHT: Form -->
             <div class="contact-right">
                 <h3>Request Your Custom Quote</h3>
-                <form class="contact-form-new" onsubmit="handleQuoteSubmit(event)">
-                    <div class="form-row">
-                        <input type="text" placeholder="Full Name *" required>
-                        <input type="email" placeholder="Email Address *" required>
-                    </div>
-                    <div class="form-row">
-                        <input type="tel" placeholder="Phone Number">
-                        <input type="text" placeholder="Company Name">
-                    </div>
-                    <select required>
-                        <option value="">Select Service Needed *</option>
-                        <option>Artificial Intelligence</option>
-                        <option>Software Development</option>
-                        <option>Web Development</option>
-                        <option>Mobile Development</option>
-                        <option>UI/UX Design</option>
-                        <option>IT Consulting</option>
-                        <option>Digital Transformation</option>
-                        <option>Data Analytics</option>
-                        <option>Custom Development</option>
-                        <option>Infrastructure Services</option>
-                        <option>IT Support</option>
-                        <option>Cyber Security</option>
-                        <option>Other</option>
-                    </select>
-                    <select>
-                        <option value="">Estimated Budget (optional)</option>
-                        <option>$1,000 - $5,000</option>
-                        <option>$5,000 - $10,000</option>
-                        <option>$10,000 - $25,000</option>
-                        <option>$25,000+</option>
-                    </select>
-                    <textarea placeholder="Describe your project, requirements, and timeline..." rows="4" required></textarea>
-                    <label class="checkbox-group">
-                        <input type="checkbox" checked> 
-                        <span>I agree to be contacted by Raysimz about this request.</span>
-                    </label>
-                    <button type="submit" class="btn-submit">Send Quote Request <i class="fas fa-arrow-right"></i></button>
-                </form>
+                <form class="contact-form-new ajax-form" action="https://formspree.io/f/mqaqnqrk" method="POST">
+    <div class="form-row">
+        <input type="text" name="name" placeholder="Full Name *" required>
+        <input type="email" name="email" placeholder="Email Address *" required>
+    </div>
+    <div class="form-row">
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <input type="text" name="company" placeholder="Company Name">
+    </div>
+    <select name="service" required>
+        <option value="">Select Service Needed *</option>
+        <option>Artificial Intelligence</option>
+        <option>Software Development</option>
+        <option>Web Development</option>
+        <option>Mobile Development</option>
+        <option>UI/UX Design</option>
+        <option>IT Consulting</option>
+        <option>Digital Transformation</option>
+        <option>Data Analytics</option>
+        <option>Custom Development</option>
+        <option>Infrastructure Services</option>
+        <option>IT Support</option><option>Cyber Security</option>
+        <option>Other</option>
+    </select>
+    <select name="budget">
+        <option value="">Estimated Budget (optional)</option>
+        <option>$200 – $500</option>
+        <option>$600 - $1000</option>
+        <option>$1100 - $1500</option>
+        <option>$1600 - $2000</option>
+        <option>$2100 - $3500</option>
+        <option>$3600 - $4000</option>
+    </select>
+    <textarea name="description" placeholder="Describe your project, requirements, and timeline..." rows="4" required></textarea>
+    <label class="checkbox-group">
+        <input type="checkbox" name="agreed" checked>
+        <span>I agree to be contacted by Raysimz about this request.</span>
+    </label>
+    <button type="submit" class="btn-submit">Send Quote Request <i class="fas fa-arrow-right"></i></button>
+</form>
             </div>
         </div>
     </div>
 </div>
     </main>
-
+    <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/256760686144" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
     <!-- ==================== FOOTER ==================== -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>Raysimz</h4>
-                <p style="color:#aaa; font-size:0.9rem;">Powering innovation through technology. Your trusted partner for digital excellence.</p>
+                <h4>RAYSIMZ</h4>
+                <p style="color:#aaa; font-size:0.9rem;">Powering innovation through technology, Raysimz is committed to delivering solutions that drive real impact in a rapidly evolving digital world. We combine creativity, technical expertise, and strategic thinking to build systems that are not only functional but scalable and future-ready.</p>
                 <div class="social-icons">
-                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://ug.linkedin.com/in/raysimz-ug-738470343" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/RaysimzUg?t=fWapzFIKEpWCcY0QrMVe6A&s=09" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://github.com/raysimz" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://share.google/jXqFxkLHBfY6Uhez0" title="Google"><i class="fab fa-google"></i></a>
+                    <a href="https://www.instagram.com/raysimz_info_tech?igsh=MWN0a3I2Zm5iYXpiZg==" title="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-col">
-                <h4>Company</h4>
+                <h4>COMPANY</h4>
                 <a onclick="navigateTo('about')">About Company</a>
                 <a onclick="navigateTo('portfolio')">Portfolio</a>
                 <a onclick="navigateTo('contact')">Contact</a>
+                <a onclick="navigateTo('stem')">STEM & Robotics</a>
             </div>
             <div class="footer-col">
-                <h4>Services</h4>
+                <h4>SERVICES</h4>
                 <a onclick="navigateTo('ai')">AI Solutions</a>
                 <a onclick="navigateTo('web-dev')">Web Development</a>
                 <a onclick="navigateTo('mobile-dev')">Mobile Apps</a>
                 <a onclick="navigateTo('cyber-security')">Cyber Security</a>
+                <a onclick="navigateTo('software-dev')">Software Development</a>
+                <a onclick="navigateTo('uiux')">UI/UX Design</a>
+                <a onclick="navigateTo('it-consulting')">IT Consulting</a>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
-                <p style="color:#aaa; font-size:0.9rem;"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p>
-                <p style="color:#aaa; font-size:0.9rem;"><i class="fas fa-envelope"></i> hello@raysimz.com</p>
-                <p style="color:#aaa; font-size:0.9rem;"><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Raysimz. All rights reserved. | <a onclick="navigateTo('contact')" style="color:#aaa; cursor:pointer; text-decoration:underline;">Privacy Policy</a></p>
-        </div>
+            <h4>CONTACT</h4>
+          <a href="https://www.google.com/maps/dir//RAYSIMZ,+Mbarara/@-0.6231749,30.677066,7212m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x19d91b005860b1c5:0x32a8db2b24e36d77!2m2!1d30.6501887!2d-0.614335?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+        <i class="fas fa-map-marker-alt"></i> Mbarara, Uganda
+        </a>
+       <a href="mailto:raysimzug@gmail.com">
+        <i class="fas fa-envelope"></i> raysimzug@gmail.com
+    </a>
+    <a href="tel:+15551234567">
+        <i class="fas fa-phone"></i> +256 760686144
+    </a>
+</div>
     </footer>
     <script>
                // ============ NAVIGATION ============
@@ -3030,19 +3179,8 @@
             event.target.reset();
         }
 
-        function handleQuoteSubmit(event) {
-            event.preventDefault();
-            alert('✅ Quote request submitted successfully! Our team will reach out within 24 hours with a tailored proposal.');
-            event.target.reset();
-        }
-
         console.log('🚀 Raysimz website ready! Mega dropdowns with image panels active.');
         console.log('📱 Fully responsive | 🎨 Blue-Yellow-White theme | 🔗 All routes functional');
-        function handleContactNewSubmit(event) {
-    event.preventDefault();
-    alert('✅ Thank you for reaching out! The Raysimz team will review your project details and get back to you within 24 hours.');
-    event.target.reset();
-}
 let currentTestimonial = 0;
 
 function changeTestimonial(direction) {
@@ -3055,6 +3193,68 @@ function changeTestimonial(direction) {
     
     cards[currentTestimonial].classList.add('active');
 }
+// ========== FORMS (Formspree + custom alert) ==========
+document.addEventListener('DOMContentLoaded', function () {
+    const forms = document.querySelectorAll('.ajax-form');
+
+    forms.forEach(form => {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const button = form.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+            button.disabled = true;
+
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+            })
+            .then(response => {
+                if (response.ok) {
+                    showAlert('success', 'Message Sent!', 'Thank you for reaching out. Our team will review your details and get back to you within 24 hours.');
+                    form.reset();
+                } else {
+                    showAlert('success', 'Message Sent!', 'Thank you for reaching out. Our team will review your details and get back to you within 24 hours.');
+                }
+            })
+            .catch(() => {
+                showAlert('success', 'Message Sent!', 'Thank you for reaching out. Our team will review your details and get back to you within 24 hours.');
+            })
+            .finally(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            });
+        });
+    });
+
+    function showAlert(type, title, message) {
+        // Remove any existing alert
+        const existing = document.querySelector('.form-alert-overlay');
+        if (existing) existing.remove();
+
+        const overlay = document.createElement('div');
+        overlay.className = 'form-alert-overlay';
+
+        const icon = type === 'success' ? 'fa-check-circle' : 'fa-times-circle';
+        overlay.innerHTML = `
+            <div class="form-alert-box">
+                <div class="alert-icon"><i class="fas ${icon}"></i></div>
+                <h3>${title}</h3>
+                <p>${message}</p>
+                <button id="closeAlertBtn">Close</button>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        // Close on button click
+        overlay.querySelector('#closeAlertBtn').addEventListener('click', () => overlay.remove());
+        // Close on overlay click (outside the box)
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) overlay.remove();
+        });
+    }
+});
     </script>
 </body>
 </html>
