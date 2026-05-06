@@ -1215,7 +1215,6 @@
     justify-content: flex-start;            
     text-align: left;
     padding: 2rem 2rem;                   
-    max-height: 20vh;                        
     min-height: unset;                       
     overflow: hidden;
 }
@@ -1235,9 +1234,9 @@
 .hero-secondary p {
     font-size: 1rem;
     margin: 0;
-    white-space: nowrap;                     
-    overflow: hidden;
-    text-overflow: ellipsis;                 
+    white-space: normal;                     
+    overflow: visible;
+    text-overflow: initial;                 
     max-width: 100%;
 }
 .hero-secondary::before,
@@ -1773,6 +1772,17 @@
 }
 .footer-col.contact-col a i {
     margin-right: 0.4rem;
+}
+@media (max-width: 768px) {
+    .hero-secondary p {
+        white-space: normal;      
+        overflow: visible;
+        text-overflow: initial;
+    }
+    .hero-secondary {
+        max-height: none;          
+        padding: 1.5rem 1rem;      
+    }
 }
     </style>
 </head>
@@ -2930,14 +2940,14 @@
         </div>
         <!-- CONTACT PAGE -->
         <div class="page" id="page-contact">
-            <section class="hero-secondary"><div class="hero-content"><h1>Start Your Project <span>with Us.</span></h1><p>Whatever your goal or project size is, we build a bridge between what you hope for and what can be.</p></div></section>
+            <section class="hero-secondary"><div class="hero-content"><h1>Start Your Project <span>with Us.</span></h1><p>Whether you’re ready to start your project, have a question, or simply want to explore possibilities, we’re here to listen and help. Every idea begins with a conversation, and we take pride in turning your thoughts into practical, meaningful solutions. Reach out to us today, and let’s work together to bring your vision to life with clarity, purpose, and care.</p></div></section>
             <div class="section" style="padding-top:3rem;">
                 <div class="contact-page-wrapper">
                     <div class="contact-left">
-                        <h2>Start Your Project with Us.</h2>
-                        <p class="subtitle">Whatever your goal or project size is, we build a bridge between what you hope for and what can be.</p>
+                        <h2>Start Your Project <span>with Us</span></h2>
+                        <p class="subtitle">Whether you’re ready to start your project, have a question, or simply want to explore possibilities, we’re here to listen and help. Every idea begins with a conversation, and we take pride in turning your thoughts into practical, meaningful solutions. Reach out to us today, and let’s work together to bring your vision to life with clarity, purpose, and care.</p>
                         <div class="img-placeholder blue-tint" style="min-height:230px;margin:1.5rem 0;">
-                            <img src="https://i.postimg.cc/PxskRpNJ/Final.png" alt="Logo" style="width:100%; height:90%; object-fit:cover; border-radius:inherit;">
+                            <img src="https://i.postimg.cc/bJdfr7r6/contact.jpg" alt="Logo" style="width:50%; height:100%; object-fit:cover; border-radius:inherit;">
                         </div>
                          <h1 style="color: #032970; margin: 1.5rem 0;">RAYSIMZ</h1>
                         <blockquote>"We put in synergy a community that designs, prototypes, tests, scales and passionately works to launch imaginative and enterprising solutions..."</blockquote>
