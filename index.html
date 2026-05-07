@@ -4,7 +4,7 @@
     <link rel="icon" type="image/png" href="https://i.postimg.cc/T3SHYzVq/BRO-Photoroom.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raysimz - Technology & Innovation</title>
+    <title>Raysimz |Technology & Innovation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
@@ -1784,9 +1784,87 @@
         padding: 1.5rem 1rem;      
     }
 }
+/* Preloader container - fullscreen overlay */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+}
+
+/* Loader squares container */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100px;
+    height: 100px;
+}
+
+/* Individual squares */
+.loader-square {
+    width: 30px;
+    height: 30px;
+    background-color: #020f28;  /* Changed from #3a86ff to #020f28 */
+    margin: 2px;
+    animation: loaderAnim 1.5s infinite ease-in-out;
+}
+
+/* Delays for each square */
+.loader-square:nth-child(1) { animation-delay: 0.1s; }
+.loader-square:nth-child(2) { animation-delay: 0.2s; }
+.loader-square:nth-child(3) { animation-delay: 0.3s; }
+.loader-square:nth-child(4) { animation-delay: 0.4s; }
+.loader-square:nth-child(5) { animation-delay: 0.5s; }
+.loader-square:nth-child(6) { animation-delay: 0.6s; }
+.loader-square:nth-child(7) { animation-delay: 0.7s; }
+
+/* Animation keyframes */
+@keyframes loaderAnim {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+}
+
+/* Text below the loader */
+.loader-text {
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+    text-align: center;
+    color: #020f28;        /* Changed from #3a86ff to #020f28 */
+    font-weight: 600;
+    font-size: 18px;
+}
     </style>
 </head>
       <body>
+        <!-- Preloader -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+    </div>
+    <div class="loader-text">Visions Into Reality</div>
+</div>
     <!-- ==================== HEADER ==================== -->
     <header>
         <div class="header-inner">
@@ -3096,14 +3174,25 @@
             </div>
             <div class="footer-col">
                 <h4>SERVICES</h4>
-                <a onclick="navigateTo('ai')">AI Solutions</a>
-                <a onclick="navigateTo('web-dev')">Web Development</a>
-                <a onclick="navigateTo('mobile-dev')">Mobile Apps</a>
-                <a onclick="navigateTo('cyber-security')">Cyber Security</a>
-                <a onclick="navigateTo('software-dev')">Software Development</a>
-                <a onclick="navigateTo('uiux')">UI/UX Design</a>
-                <a onclick="navigateTo('it-consulting')">IT Consulting</a>
-            </div>
+    <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+        <div style="flex:1; min-width:120px;">
+            <a onclick="navigateTo('ai')">AI Solutions</a>
+            <a onclick="navigateTo('web-dev')">Web Development</a>
+            <a onclick="navigateTo('mobile-dev')">Mobile Apps</a>
+            <a onclick="navigateTo('cyber-security')">Cyber Security</a>
+            <a onclick="navigateTo('software-dev')">Software Development</a>
+            <a onclick="navigateTo('uiux')">UI/UX Design</a>
+        </div>
+        <div style="flex:1; min-width:120px;">
+            <a onclick="navigateTo('it-consulting')">IT Consulting</a>
+            <a onclick="navigateTo('digital-transformation')">Digital Transformation</a>
+            <a onclick="navigateTo('data-analytics')">Data Analytics</a>
+            <a onclick="navigateTo('custom-dev')">Custom Development</a>
+            <a onclick="navigateTo('infrastructure')">Infrastructure</a>
+            <a onclick="navigateTo('it-support')">IT Support</a>
+        </div>
+    </div>
+</div>
             <div class="footer-col">
             <h4>CONTACT</h4>
           <a href="https://www.google.com/maps/dir//RAYSIMZ,+Mbarara/@-0.6231749,30.677066,7212m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x19d91b005860b1c5:0x32a8db2b24e36d77!2m2!1d30.6501887!2d-0.614335?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
@@ -3115,6 +3204,10 @@
     <a href="tel:+15551234567">
         <i class="fas fa-phone"></i> +256 760686144
     </a>
+        <a href="https://wa.me256760686144">
+        <i class="fab fa-whatsapp"></i> WhatsApp Us
+    </a>
+
 </div>
     </footer>
     <script>
@@ -3263,6 +3356,13 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.addEventListener('click', function (e) {
             if (e.target === overlay) overlay.remove();
         });
+    }
+});
+// Hide preloader when the page is fully loaded
+window.addEventListener('load', function() {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.style.display = 'none';
     }
 });
     </script>
