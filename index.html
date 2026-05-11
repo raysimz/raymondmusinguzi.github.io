@@ -3210,116 +3210,100 @@
 
 </div>
     </footer>
-    <script>
-               // ============ NAVIGATION ============
-        function navigateTo(pageName) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            const target = document.getElementById('page-' + pageName);
-            if (target) {
-                target.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-            // Close all mega dropdowns
-            document.querySelectorAll('.mega-dropdown').forEach(d => d.classList.remove('show'));
-            // Close mobile nav
-            document.getElementById('mobileNav').classList.remove('open');
-            document.querySelectorAll('.mobile-submenu').forEach(d => d.classList.remove('open'));
-            document.getElementById('hamburgerBtn').innerHTML = '<i class="fas fa-bars"></i>';
-        }
 
-        // ============ MEGA DROPDOWN TOGGLE (Desktop) ============
-        function toggleMegaDropdown(event, dropdownId) {
-            event.stopPropagation();
-            const menu = document.getElementById(dropdownId);
-            const isOpen = menu.classList.contains('show');
-            // Close all mega dropdowns
-            document.querySelectorAll('.mega-dropdown').forEach(d => d.classList.remove('show'));
-            if (!isOpen) {
-                menu.classList.add('show');
-            }
-        }
+<script>
+// ============ NAVIGATION ============
+function navigateTo(pageName) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + pageName);
+    if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // Close all mega dropdowns
+    document.querySelectorAll('.mega-dropdown').forEach(d => d.classList.remove('show'));
+    // Close mobile nav
+    const mobileNav = document.getElementById('mobileNav');
+    if (mobileNav) mobileNav.classList.remove('open');
+    document.querySelectorAll('.mobile-submenu').forEach(d => d.classList.remove('open'));
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    if (hamburgerBtn) hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
+}
 
-        // Close mega dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown') && !e.target.closest('.mega-dropdown')) {
-                document.querySelectorAll('.mega-dropdown').forEach(d => d.classList.remove('show'));
-            }
-        });
+// ============ MEGA DROPDOWN TOGGLE (Desktop) ============
+function toggleMegaDropdown(event, dropdownId) {
+    event.stopPropagation();
+    const menu = document.getElementById(dropdownId);
+    const isOpen = menu.classList.contains('show');
+    document.querySelectorAll('.mega-dropdown').forEach(d => d.classList.remove('show'));
+    if (!isOpen) menu.classList.add('show');
+}
 
-        // Close mega dropdowns on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.mega-dropdown').forEach(d => d.classList.remove('show'));
-                document.getElementById('mobileNav').classList.remove('open');
-                document.getElementById('hamburgerBtn').innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
+// Close mega dropdowns when clicking outside
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown') && !e.target.closest('.mega-dropdown')) {
+        document.querySelectorAll('.mega-dropdown').forEach(d => d.classList.remove('show'));
+    }
+});
 
-        // ============ MOBILE NAV ============
-        function toggleMobileNav() {
-            const mobileNav = document.getElementById('mobileNav');
-            const btn = document.getElementById('hamburgerBtn');
-            mobileNav.classList.toggle('open');
-            if (mobileNav.classList.contains('open')) {
-                btn.innerHTML = '<i class="fas fa-times"></i>';
-            } else {
-                btn.innerHTML = '<i class="fas fa-bars"></i>';
-                document.querySelectorAll('.mobile-submenu').forEach(d => d.classList.remove('open'));
-            }
-            // Also close desktop mega dropdowns
-            document.querySelectorAll('.mega-dropdown').forEach(d => d.classList.remove('show'));
-        }
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.mega-dropdown').forEach(d => d.classList.remove('show'));
+        const mobileNav = document.getElementById('mobileNav');
+        if (mobileNav) mobileNav.classList.remove('open');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        if (hamburgerBtn) hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+});
 
-        function toggleMobileSubmenu(submenuId) {
-            const submenu = document.getElementById(submenuId);
-            submenu.classList.toggle('open');
-        }
+// ============ MOBILE NAV ============
+function toggleMobileNav() {
+    const mobileNav = document.getElementById('mobileNav');
+    const btn = document.getElementById('hamburgerBtn');
+    if (!mobileNav) return;
+    mobileNav.classList.toggle('open');
+    if (mobileNav.classList.contains('open')) {
+        btn.innerHTML = '<i class="fas fa-times"></i>';
+    } else {
+        btn.innerHTML = '<i class="fas fa-bars"></i>';
+        document.querySelectorAll('.mobile-submenu').forEach(d => d.classList.remove('open'));
+    }
+    document.querySelectorAll('.mega-dropdown').forEach(d => d.classList.remove('show'));
+}
 
-        // ============ FORM HANDLERS ============
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            alert('✅ Thank you for your message! The Raysimz team will get back to you within 24 hours.');
-            event.target.reset();
-        }
+function toggleMobileSubmenu(submenuId) {
+    const submenu = document.getElementById(submenuId);
+    if (submenu) submenu.classList.toggle('open');
+}
 
-        console.log('🚀 Raysimz website ready! Mega dropdowns with image panels active.');
-        console.log('📱 Fully responsive | 🎨 Blue-Yellow-White theme | 🔗 All routes functional');
+// ============ TESTIMONIAL CAROUSEL ============
 let currentTestimonial = 0;
-
 function changeTestimonial(direction) {
     const cards = document.querySelectorAll('#testimonialCarousel .testimonial-card');
     if (!cards.length) return;
-    
     cards[currentTestimonial].classList.remove('active');
-    
     currentTestimonial = (currentTestimonial + direction + cards.length) % cards.length;
-    
     cards[currentTestimonial].classList.add('active');
 }
-// ========== FORMS (Formspree + custom alert) ==========
+
+// ============ FORMS (Formspree + custom alert) ==========
 document.addEventListener('DOMContentLoaded', function () {
     const forms = document.querySelectorAll('.ajax-form');
-
     forms.forEach(form => {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-
             const button = form.querySelector('button[type="submit"]');
             const originalText = button.innerHTML;
             button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
             button.disabled = true;
-
             fetch(form.action, {
                 method: form.method,
                 body: new FormData(form),
             })
             .then(response => {
-                if (response.ok) {
-                    showAlert('success', 'Message Sent!', 'Thank you for reaching out. Our team will review your details and get back to you within 24 hours.');
-                    form.reset();
-                } else {
-                    showAlert('success', 'Message Sent!', 'Thank you for reaching out. Our team will review your details and get back to you within 24 hours.');
-                }
+                showAlert('success', 'Message Sent!', 'Thank you for reaching out. Our team will review your details and get back to you within 24 hours.');
+                form.reset();
             })
             .catch(() => {
                 showAlert('success', 'Message Sent!', 'Thank you for reaching out. Our team will review your details and get back to you within 24 hours.');
@@ -3330,15 +3314,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
-
     function showAlert(type, title, message) {
-        // Remove any existing alert
         const existing = document.querySelector('.form-alert-overlay');
         if (existing) existing.remove();
-
         const overlay = document.createElement('div');
         overlay.className = 'form-alert-overlay';
-
         const icon = type === 'success' ? 'fa-check-circle' : 'fa-times-circle';
         overlay.innerHTML = `
             <div class="form-alert-box">
@@ -3349,73 +3329,66 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `;
         document.body.appendChild(overlay);
-
-        // Close on button click
         overlay.querySelector('#closeAlertBtn').addEventListener('click', () => overlay.remove());
-        // Close on overlay click (outside the box)
         overlay.addEventListener('click', function (e) {
             if (e.target === overlay) overlay.remove();
         });
     }
 });
+
 // Hide preloader when the page is fully loaded
 window.addEventListener('load', function() {
     const preloader = document.querySelector('.preloader');
-    if (preloader) {
-        preloader.style.display = 'none';
-    }
+    if (preloader) preloader.style.display = 'none';
 });
-// ----- HASH ROUTING -----
-let isNavigating = false;
 
-function getPageFromHash() {
-    let hash = window.location.hash.substring(1); // remove '#'
-    if (hash === '') return 'home';
-    // Some page names have hyphens – the IDs are exactly like 'cyber-security'
-    return hash;
+// ========== CLEAN URL ROUTING (no hash) – for Cloudflare Worker ==========
+function getPageFromPath() {
+    let path = window.location.pathname;
+    if (path === '/' || path === '/index.html') return 'home';
+    let page = path.replace(/^\//, '').replace(/\.html$/, '');
+    return page;
 }
 
-function updatePageFromHash() {
-    if (isNavigating) return;
-    const pageName = getPageFromHash();
-    // Use existing navigateTo but avoid changing hash again
+function updatePageFromPath() {
+    const pageName = getPageFromPath();
     const targetPage = document.getElementById('page-' + pageName);
     if (targetPage && !targetPage.classList.contains('active')) {
-        isNavigating = true;
+        // Use the existing navigateTo to change page, but prevent URL loop
         navigateTo(pageName);
-        isNavigating = false;
     } else if (!targetPage && pageName !== 'home') {
-        // If hash doesn't match any page, fallback to home
-        window.location.hash = 'home';
+        // Invalid path – redirect to home
+        history.replaceState(null, '', '/');
+        navigateTo('home');
     }
 }
 
-// Override the original navigateTo to update the URL hash
-const originalNavigateTo = navigateTo;
-navigateTo = function(pageName) {
-    // Call the original function (switches active page)
-    originalNavigateTo(pageName);
-    // Update URL hash without causing a second navigation
-    if (window.location.hash.substring(1) !== pageName) {
-        isNavigating = true;
-        window.location.hash = pageName;
-        isNavigating = false;
+// Save original navigateTo (which already updates URL via clean path)
+// We must not redefine navigateTo again – just wrap it
+const originalNav = navigateTo;
+window.navigateTo = function(pageName) {
+    originalNav(pageName);
+    let newPath = pageName === 'home' ? '/' : '/' + pageName;
+    // Update URL only if it's not already the same
+    if (window.location.pathname !== newPath) {
+        history.pushState(null, '', newPath);
     }
 };
 
-// Listen for hash changes (back/forward buttons, external links)
-window.addEventListener('hashchange', updatePageFromHash);
+// Listen to back/forward buttons
+window.addEventListener('popstate', updatePageFromPath);
 
-// On initial load, show the page based on hash (or home)
-document.addEventListener('DOMContentLoaded', () => {
-    // Wait for the preloader to finish (your existing code hides preloader on load)
-    if (window.location.hash) {
-        updatePageFromHash();
-    } else {
-        navigateTo('home'); // ensures consistent state
+// On initial load, show the correct page based on the URL path
+document.addEventListener('DOMContentLoaded', function() {
+    // If there's a hash (old style) and no clean path, convert it
+    if (window.location.hash && window.location.pathname === '/') {
+        const hashPage = window.location.hash.substring(1);
+        if (hashPage && document.getElementById('page-' + hashPage)) {
+            window.history.replaceState(null, '', '/' + hashPage);
+        }
     }
+    updatePageFromPath();
 });
-
-    </script>
+</script>
 </body>
 </html>
