@@ -3159,7 +3159,7 @@
                 <p style="color:#aaa; font-size:0.9rem;">Powering innovation through technology, Raysimz is committed to delivering solutions that drive real impact in a rapidly evolving digital world. We combine creativity, technical expertise, and strategic thinking to build systems that are not only functional but scalable and future-ready.</p>
                 <div class="social-icons">
                     <a href="https://ug.linkedin.com/in/raysimz-ug-738470343" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://x.com/RaysimzUg?t=fWapzFIKEpWCcY0QrMVe6A&s=09" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://x.com/RaysimzUg?t=fWapzFIKEpWCcY0QrMVe6A&s=09" title="X"><i class="fab fa-x-twitter"></i></a>
                     <a href="https://github.com/raysimz" title="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://share.google/jXqFxkLHBfY6Uhez0" title="Google"><i class="fab fa-google"></i></a>
                     <a href="https://www.instagram.com/raysimz_info_tech?igsh=MWN0a3I2Zm5iYXpiZg==" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -3363,6 +3363,56 @@ window.addEventListener('load', function() {
     const preloader = document.querySelector('.preloader');
     if (preloader) {
         preloader.style.display = 'none';
+    }
+});
+// ----- HASH ROUTING -----
+let isNavigating = false;
+
+function getPageFromHash() {
+    let hash = window.location.hash.substring(1); // remove '#'
+    if (hash === '') return 'home';
+    // Some page names have hyphens – the IDs are exactly like 'cyber-security'
+    return hash;
+}
+
+function updatePageFromHash() {
+    if (isNavigating) return;
+    const pageName = getPageFromHash();
+    // Use existing navigateTo but avoid changing hash again
+    const targetPage = document.getElementById('page-' + pageName);
+    if (targetPage && !targetPage.classList.contains('active')) {
+        isNavigating = true;
+        navigateTo(pageName);
+        isNavigating = false;
+    } else if (!targetPage && pageName !== 'home') {
+        // If hash doesn't match any page, fallback to home
+        window.location.hash = 'home';
+    }
+}
+
+// Override the original navigateTo to update the URL hash
+const originalNavigateTo = navigateTo;
+navigateTo = function(pageName) {
+    // Call the original function (switches active page)
+    originalNavigateTo(pageName);
+    // Update URL hash without causing a second navigation
+    if (window.location.hash.substring(1) !== pageName) {
+        isNavigating = true;
+        window.location.hash = pageName;
+        isNavigating = false;
+    }
+};
+
+// Listen for hash changes (back/forward buttons, external links)
+window.addEventListener('hashchange', updatePageFromHash);
+
+// On initial load, show the page based on hash (or home)
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for the preloader to finish (your existing code hides preloader on load)
+    if (window.location.hash) {
+        updatePageFromHash();
+    } else {
+        navigateTo('home'); // ensures consistent state
     }
 });
     </script>
