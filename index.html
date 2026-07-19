@@ -4,16 +4,7 @@
     <link rel="icon" type="image/png" href="https://i.postimg.cc/T3SHYzVq/BRO-Photoroom.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raysimz | Technology & Innovation</title>
-
-<meta property="og:title" content="Raysimz | Technology & Innovation">
-<meta property="og:description" content="We turn visions into scalable technology – AI, software, web, and more.">
-<meta property="og:image" content="https://i.postimg.cc/T3SHYzVq/BRO-Photoroom.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Raysimz | Technology & Innovation">
-<meta name="twitter:description" content="We turn visions into scalable technology – AI, software, web, and more.">
-<meta name="twitter:image" content="https://i.postimg.cc/T3SHYzVq/BRO-Photoroom.png">
-
+    <title>Raysimz |Technology & Innovation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
@@ -1446,7 +1437,7 @@
     .carousel-btn.left { left: 5px; }
     .carousel-btn.right { right: 5px; }
 }
-/* ========== PORTFOLIO CARDS SECTION ========== */
+/* ========== A CARDS SECTION ========== */
 .portfolio-section {
     background: var(--white);
     padding: 4rem 1.5rem;
@@ -1858,6 +1849,166 @@
     font-weight: 600;
     font-size: 18px;
 }
+
+/* ==============================================================
+   ADDED: ANIMATIONS + IMAGE STYLING + ROUTING + ANTI-INSPECT
+   ============================================================== */
+
+/* ----- 1. ANIMATION KEYFRAMES ----- */
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeLeft {
+    0% { opacity: 0; transform: translateX(-30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRight {
+    0% { opacity: 0; transform: translateX(30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeScale {
+    0% { opacity: 0; transform: scale(0.92); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatGlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ----- 2. ANIMATION CLASSES (applied by JS) ----- */
+.anim-fade-up {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+}
+.anim-fade-left {
+    opacity: 0;
+    animation: fadeLeft 0.7s ease forwards;
+}
+.anim-fade-right {
+    opacity: 0;
+    animation: fadeRight 0.7s ease forwards;
+}
+.anim-fade-scale {
+    opacity: 0;
+    animation: fadeScale 0.7s ease forwards;
+}
+
+/* Delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+
+/* ----- 3. IMAGE STYLING IMPROVEMENTS ----- */
+.img-placeholder {
+    border-radius: var(--radius-xl);
+    box-shadow: 0 8px 30px rgba(2, 15, 40, 0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.img-placeholder:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 40px rgba(2, 15, 40, 0.20);
+}
+.img-placeholder img {
+    border-radius: inherit;
+    transition: transform 0.6s ease;
+}
+.img-placeholder:hover img {
+    transform: scale(1.02);
+}
+
+/* hero-right-image gets a subtle glow */
+.hero-right-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    z-index: 1;
+    filter: drop-shadow(0 8px 30px rgba(0,0,0,0.15));
+}
+.hero-right-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+}
+
+/* Philosophy icons pulse on hover */
+.philosophy-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.philosophy-item:hover .philosophy-icon {
+    transform: scale(1.12);
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+}
+
+/* Cards get a subtle lift + border glow on hover (already present, adding extra) */
+.card:hover,
+.impact-card:hover,
+.portfolio-card:hover,
+.vmp-card-dark:hover {
+    border-color: var(--yellow);
+    box-shadow: 0 12px 36px rgba(2, 15, 40, 0.12);
+}
+
+/* Testimonial profile pics – soft border glow */
+.testimonial-card .profile-pic {
+    border: 3px solid var(--yellow);
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.testimonial-card .profile-pic:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 28px rgba(245, 158, 11, 0.4);
+}
+
+/* Approach right image – floating animation */
+.approach-right img {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.approach-right img:hover {
+    transform: scale(1.02) rotate(-0.5deg);
+    box-shadow: 0 16px 48px rgba(2, 15, 40, 0.20);
+}
+
+/* Step icons – soft pulse on hover */
+.step-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.step-item:hover .step-icon {
+    transform: scale(1.10);
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+}
+
+/* CTA section image overlay – subtle zoom on hover (if background image) */
+.cta-section {
+    transition: transform 0.4s ease;
+}
+.cta-section:hover {
+    transform: scale(1.005);
+}
+
+/* Quote button glow improvement */
+.btn-quote {
+    box-shadow: 0 2px 12px rgba(245, 158, 11, 0.30);
+}
+.btn-quote:hover {
+    box-shadow: 0 6px 24px rgba(245, 158, 11, 0.50);
+}
+
+/* ==============================================================
+   END ADDED STYLES
+   ============================================================== */
     </style>
 </head>
       <body>
@@ -1877,8 +2028,8 @@
     <!-- ==================== HEADER ==================== -->
     <header>
         <div class="header-inner">
-           <div class="logo-wrapper" onclick="window.location.href='/'" style="display: flex; align-items: center; gap: 0; cursor: pointer;">
-            <img src="https://i.postimg.cc/PxskRpNJ/Final.png" alt="Raysimz" class="site-logo" onclick="window.location.href='/'" style="cursor: pointer;">
+           <div class="logo-wrapper" onclick="navigateTo('home')" style="display: flex; align-items: center; gap: 0; cursor: pointer;">
+            <img src="https://i.postimg.cc/PxskRpNJ/Final.png" alt="Raysimz" class="site-logo" onclick="navigateTo('home')" style="cursor: pointer;">
 </div>
             <nav class="nav-container" id="desktopNav">
                 <div class="dropdown">
@@ -1886,9 +2037,9 @@
                     <div class="mega-dropdown company-mega" id="mega-company">
                         <div class="mega-dropdown-left">
                             <span class="mega-section-title">Company</span>
-                            <a onclick="window.location.href='/about.html'"><i class="fas fa-building"></i> About Company</a>
-                            <a onclick="window.location.href='/portfolio.html'"><i class="fas fa-briefcase"></i> Portfolio</a>
-                            <a onclick="window.location.href='/stem.html'"><i class="fas fa-robot"></i> STEM & Robotics</a>
+                            <a onclick="navigateTo('about')"><i class="fas fa-building"></i> About Company</a>
+                            <a onclick="navigateTo('portfolio')"><i class="fas fa-briefcase"></i> Portfolio</a>
+                            <a onclick="navigateTo('stem')"><i class="fas fa-robot"></i> STEM & Robotics</a>
                         </div>
                         <div class="mega-dropdown-right">
                             <div class="mega-image"><img src="https://i.postimg.cc/jSTQRFTV/Company.png" alt="Company" style="width:100%; height:100%; object-fit:cover; border-radius:inherit; display:block;"></div>
@@ -1901,18 +2052,18 @@
                     <div class="mega-dropdown services-mega" id="mega-services">
                         <div class="mega-dropdown-left">
                             <span class="mega-section-title" style="grid-column:1/-1;">Core Services</span>
-                            <a onclick="window.location.href='/ai.html'"><i class="fas fa-brain"></i> Artificial Intelligence</a>
-                            <a onclick="window.location.href='/software-dev.html'"><i class="fas fa-code"></i> Software Development</a>
-                            <a onclick="window.location.href='/web-dev.html'"><i class="fas fa-globe"></i> Web Development</a>
-                            <a onclick="window.location.href='/mobile-dev.html'"><i class="fas fa-mobile-alt"></i> Mobile Development</a>
-                            <a onclick="window.location.href='/uiux.html'"><i class="fas fa-paint-brush"></i> UI/UX Design</a>
-                            <a onclick="window.location.href='/it-consulting.html'"><i class="fas fa-comments"></i> IT Consulting</a>
-                            <a onclick="window.location.href='/digital-transformation.html'"><i class="fas fa-sync-alt"></i> Digital Transformation</a>
-                            <a onclick="window.location.href='/data-analytics.html'"><i class="fas fa-chart-bar"></i> Data Analytics</a>
-                            <a onclick="window.location.href='/custom-dev.html'"><i class="fas fa-cogs"></i> Custom Development</a>
-                            <a onclick="window.location.href='/infrastructure.html'"><i class="fas fa-server"></i> Infrastructure Services</a>
-                            <a onclick="window.location.href='/it-support.html'"><i class="fas fa-headset"></i> IT Support</a>
-                            <a onclick="window.location.href='/cyber-security.html'"><i class="fas fa-shield-alt"></i> Cyber Security</a>
+                            <a onclick="navigateTo('ai')"><i class="fas fa-brain"></i> Artificial Intelligence</a>
+                            <a onclick="navigateTo('software-dev')"><i class="fas fa-code"></i> Software Development</a>
+                            <a onclick="navigateTo('web-dev')"><i class="fas fa-globe"></i> Web Development</a>
+                            <a onclick="navigateTo('mobile-dev')"><i class="fas fa-mobile-alt"></i> Mobile Development</a>
+                            <a onclick="navigateTo('uiux')"><i class="fas fa-paint-brush"></i> UI/UX Design</a>
+                            <a onclick="navigateTo('it-consulting')"><i class="fas fa-comments"></i> IT Consulting</a>
+                            <a onclick="navigateTo('digital-transformation')"><i class="fas fa-sync-alt"></i> Digital Transformation</a>
+                            <a onclick="navigateTo('data-analytics')"><i class="fas fa-chart-bar"></i> Data Analytics</a>
+                            <a onclick="navigateTo('custom-dev')"><i class="fas fa-cogs"></i> Custom Development</a>
+                            <a onclick="navigateTo('infrastructure')"><i class="fas fa-server"></i> Infrastructure Services</a>
+                            <a onclick="navigateTo('it-support')"><i class="fas fa-headset"></i> IT Support</a>
+                            <a onclick="navigateTo('cyber-security')"><i class="fas fa-shield-alt"></i> Cyber Security</a>
                         </div>
                         <div class="mega-dropdown-right">
                             <div class="mega-image"><img src="https://i.postimg.cc/FHvghBvH/Services.png" alt="Services" style="width:100%; height:100%; object-fit:cover; border-radius:inherit; display:block;"></div>
@@ -1925,16 +2076,16 @@
                     <div class="mega-dropdown industries-mega" id="mega-industries">
                         <div class="mega-dropdown-left">
                             <span class="mega-section-title" style="grid-column:1/-1;">Industries We Serve</span>
-                            <a onclick="window.location.href='/banking.html'"><i class="fas fa-university"></i> Banking & Finance</a>
-                            <a onclick="window.location.href='/healthcare.html'"><i class="fas fa-heartbeat"></i> Healthcare</a>
-                            <a onclick="window.location.href='/education.html'"><i class="fas fa-graduation-cap"></i> Education</a>
-                            <a onclick="window.location.href='/real-estate.html'"><i class="fas fa-home"></i> Real Estate</a>
-                            <a onclick="window.location.href='/telecom.html'"><i class="fas fa-broadcast-tower"></i> Telecommunications</a>
-                            <a onclick="window.location.href='/government.html'"><i class="fas fa-landmark"></i> Government</a>
-                            <a onclick="window.location.href='/retail.html'"><i class="fas fa-shopping-cart"></i> Retail</a>
-                            <a onclick="window.location.href='/manufacturing.html'"><i class="fas fa-industry"></i> Manufacturing</a>
-                            <a onclick="window.location.href='/travel.html'"><i class="fas fa-plane"></i> Travel & Hospitality</a>
-                            <a onclick="window.location.href='/transportation.html'"><i class="fas fa-truck"></i> Transportation</a>
+                            <a onclick="navigateTo('banking')"><i class="fas fa-university"></i> Banking & Finance</a>
+                            <a onclick="navigateTo('healthcare')"><i class="fas fa-heartbeat"></i> Healthcare</a>
+                            <a onclick="navigateTo('education')"><i class="fas fa-graduation-cap"></i> Education</a>
+                            <a onclick="navigateTo('real-estate')"><i class="fas fa-home"></i> Real Estate</a>
+                            <a onclick="navigateTo('telecom')"><i class="fas fa-broadcast-tower"></i> Telecommunications</a>
+                            <a onclick="navigateTo('government')"><i class="fas fa-landmark"></i> Government</a>
+                            <a onclick="navigateTo('retail')"><i class="fas fa-shopping-cart"></i> Retail</a>
+                            <a onclick="navigateTo('manufacturing')"><i class="fas fa-industry"></i> Manufacturing</a>
+                            <a onclick="navigateTo('travel')"><i class="fas fa-plane"></i> Travel & Hospitality</a>
+                            <a onclick="navigateTo('transportation')"><i class="fas fa-truck"></i> Transportation</a>
                         </div>
                         <div class="mega-dropdown-right">
                             <div class="mega-image"><img src="https://i.postimg.cc/g2pqGTpc/Industry.jpg" alt="Industries" style="width:100%; height:100%; object-fit:cover; border-radius:inherit; display:block;"></div>
@@ -1942,66 +2093,1223 @@
                         </div>
                     </div>
                 </div>
-                <button class="nav-link" onclick="window.location.href='/contact.html'">Contact</button>
+                <button class="nav-link" onclick="navigateTo('contact')">Contact</button>
             </nav>
-            <button class="btn-quote desktop-only" onclick="window.location.href='/request-quote.html'">Request Quote</button>
+            <button class="btn-quote desktop-only" onclick="navigateTo('request-quote')">Request Quote</button>
             <button class="hamburger" id="hamburgerBtn" aria-label="Menu" onclick="toggleMobileNav()"><i class="fas fa-bars"></i></button>
         </div>
         <div class="mobile-nav" id="mobileNav">
             <button class="nav-link" onclick="toggleMobileSubmenu('mob-company')">Company <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:0.3rem;"></i></button>
             <div class="mobile-submenu" id="mob-company">
                 <span class="mobile-section-label">Company</span>
-                <a onclick="window.location.href='/about.html'">About Company</a>
-                <a onclick="window.location.href='/portfolio.html'">Portfolio</a>
-                <a onclick="window.location.href='/stem.html'">STEM & Robotics</a>
+                <a onclick="navigateTo('about')">About Company</a>
+                <a onclick="navigateTo('portfolio')">Portfolio</a>
+                <a onclick="navigateTo('stem')">STEM & Robotics</a>
             </div>
             <button class="nav-link" onclick="toggleMobileSubmenu('mob-services')">Services <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:0.3rem;"></i></button>
             <div class="mobile-submenu" id="mob-services">
                 <span class="mobile-section-label">Core Services</span>
-                <a onclick="window.location.href='/ai.html'">Artificial Intelligence</a>
-                <a onclick="window.location.href='/software-dev.html'">Software Development</a>
-                <a onclick="window.location.href='/web-dev.html'">Web Development</a>
-                <a onclick="window.location.href='/mobile-dev.html'">Mobile Development</a>
-                <a onclick="window.location.href='/uiux.html'">UI/UX Design</a>
-                <a onclick="window.location.href='/it-consulting.html'">IT Consulting</a>
-                <a onclick="window.location.href='/digital-transformation.html'">Digital Transformation</a>
-                <a onclick="window.location.href='/data-analytics.html'">Data Analytics</a>
-                <a onclick="window.location.href='/custom-dev.html'">Custom Development</a>
-                <a onclick="window.location.href='/infrastructure.html'">Infrastructure Services</a>
-                <a onclick="window.location.href='/it-support.html'">IT Support</a>
-                <a onclick="window.location.href='/cyber-security.html'">Cyber Security</a>
+                <a onclick="navigateTo('ai')">Artificial Intelligence</a>
+                <a onclick="navigateTo('software-dev')">Software Development</a>
+                <a onclick="navigateTo('web-dev')">Web Development</a>
+                <a onclick="navigateTo('mobile-dev')">Mobile Development</a>
+                <a onclick="navigateTo('uiux')">UI/UX Design</a>
+                <a onclick="navigateTo('it-consulting')">IT Consulting</a>
+                <a onclick="navigateTo('digital-transformation')">Digital Transformation</a>
+                <a onclick="navigateTo('data-analytics')">Data Analytics</a>
+                <a onclick="navigateTo('custom-dev')">Custom Development</a>
+                <a onclick="navigateTo('infrastructure')">Infrastructure Services</a>
+                <a onclick="navigateTo('it-support')">IT Support</a>
+                <a onclick="navigateTo('cyber-security')">Cyber Security</a>
             </div>
             <button class="nav-link" onclick="toggleMobileSubmenu('mob-industries')">Industries <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:0.3rem;"></i></button>
             <div class="mobile-submenu" id="mob-industries">
                 <span class="mobile-section-label">Industries We Serve</span>
-                <a onclick="window.location.href='/banking.html'">Banking & Finance</a>
-                <a onclick="window.location.href='/healthcare.html'">Healthcare</a>
-                <a onclick="window.location.href='/education.html'">Education</a>
-                <a onclick="window.location.href='/real-estate.html'">Real Estate</a>
-                <a onclick="window.location.href='/telecom.html'">Telecommunications</a>
-                <a onclick="window.location.href='/government.html'">Government</a>
-                <a onclick="window.location.href='/retail.html'">Retail</a>
-                <a onclick="window.location.href='/manufacturing.html'">Manufacturing</a>
-                <a onclick="window.location.href='/travel.html'">Travel & Hospitality</a>
-                <a onclick="window.location.href='/transportation.html'">Transportation</a>
+                <a onclick="navigateTo('banking')">Banking & Finance</a>
+                <a onclick="navigateTo('healthcare')">Healthcare</a>
+                <a onclick="navigateTo('education')">Education</a>
+                <a onclick="navigateTo('real-estate')">Real Estate</a>
+                <a onclick="navigateTo('telecom')">Telecommunications</a>
+                <a onclick="navigateTo('government')">Government</a>
+                <a onclick="navigateTo('retail')">Retail</a>
+                <a onclick="navigateTo('manufacturing')">Manufacturing</a>
+                <a onclick="navigateTo('travel')">Travel & Hospitality</a>
+                <a onclick="navigateTo('transportation')">Transportation</a>
             </div>
-            <button class="nav-link" onclick="window.location.href='/contact.html'">Contact</button>
-            <button class="btn-quote" onclick="window.location.href='/request-quote.html'">Request Quote</button>
+            <button class="nav-link" onclick="navigateTo('contact')">Contact</button>
+            <button class="btn-quote" onclick="navigateTo('request-quote')">Request Quote</button>
         </div>
     </header>
 
     <!-- ==================== MAIN CONTENT ==================== -->
-    <main id="mainContent"><div class="page active" id="page-home">
+    <main id="mainContent">
+        <!-- HOME PAGE -->
+        <div class="page active" id="page-home">
             <section class="hero hero-home">
                 <div class="hero-content">
-                    <h1>INTELLIGENT<span> DIGITAL</span> SYSTEMS</h1>
+                    <h1>INTELLIGENT<span> DIGITAL</span> SYSTEMS </i></h1>
                     <p>At Raysimz, We work closely with organizations to understand their challenges and build tailored solutions that combine innovation, efficiency, and real-world usability. From concept to deployment, we turn complex ideas into reliable digital products that deliver measurable impact and long-term value</p>
                     <div class="hero-buttons">
-                        <button class="btn-primary" onclick="window.location.href='/request-quote.html'">Get Started <i class="fas fa-arrow-right"></i></button>
-                        <button class="btn-outline" onclick="window.location.href='/portfolio.html'">View Our Work</button>
-                    </div></main>
+                        <button class="btn-primary" onclick="navigateTo('request-quote')">Get Started <i class="fas fa-arrow-right"></i></button>
+                        <button class="btn-outline" onclick="navigateTo('portfolio')">View Our Work</button>
+                    </div>
+                </div>
+                <div class="hero-right-image">
+                    <img src="https://i.postimg.cc/vZ8vtNPp/Bg-Photoroom.png" alt="Tech illustration">
+                </div>
+            </section>
+
+            <!-- VISIONS INTO REALITY -->
+            <div class="section scalable-section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Visions Into Reality</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Raysimz is a technology-driven company focused on building innovative digital solutions that simplify complex challenges in today's fast-evolving world. We specialize in turning ideas into practical, scalable systems that help individuals and businesses grow, adapt, and thrive in the digital economy.</p>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We are committed to using technology as a tool for progress-creating impact that goes beyond products, by empowering a generation to think boldly, build creatively, and transform opportunities into real-world value faster than ever before.</p>
+                        <button class="btn-primary" style="align-self:flex-start;" onclick="navigateTo('portfolio')">View Our Work <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/L64JhKQt/Hello.png" alt="Innovation Team" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CORE SERVICES -->
+            <div class="section">
+                <div class="section-header">
+                    <h2 style="color: #021a4f;">OUR CORE SERVICES</h2>
+                    <div class="underline"></div>
+                    <p>End-to-end technology solutions tailored to your business needs</p>
+                </div>
+                <div class="grid grid-4">
+                    <div class="card" onclick="navigateTo('ai')"><div class="card-icon"><i class="fas fa-brain"></i></div><h3>Artificial Intelligence</h3><p>Smart AI solutions that automate and optimize operations.</p></div>
+                    <div class="card" onclick="navigateTo('software-dev')"><div class="card-icon"><i class="fas fa-code"></i></div><h3>Software Development</h3><p>Custom software engineered for performance and scale.</p></div>
+                    <div class="card" onclick="navigateTo('web-dev')"><div class="card-icon"><i class="fas fa-globe"></i></div><h3>Web Development</h3><p>Responsive, fast, and beautiful web applications.</p></div>
+                    <div class="card" onclick="navigateTo('cyber-security')"><div class="card-icon"><i class="fas fa-shield-alt"></i></div><h3>Cyber Security</h3><p>Protect your digital assets with enterprise-grade security.</p></div>
+                </div>
+            </div>
+
+            <!-- SCALABLE TECH (image left, text right) -->
+            <div class="section scalable-section">
+                <div class="grid grid-2">
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/kgw2jdFK/hh.png" alt="Scalable Technology" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem; color: #021a4f;">We Build Scalable Technology</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">For over 5 years, we have been providing global enterprises with established brands, turning software ideas into market-ready solutions.</p>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We go beyond development by focusing on scalability, performance, and long-term value. Every solution we build is designed to adapt, evolve, and support continuous growth-ensuring our clients stay competitive, agile, and ready to lead in an increasingly dynamic digital world.</p>
+                        <button class="btn-primary" style="align-self:flex-start;" onclick="navigateTo('portfolio')">View Our Work <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section (photo inside navy) -->
+            <div class="cta-section philosophy-cta">
+                <div class="philosophy-content">
+                    <h2>Our Approach</h2>
+                    <p class="philosophy-sub">At Raysimz, we believe great technology is built at the intersection of innovation, purpose, and scalability. As we transform ideas into powerful digital solutions, our approach guides how we design, develop, and deliver systems that create real value, driving both business growth and meaningful impact in a rapidly evolving digital world.</p>
+                    <div class="philosophy-grid">
+                        <div class="philosophy-item">
+                            <div class="philosophy-icon"><i class="fas fa-lightbulb"></i></div>
+                            <h3>Build for Scale</h3>
+                            <p>We don’t just create solutions for today, we engineer systems that grow with demand, ensuring long-term performance, flexibility, and sustainability.</p>
+                        </div>
+                        <div class="philosophy-item">
+                            <div class="philosophy-icon"><i class="fas fa-rocket"></i></div>
+                            <h3>Innovation with Purpose</h3>
+                            <p>Every product we build is driven by intention, solving real problems while creating opportunities for businesses and individuals to thrive.</p>
+                        </div>
+                        <div class="philosophy-item">
+                            <div class="philosophy-icon"><i class="fas fa-handshake"></i></div>
+                            <h3>Collaborative Thinking</h3>
+                            <p>We work closely with our clients and partners, combining ideas and expertise to create smarter, more effective solutions.</p>
+                        </div>
+                        <div class="philosophy-item">
+                            <div class="philosophy-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3>Technology for Growth</h3>
+                            <p>We leverage the power of technology to unlock new possibilities, helping businesses scale faster, operate smarter, and compete globally.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end #page-home -->
+
+        <!-- ABOUT COMPANY PAGE -->
+        <div class="page" id="page-about">
+            <section class="hero hero-secondary"><div class="hero-content"><h1>Visions To<span> Reality</span></h1><p>Since 2020, Raysimz has been turning vision into scalable technology.</p></div></section>
+            <div class="section scalable-section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Scalable Innovation as a Driver for Growth</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Raysimz was founded on the belief that the greatest opportunity today lies in transforming bold ideas into scalable technology that drives real-world impact. By harnessing innovation, creativity, and technical expertise, we empower individuals and organizations to build solutions that not only solve meaningful challenges but also unlock sustainable growth and long-term success. We see this as a shared opportunity-where creators, businesses, and institutions can leverage technology to expand possibilities, create value, and thrive in a rapidly evolving digital economy. At our core, we act as enablers-bringing together vision, strategy, and execution to turn ambition into scalable, impactful reality.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/1t5zqSRx/Imagine.png" alt="Innovation Team" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="section scalable-section">
+                <div class="grid grid-2">
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/j5dj7TxG/Impact.png" alt="Innovation Team" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Technology as a Catalyst for Solutions</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We believe technology is at the heart of solving today’s most pressing challenges across industries. We are driven by the understanding that digital innovation is no longer separate-it is deeply embedded in every sector, shaping how problems are approached and solved. From early-stage ideas and prototypes to fully integrated systems and scalable platforms, we support the entire journey of building impactful solutions. Central to our approach is fostering collaboration between stakeholders, ensuring that every innovation is practical, adaptable, and built for real-world success. While each project is unique, they are all unified by our commitment to using technology to create meaningful, scalable impact.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- DARK VISION / MISSION / PURPOSE SECTION -->
+            <div class="about-vmp-dark">
+                <div class="about-vmp-container">
+                    <!-- Left Column – Cards -->
+                    <div class="about-vmp-left">
+                        <div class="vmp-card-dark">
+                            <div class="vmp-icon"><i class="fas fa-eye"></i></div>
+                            <div class="vmp-text">
+                                <h3>Vision</h3>
+                                <p>To become a leading force in building scalable technology that transforms ideas into impactful global solutions.</p>
+                            </div>
+                        </div>
+                        <div class="vmp-card-dark">
+                            <div class="vmp-icon"><i class="fas fa-rocket"></i></div>
+                            <div class="vmp-text">
+                                <h3>Mission</h3>
+                                <p>To design and deliver innovative, reliable, and scalable digital solutions that empower businesses and individuals to grow, adapt, and thrive in a digital-first world.</p>
+                            </div>
+                        </div>
+                        <div class="vmp-card-dark">
+                            <div class="vmp-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div class="vmp-text">
+                                <h3>Purpose</h3>
+                                <p>To turn vision into reality by using technology to create meaningful impact, unlock opportunities, and drive sustainable growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column – Descriptive Text -->
+                    <div class="about-vmp-right">
+                        <h3>Raysimz</h3>
+                        <h2 style="font-size: 30px; color: #e6960a;">MOVING BEYOND CONVERSATION TO REAL WORLD SOLUTIONS.</h2>
+                        <p>We are committed to using technology to create meaningful impact, building solutions that address today’s challenges while shaping a better future. Through our work, we aim to inspire and empower a generation to not just adapt, but to lead and thrive in a fast-evolving digital world-where bold ideas can be transformed into impact faster than ever before.</p><br>
+                        <p>We achieve this by building scalable, future-ready technology that bridges ideas and execution. By combining innovation with practical solutions, we enable businesses, creators, and communities to unlock new opportunities, accelerate growth, and create lasting value in an increasingly connected world.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- TESTIMONIALS SECTION -->
+            <div class="testimonials-section">
+                <h3 style="color: #e6960a;">Testimonials</h3>
+                <h2>Voices of Impact</h2>
+                <div class="testimonials-carousel" id="testimonialCarousel">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card active">
+                        <img src="https://i.postimg.cc/HnjkgHZL/IMG-20230514-WA0039.jpg" alt="Profile" class="profile-pic">
+                        <h4>Daniel Nasasira</h4>
+                        <div class="job-title">FOUNDER, NASDAN</div>
+                        <p class="testimonial-text">Working with Raysimz feels different. There’s a genuine sense of purpose and forward thinking in everything they do</p>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <img src="https://i.postimg.cc/RhqZB9sH/IMG-20230514-WA0118.jpg" alt="Profile" class="profile-pic">
+                        <h4>Ephraim Tindimwebwa</h4>
+                        <div class="job-title">FINANCIAL ANALYTICS</div>
+                        <p class="testimonial-text">It’s rare to find a team so committed to both innovation and meaningful impact, that’s what stands out about Raysimz</p>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <img src="https://i.postimg.cc/Y0jCHkng/Treasure.jpg" alt="Profile" class="profile-pic">
+                        <h4>Treasure Atukwatse</h4>
+                        <div class="job-title">PETROLEUM ENGINEER</div>
+                        <p class="testimonial-text">There’s a strong vision behind Raysimz, and you can feel it in the way they approach everything</p>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <img src="https://i.postimg.cc/j2CSbKgD/IMG-20230514-WA0056.jpg" alt="Profile" class="profile-pic">
+                        <h4>Ingrid Agaba</h4>
+                        <div class="job-title">CEO, TRANSLOGISTICS</div>
+                        <p class="testimonial-text">The mindset at Raysimz is inspiring. They don’t just think about now, they think about what’s next.</p>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <!-- Navigation buttons -->
+                    <button class="carousel-btn left" onclick="changeTestimonial(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn right" onclick="changeTestimonial(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- PORTFOLIO PAGE -->
+        <div class="page" id="page-portfolio">
+            <section class="hero hero-secondary"><div class="hero-content"><h1>Our <span>Portfolio</span></h1><p>Showcasing transformative projects across industries.</p></div></section>
+            <div class="section scalable-section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Our Work In Action</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We don’t just build software, we craft digital solutions designed to evolve with real-world demands. Every project in our portfolio reflects a deep commitment to solving complex challenges through thoughtful design, strong engineering, and purposeful innovation. We work at the intersection of strategy and technology, ensuring that every solution is not only functional, but also adaptable, efficient, and built for long-term growth.</p>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Our approach goes beyond delivery. We focus on understanding context, refining ideas, and shaping systems that can support continuous improvement in a rapidly changing digital landscape. This portfolio represents how we turn vision into execution-transforming challenges into opportunities and building technology that creates lasting value for businesses and users alike.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/wvfj5rMG/mohamed-hassan-cooperation-8774807-1920.png" alt="Innovation Team" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+                <div class="portfolio-grid">
+                    <!-- Card 1 -->
+                    <div class="portfolio-card">
+                        <div class="card-icon"><i class="fas fa-home"></i></div>
+                        <h3>RentEase</h3>
+                        <p>A modern rental marketplace platform designed to simplify how people discover, list, and manage rental properties. Rentease focuses on connecting tenants and landlords through a streamlined, user-friendly experience that reduces friction in the rental process while improving transparency and access.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="portfolio-card">
+                        <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                        <h3>Agriscan</h3>
+                        <p>AgriScan is an intelligent agricultural system designed to help farmers detect plant diseases early, analyze soil health, and monitor weather conditions. It combines data-driven insights with practical agricultural needs to support better decision-making, improved crop yield, and smarter farming practices.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="portfolio-card">
+                        <div class="card-icon"><i class="fas fa-notes-medical"></i></div>
+                        <h3>A.I Medical Database</h3>
+                        <p>Secure healthcare platform that enables sharing of patient records across hospitals, improving coordination and access to critical information. It reduces duplication of records while ensuring faster, more efficient patient care. It also provides intelligent insights on conditions like hypertension to support early detection and better decision-making.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="portfolio-card">
+                        <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-featured e-commerce system built for a clothing brand, handling product listings, secure payments, order management, and customer interactions. It delivers a smooth shopping experience while supporting brand growth and online sales scalability.</p>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="portfolio-card">
+                        <div class="card-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>Smart Systems & Automation Ideas</h3>
+                        <p>Experimental and conceptual builds focused on automation, system efficiency, and solving repetitive problems using technology. These projects explore how digital tools can reduce complexity and improve productivity.</p>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="portfolio-card">
+                        <div class="card-icon"><i class="fas fa-school"></i></div>
+                        <h3>School Website System</h3>
+                        <p>A modern and responsive school website platform designed to improve communication, visibility, and digital presence for educational institutions. It provides structured access to school information such as announcements, academics, events, and student resources, while ensuring an easy and intuitive experience for students, parents, and staff.</p>
+                    </div>
+                </div>
+        </div>
+        <br>
+        <br>
+        <!-- STEM & ROBOTICS PAGE -->
+        <div class="page" id="page-stem">
+            <section class="hero-secondary"><div class="hero-content"><h1>STEM & <span>Robotics</span></h1><p>We are focused on introducing students to science, technology, engineering, and mathematics through hands-on learning.</p></div></section>
+            <div class="section scalable-section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Future Skills & Innovation Labs</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We design learning experiences that move beyond theory, giving young minds the space to explore, build, and experiment with real technology. Through structured hands-on engagement in robotics, programming, and digital systems, learners are exposed to how modern solutions are created and applied in the real world.</p>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Our focus is on developing adaptable thinkers who are ready for an AI-driven future. By combining creativity with technical foundations, we prepare individuals to confidently navigate and contribute to the evolving landscape of technology, innovation, and intelligent systems.</p>
+                        <a href="#" class="link-arrow" onclick="navigateTo('contact')">Join Trainings <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/br02hhTv/20230627-013707.jpg" alt="Steam & Robotics" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="section scalable-section">
+                <div class="grid grid-2">
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/L6QvcL8K/SDGS.png" alt="SDGs" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Robotics for Sustainable Development Goals (SDGs)</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Our robotics training is designed with a strong focus on the Sustainable Development Goals (SDGs), using automation and intelligent systems to address real-world challenges. We guide learners to build robotic solutions that relate to areas such as quality education, good health, clean environments, and sustainable industries.</p>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Through practical, project-based robotics learning, students gain the ability to apply engineering and programming skills to meaningful problems. This approach develops innovators who not only understand robotics but can also use it as a tool to drive positive social and environmental impact.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section scalable-section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Competitions & Innovation Challenges</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We actively engage learners in robotics competitions and innovation challenges that test their creativity, problem-solving ability, and technical skills in real-world scenarios. These platforms push students beyond the classroom, encouraging them to design, build, and present functional robotic solutions under guided but competitive environments.</p>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Through participation in these events, learners develop confidence, teamwork, and resilience while applying engineering and programming concepts to solve practical problems. Our goal is to nurture a competitive yet collaborative mindset that prepares them for global innovation stages and future technology-driven careers.</p>
+                        <a href="#" class="link-arrow" onclick="navigateTo('contact')">Register Your Team <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/Y0Mm0rMZ/Leona-on-the-right-e1714682950222.jpg" alt="Steam & Robbotics Competitions" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICE PAGES -->
+        <!-- AI -->
+        <div class="page" id="page-ai">
+            <section class="hero-secondary"><div class="hero-content"><h1>Artificial <span>Intelligence</span></h1><p>Unlock the power of AI with custom machine learning models and intelligent automation.</p></div></section>
+            <div class="section scalable-section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Artificial Intelligence Solutions</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We design and deploy intelligent systems that help businesses operate smarter, faster, and more efficiently. Through AI-driven data analysis, automation, and predictive modeling, we turn raw information into actionable insights that support better decision-making. Our solutions streamline operations, reduce costs, and enhance customer experiences by enabling personalization and real-time responsiveness. From building smart platforms to generating automated reports and risk insights, we use AI to solve practical business challenges and create scalable, future-ready systems that drive measurable growth and competitive advantage.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/3NDyRkDf/AI.png" alt="Artificial Intelligence" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Leverage AI Today</h2><p>Discover how AI can transform your operations.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item">
+                                <div class="step-icon"><i class="fas fa-search"></i></div>
+                                <div class="step-text">
+                                    <h4>Discovery & Consultation</h4>
+                                    <p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p>
+                                </div>
+                            </li>
+                            <li class="step-item">
+                                <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
+                                <div class="step-text">
+                                    <h4>Strategy & Planning</h4>
+                                    <p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p>
+                                </div>
+                            </li>
+                            <li class="step-item">
+                                <div class="step-icon"><i class="fas fa-code"></i></div>
+                                <div class="step-text">
+                                    <h4>Development & Implementation</h4>
+                                    <p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p>
+                                </div>
+                            </li>
+                            <li class="step-item">
+                                <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                                <div class="step-text">
+                                    <h4>Testing & Launch</h4>
+                                    <p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p>
+                                </div>
+                            </li>
+                            <li class="step-item">
+                                <div class="step-icon"><i class="fas fa-headset"></i></div>
+                                <div class="step-text">
+                                    <h4>Ongoing Support</h4>
+                                    <p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="approach-right">
+                        <img src="https://i.postimg.cc/9XN2Yyxn/MIND-2.png" alt="Our approach" style="object-fit:cover; width:100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOFTWARE DEV -->
+        <div class="page" id="page-software-dev">
+            <section class="hero-secondary"><div class="hero-content"><h1>Software <span>Development</span></h1><p>Custom software engineered for performance, scalability, and reliability.</p></div></section>
+            <div class="section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Custom Software Engineering Solutions</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We design and develop powerful software systems tailored to meet specific business needs and operational goals. Our process begins with a deep understanding of workflows, challenges, and opportunities, allowing us to build solutions that are both practical and scalable. We focus on clean architecture, strong security, and high performance to ensure long-term reliability. By integrating modern technologies, we create systems that automate processes, reduce manual effort, and improve overall efficiency. Our software solutions are built to adapt, making it easier for businesses to grow without technical limitations. We also ensure seamless integration with existing platforms to maintain continuity and enhance productivity. Ultimately, our goal is to deliver software that becomes a strategic asset, driving innovation and measurable business impact.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/xdK4Cp1C/Dev.png" alt="Software Development" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Build Powerful Software</h2><p>Create scalable systems that drive your business forward</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/pd2DfsBK/dem.jpg" alt="Software" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WEB DEV -->
+        <div class="page" id="page-web-dev">
+            <section class="hero-secondary"><div class="hero-content"><h1>Web <span>Development</span></h1><p>Responsive, fast, and beautiful web applications built with modern frameworks.</p></div></section>
+            <div class="section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Modern Web Development & Digital Platforms</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We build dynamic and responsive web solutions that serve as powerful digital touchpoints for businesses. Our approach combines intuitive design with strong backend functionality to create platforms that are both visually engaging and highly efficient. We prioritize speed, security, and scalability to ensure that websites perform reliably under different conditions and user demands. By focusing on user experience, we make it easy for visitors to navigate, interact, and take action. Our web platforms are designed to support business objectives such as lead generation, customer engagement, and service delivery. We also incorporate modern tools and frameworks to keep solutions future-ready and easy to maintain. In the end, we deliver web experiences that strengthen brand identity and drive meaningful online growth.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/nc27H4xc/bookdragon-web-development-4202909-1920.png" alt="Web" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Launch on the Web</h2><p>Establish a strong digital presence with modern web solutions</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/dVXh1nxF/Mind.png" alt="Web" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE DEV -->
+        <div class="page" id="page-mobile-dev">
+            <section class="hero-secondary"><div class="hero-content"><h1>Mobile <span>Development</span></h1><p>Native and cross-platform mobile apps that users love.</p></div></section>
+            <div class="section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Advanced Mobile Application Development</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We create high-performance mobile applications that connect businesses directly with their users in real time. Our development process emphasizes simplicity, functionality, and seamless user experience across devices and operating systems. We design applications that are fast, reliable, and capable of handling complex tasks without compromising usability. By leveraging modern mobile technologies, we ensure that apps remain scalable as user demands grow. Our solutions enable businesses to offer convenient services, improve customer engagement, and maintain constant accessibility. We also focus on integrating key features such as notifications, data synchronization, and secure transactions. The end result is a mobile experience that enhances interaction, builds customer loyalty, and supports continuous business growth.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/2y8kTBK1/mohamed-hassan-website-9022660-1920.png" alt="Mobile" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Go Mobile First</h2><p>Reach users everywhere with seamless mobile experiences</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/mZzBZBWK/software.png" alt="Mobile" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UI/UX DESIGN -->
+        <div class="page" id="page-uiux">
+            <section class="hero-secondary"><div class="hero-content"><h1>UI/UX <span>Design</span></h1><p>Human-centered design that delights users and drives engagement.</p></div></section>
+            <div class="section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">UI/UX Design Excellence</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We craft intuitive and visually engaging digital experiences that put users at the center of every design decision. Our UI/UX process begins with understanding user behavior, business goals, and interaction patterns. We then translate this insight into clean, modern, and easy-to-navigate interfaces. Every design is structured to improve usability, reduce friction, and enhance overall satisfaction. We focus on consistency, accessibility, and responsiveness across all devices and platforms. Through prototyping and user testing, we refine experiences to ensure they are both functional and impactful. The result is digital products that not only look great but also deliver smooth, meaningful interactions that keep users engaged.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/dtwHHjnP/geralt-productivity-1995786-1920.jpg" alt="UI/UX" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Design Experiences That Matter</h2><p>Create intuitive and engaging user interfaces.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/wv9gTmgd/mohamed-hassan-teamwork-8661183-1920.png" alt="UX/IX" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IT CONSULTING -->
+        <div class="page" id="page-it-consulting">
+            <section class="hero-secondary"><div class="hero-content"><h1>IT <span>Consulting</span></h1><p>Strategic technology advisory to align IT with your business goals.</p></div></section>
+            <div class="section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Strategic IT Consulting</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We provide expert IT consulting services that help businesses align technology with their long-term goals. Our approach involves analyzing existing systems, identifying gaps, and recommending solutions that improve efficiency and performance. We work closely with organizations to design technology roadmaps that support growth and innovation. By combining technical expertise with business insight, we help clients make informed decisions about infrastructure, software, and digital strategy. Our consulting services also focus on cost optimization, risk reduction, and system modernization. We ensure that every recommendation is practical, scalable, and tailored to specific business needs. The outcome is a clear technology direction that strengthens competitiveness and operational success.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/fLFs7gYs/mohamed-hassan-therapy-10029718-1920-Photoroom.png" alt="IT" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Get Expert IT Guidance</h2><p>Make smarter technology decisions with strategic guidance.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/QNyCSfjj/geralt-feedback-6395772-1920.jpg" alt="Our approach" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIGITAL TRANSFORMATION -->
+        <div class="page" id="page-digital-transformation">
+            <section class="hero-secondary"><div class="hero-content"><h1>Digital <span>Transformation</span></h1><p>Reimagine your business for the digital age.</p></div></section>
+            <div class="section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Digital Transformation Services</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We help businesses evolve by integrating digital technologies into every aspect of their operations. Our digital transformation approach focuses on replacing outdated processes with smarter, automated, and data-driven systems. We enable organizations to become more agile, efficient, and responsive in a fast-changing digital landscape. This includes modernizing workflows, adopting cloud solutions, and implementing intelligent systems that improve decision-making. We also support cultural and operational shifts to ensure smooth adoption of new technologies. By bridging the gap between traditional and digital systems, we unlock new opportunities for growth and innovation. The result is a fully transformed business that is ready for the future.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/k4tJHmJS/Discuss.png" alt="digital-transformation" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Accelerate Digital Transformation</h2><p>Modernise your business for a faster, smarter digital future.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/5yd4dRy2/mohamed-hassan-website-9049203-1920.jpg" alt="digital-transformation" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DATA ANALYTICS -->
+        <div class="page" id="page-data-analytics">
+            <section class="hero-secondary"><div class="hero-content"><h1>Data <span>Analytics</span></h1><p>Turn raw data into actionable insights with advanced analytics.</p></div></section>
+            <div class="section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Advanced Data Analytics Solutions</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We turn raw data into powerful insights that drive smarter business decisions. Our data analytics services involve collecting, processing, and analyzing large datasets to uncover trends, patterns, and opportunities. We build dashboards and reporting systems that make complex information easy to understand and act on. By leveraging predictive analytics, we help businesses anticipate future outcomes and make proactive decisions. Our solutions also improve performance tracking, customer understanding, and operational efficiency. We ensure data accuracy, security, and accessibility across all systems. Ultimately, we empower organizations to use data as a strategic asset for growth and innovation.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/T34K1GPy/Data.png" alt="data-analytics" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Turn Data Into Insight</h2><p>Unlock value from your data to drive better decisions.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/prWWk1dD/serenawong-man-1633667-1920-Photoroom.png" alt="data-analytics" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CUSTOM DEVELOPMENT -->
+        <div class="page" id="page-custom-dev">
+            <section class="hero-secondary"><div class="hero-content"><h1>Custom <span>Development</span></h1><p>Bespoke software solutions tailored precisely to your requirements.</p></div></section>
+            <div class="section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Custom Software Development</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We develop tailor-made digital solutions designed to meet unique business requirements. Unlike off-the-shelf systems, our custom development approach ensures complete flexibility, scalability, and control. We work from concept to deployment, building solutions that align perfectly with operational needs. Our focus is on performance, security, and seamless integration with existing systems. Every solution is designed to evolve as the business grows and changes. We use modern technologies to ensure reliability and long-term sustainability. The end result is a fully customized system that enhances productivity and delivers measurable value.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/WbFqnrZN/Custom-2.png" alt="custom-dev" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Build Tailored Solutions</h2><p>Develop custom software designed around your unique needs.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/hPzQrxmM/Custom.png" alt="custom-dev" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFRASTRUCTURE -->
+        <div class="page" id="page-infrastructure">
+            <section class="hero-secondary"><div class="hero-content"><h1>Infrastructure <span>Services</span></h1><p>Robust, scalable, and secure IT infrastructure for modern enterprises.</p></div></section>
+            <div class="section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">IT Infrastructure Services</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We design and manage reliable IT infrastructures that support smooth and uninterrupted business operations. Our services include network setup, cloud integration, server management, and system optimization. We ensure that infrastructure is secure, scalable, and capable of handling increasing workloads. By implementing best practices, we reduce downtime and improve system performance. We also focus on monitoring and maintenance to ensure continuous stability and efficiency. Our solutions are built to support both current needs and future expansion. The result is a strong technological foundation that enables businesses to operate without limitations.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/02srp39W/mohamed-hassan-construction-engineer-9188149-1920.jpg" alt="infrastructure" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Strengthen Your Infrastructure</h2><p>Ensure reliable, scalable, and high-performing IT systems.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/bNhdQMqK/mohamed-hassan-seo-5263612-1920.jpg" alt="infrastructure" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IT SUPPORT -->
+        <div class="page" id="page-it-support">
+            <section class="hero-secondary"><div class="hero-content"><h1>IT <span>Support</span></h1><p>24/7 technical support to keep your business running smoothly.</p></div></section>
+            <div class="section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Comprehensive IT Support Services</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We provide dependable IT support that ensures systems run smoothly and issues are resolved quickly. Our support services include troubleshooting, system maintenance, software updates, and technical assistance. We focus on minimizing downtime and ensuring uninterrupted business operations. Our team is available to respond to technical challenges and provide practical solutions in real time. We also implement preventive maintenance strategies to reduce future disruptions. By maintaining system health and performance, we help businesses stay productive and efficient. The outcome is a reliable IT environment that users can depend on every day.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/d1YgW8DZ/IT.png" alt="it-support" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Reliable IT Support</h2><p>Keep your systems running smoothly with dependable support.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/HxgFSQjM/mohamed-hassan-delivery-7070991-1920.png" alt="it-support" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CYBER SECURITY -->
+        <div class="page" id="page-cyber-security">
+            <section class="hero-secondary"><div class="hero-content"><h1>Cyber <span>Security</span></h1><p>Protect your business with enterprise-grade security solutions.</p></div></section>
+            <div class="section">
+                <div class="grid grid-2">
+                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Cyber Security Solutions</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We protect businesses from digital threats by implementing strong and proactive cybersecurity measures. Our services include threat detection, vulnerability assessment, data protection, and system monitoring. We design security frameworks that safeguard sensitive information and ensure compliance with industry standards. By using advanced tools and techniques, we identify and neutralize risks before they cause damage. We also educate organizations on best practices to strengthen their security posture. Our approach is continuous, adapting to emerging threats and evolving attack methods. The result is a secure digital environment that protects assets, builds trust, and ensures business continuity.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/bvVW4CLL/Cyber.png" alt="cyber-security" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section"><h2>Protect Your Digital Assets</h2><p>Secure your systems and data from evolving cyber threats.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/3JphmT9T/geralt-woman-5899198-1920.jpg" alt="cyber-security" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INDUSTRY PAGES -->
+        <div class="page" id="page-banking"><section class="hero-secondary"><div class="hero-content"><h1>Banking & <span>Finance</span></h1><p>Secure, compliant, and innovative fintech solutions.</p></div></section>
+        <div class="section">
+            <div class="grid grid-2">
+                                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Driving Digital Trust in Banking & Finance</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Raysimz supports financial institutions in building secure, scalable, and efficient digital systems that meet the demands of modern banking. We help streamline operations, enhance transaction security, and improve customer experiences through intelligent platforms. From digital payments to data-driven insights, our solutions are designed to increase reliability and trust. We focus on compliance, performance, and innovation to ensure financial organizations remain competitive. Our approach enables institutions to adapt quickly to evolving technologies and customer expectations.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/W1skL71d/Banking.png" alt="Banking & Finance" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+            </div>
+            <div class="cta-section"><h2>Modernize Financial Systems</h2><p>Build secure, scalable, and future-ready banking solutions.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/1zcwVYY1/mohamed-hassan-money-transfer-3588301-1920.jpg" alt="banking" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="page" id="page-healthcare"><section class="hero-secondary"><div class="hero-content"><h1><span>Healthcare</span></h1><p>Technology that improves patient outcomes and operational efficiency.</p></div></section>
+        <div class="section">
+            <div class="grid grid-2">
+                                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Advancing Healthcare Through Technology</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We empower healthcare providers with digital solutions that improve patient care, data accessibility, and operational efficiency. Our systems enable secure sharing of medical records, intelligent data analysis, and faster decision-making. By integrating technology into healthcare processes, we help reduce inefficiencies and enhance service delivery. We focus on reliability, security, and real-time access to critical information. Our goal is to support a more connected, responsive, and data-driven healthcare ecosystem.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/PxXZWzBj/tanrica-doctor-9892173-1920.png" alt="health" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+            </div>
+            <div class="cta-section"><h2>Transform Healthcare Delivery</h2><p>Enhance care with intelligent, connected systems.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/jjQPnk34/mohamed-hassan-doctor-4229348-1920.jpg" alt="Health" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="page" id="page-education"><section class="hero-secondary"><div class="hero-content"><h1><span>Education</span></h1><p>Empowering learners and educators with technology.</p></div></section>
+        <div class="section">
+            <div class="grid grid-2">
+                                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Reimagining Education for the Digital Age</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Raysimz works with educational institutions to create modern learning environments powered by technology. We develop platforms that improve access to information, enhance communication, and support interactive learning. Our solutions bridge the gap between traditional education and digital innovation. By integrating systems such as portals, learning tools, and automation, we help institutions operate more efficiently. We aim to empower both educators and learners with tools for a smarter future.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/D0rMjbFf/Education.png" alt="education" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+            </div>
+            <div class="cta-section"><h2>Digitize Learning Experiences</h2><p>Empower education through innovative technology.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/Qt85QkRG/openclipart-vectors-blackboard-2026160-1920.png" alt="education" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="page" id="page-real-estate"><section class="hero-secondary"><div class="hero-content"><h1>Real <span>Estate</span></h1><p>Smart property tech for the modern real estate market.</p></div></section>
+        <div class="section">
+            <div class="grid grid-2">
+                                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Transforming Real Estate Experiences</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We provide digital solutions that simplify property management, listings, and client interactions within the real estate industry. Our platforms enhance transparency, streamline transactions, and improve accessibility for both buyers and sellers. By leveraging technology, we help real estate businesses operate more efficiently and scale effectively. Our systems are designed to handle growing demands while maintaining performance. We enable smarter, faster, and more connected real estate operations.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/g00bx4pS/4.png" alt="realeastate" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+            </div>
+            <div class="cta-section"><h2>Build Smarter Property Platforms</h2><p>Simplify and scale real estate operations.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/s2R5XRmp/hazarman-home-2156096-1920.png" alt="realestate" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="page" id="page-telecom"><section class="hero-secondary"><div class="hero-content"><h1><span>Telecommunications</span></h1><p>Connecting the world with robust telecom solutions.</p></div></section>
+        <div class="section">
+            <div class="grid grid-2">
+                                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Powering Modern Telecommunications</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Raysimz supports telecom companies with scalable systems that enhance connectivity, service delivery, and customer management. We build solutions that handle high volumes of data while maintaining speed and reliability. Our focus is on optimizing infrastructure, improving user experience, and enabling seamless communication. We help telecom providers adapt to increasing demand and technological advancements. Our solutions ensure consistent performance in a highly dynamic industry.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/3rq5d2fj/1-1.png" alt="telecommunications" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+            </div>
+            <div class="cta-section"><h2>Enhance Network Solutions</h2><p>Deliver faster, smarter communication systems.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/yd19mX2f/mohamed-hassan-phone-call-6607616-1920.png" alt="telecommunications" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="page" id="page-government"><section class="hero-secondary"><div class="hero-content"><h1><span>Government</span></h1><p>Secure, transparent, and citizen-centric digital services.</p></div></section>
+        <div class="section">
+            <div class="grid grid-2">
+                                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Enabling Efficient Government Systems</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We work with government institutions to build digital systems that improve service delivery, transparency, and efficiency. Our solutions help streamline operations, manage data effectively, and enhance citizen engagement. By digitizing processes, we reduce manual workloads and improve accessibility to public services. We focus on building secure and scalable platforms that support long-term national development. Our goal is to enable smarter governance through technology.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/g0q8LBtC/mohamed-hassan-judge-7602999-1920.png" alt="government" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+            </div>
+            <div class="cta-section"><h2>Digitize Public Services</h2><p>Improve efficiency and citizen engagement.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/fyJJTH0X/democrancy.jpg" alt="government" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="page" id="page-retail"><section class="hero-secondary"><div class="hero-content"><h1><span>Retail</span></h1><p>Omnichannel solutions that drive sales and customer loyalty.</p></div></section>
+        <div class="section">
+            <div class="grid grid-2">
+                                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Elevating Retail Through Digital Innovation</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Raysimz helps retail businesses enhance customer experiences and streamline operations through technology. We build platforms that support online sales, inventory management, and customer engagement. Our solutions enable retailers to adapt to changing consumer behaviors and market trends. By integrating digital tools, we improve efficiency and scalability. We empower businesses to grow and compete in an increasingly digital marketplace.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/WbmhpJDz/retail.png" alt="retail" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+            </div>
+            <div class="cta-section"><h2>Transform Retail Experiences</h2><p>Drive sales with smart digital solutions.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/q7Xy6ZDb/mohamed-hassan-grocery-8885334-1920.jpg" alt="retail" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="page" id="page-manufacturing"><section class="hero-secondary"><div class="hero-content"><h1><span>Manufacturing</span></h1><p>Industry 4.0 solutions for smart factories and supply chains.</p></div></section>
+        <div class="section">
+            <div class="grid grid-2">
+                                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Optimizing Manufacturing with Technology</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We provide manufacturing companies with solutions that improve production efficiency, system integration, and operational visibility. Our technology helps streamline processes, reduce downtime, and enhance productivity. We focus on building systems that support automation and data-driven decision-making. By modernizing operations, we enable manufacturers to scale effectively. Our solutions ensure long-term efficiency and competitiveness.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/d0SPrdQ2/2.png" alt="manufacturing" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+            </div>
+            <div class="cta-section"><h2>Modernize Production Systems</h2><p>Boost efficiency with smart manufacturing solutions.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/4ySwmF27/mohamed-hassan-printer-9759006-1920.png" alt="manufacturing" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="page" id="page-travel"><section class="hero-secondary"><div class="hero-content"><h1>Travel & <span>Hospitality</span></h1><p>Delivering exceptional guest experiences through technology.</p></div></section>
+        <div class="section">
+            <div class="grid grid-2">
+                                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Redefining Travel & Hospitality Experiences</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">Raysimz supports the travel and hospitality industry with digital platforms that enhance booking, management, and customer experience. We build systems that improve accessibility, streamline operations, and personalize user interactions. Our solutions help businesses adapt to evolving traveler expectations. By integrating technology, we create seamless and enjoyable experiences. We enable businesses to grow in a competitive and dynamic market.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/R0b5KfC1/3.png" alt="travel" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+            </div>
+            <div class="cta-section"><h2>Enhance Guest Experiences</h2><p>Deliver seamless and personalized services.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/R0zwFzd1/elf-moondance-reception-6031806-1920.png" alt="travel" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="page" id="page-transportation"><section class="hero-secondary"><div class="hero-content"><h1><span>Transportation</span></h1><p>Logistics and mobility solutions for a connected world.</p></div></section>
+        <div class="section">
+            <div class="grid grid-2">
+                                    <div style="display:flex; flex-direction:column; justify-content:center;">
+                        <h2 style="font-size:2.9rem; font-weight:700;margin-bottom:1rem; line-height:1.3; color: #021a4f;">Driving Innovation in Transportation</h2>
+                        <p style="color:var(--gray-500); font-size:1.1rem; line-height:1.7; margin-bottom:1.8rem;">We develop solutions that improve efficiency, tracking, and management within the transportation sector. Our systems enable better coordination, real-time insights, and optimized operations. We help organizations enhance reliability and reduce operational challenges. By leveraging technology, we support smarter and more connected transportation networks. Our focus is on scalability, performance, and innovation.</p>
+                    </div>
+                    <div class="img-placeholder blue-tint" style="min-height:350px;">
+                        <img src="https://i.postimg.cc/4xdhxbrx/transport.png" alt="transport" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                    </div>
+            </div>
+            <div class="cta-section"><h2>Optimize Transportation Systems</h2><p>Build smarter, more efficient mobility solutions.</p><button class="btn-primary" onclick="navigateTo('request-quote')">Get Started</button></div>
+            <!-- HOW WE DELIVER -->
+            <div class="approach-section">
+                <div class="approach-wrapper">
+                    <div class="approach-left">
+                        <h2>How We Deliver</h2>
+                        <ul class="step-list">
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-text"><h4>Discovery & Consultation</h4><p>We start by understanding your business goals, challenges, and target users to define a clear project roadmap.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-lightbulb"></i></div><div class="step-text"><h4>Strategy & Planning</h4><p>Our team designs a tailored technical strategy, selecting the right technologies and architecture for your solution.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-code"></i></div><div class="step-text"><h4>Development & Implementation</h4><p>We build your product using agile methods, ensuring transparency and flexibility throughout the process.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-text"><h4>Testing & Launch</h4><p>Rigorous quality assurance and user testing guarantee a smooth, bug‑free deployment.</p></div></li>
+                            <li class="step-item"><div class="step-icon"><i class="fas fa-headset"></i></div><div class="step-text"><h4>Ongoing Support</h4><p>Post‑launch, we provide continuous monitoring, maintenance, and updates to keep your system running optimally.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="approach-right"><img src="https://i.postimg.cc/0yQJydLr/transportation.png" alt="transport" style="object-fit:cover; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- CONTACT PAGE -->
+        <div class="page" id="page-contact">
+            <section class="hero-secondary"><div class="hero-content"><h1>Start Your Project <span>with Us.</span></h1><p>Whether you’re ready to start your project, have a question, or simply want to explore possibilities, we’re here to listen and help. Every idea begins with a conversation, and we take pride in turning your thoughts into practical, meaningful solutions. Reach out to us today, and let’s work together to bring your vision to life with clarity, purpose, and care.</p></div></section>
+            <div class="section" style="padding-top:3rem;">
+                <div class="contact-page-wrapper">
+                    <div class="contact-left">
+                        <h2>Start Your Project <span>with Us</span></h2>
+                        <p class="subtitle">Whether you’re ready to start your project, have a question, or simply want to explore possibilities, we’re here to listen and help. Every idea begins with a conversation, and we take pride in turning your thoughts into practical, meaningful solutions. Reach out to us today, and let’s work together to bring your vision to life with clarity, purpose, and care.</p>
+                        <div class="img-placeholder blue-tint" style="min-height:230px;margin:1.5rem 0;">
+                            <img src="https://i.postimg.cc/bJdfr7r6/contact.jpg" alt="Logo" style="width:50%; height:100%; object-fit:cover; border-radius:inherit;">
+                        </div>
+                         <h1 style="color: #032970; margin: 1.5rem 0;">RAYSIMZ</h1>
+                        <blockquote>"We put in synergy a community that designs, prototypes, tests, scales and passionately works to launch imaginative and enterprising solutions..."</blockquote>
+                        <div class="team-info">
+    <div class="team-avatar">
+        <img src="https://i.postimg.cc/QCPxNPwT/Robot.png" alt="Raymond Musinguzi">
+    </div>
+    <div>
+        <div class="team-name">RAYMOND MUSINGUZI</div>
+        <div class="team-role">Team Lead</div>
+    </div>
+</div>
+                    </div>
+                    <div class="contact-right">
+                        <h3>Fill out the form and we'll be in touch as soon as possible.</h3>
+                        <form class="contact-form-new ajax-form" action="https://formspree.io/f/mqaqnqrk" method="POST">
+    <div class="form-row">
+        <input type="text" name="name" placeholder="Name *" required>
+        <input type="tel" name="phone" placeholder="Phone *" required>
+    </div>
+    <input type="email" name="email" placeholder="Email *" required>
+    <input type="text" name="country" placeholder="Country *"required>
+    <select name="service" required>
+        <option value="">Select Service *</option>
+        <option>Artificial Intelligence</option>
+        <option>Software Development</option>
+        <option>Web Development</option>
+        <option>Mobile Development</option>
+        <option>UI/UX Design</option>
+        <option>IT Consulting</option>
+        <option>Digital Transformation</option>
+        <option>Data Analytics</option>
+        <option>Custom Development</option>
+        <option>Infrastructure Services</option>
+        <option>IT Support</option><option>Cyber Security</option>
+        <option>Other</option>
+    </select>
+    <textarea name="message" placeholder="Tell us more about your project, needs and budget..."></textarea>
+    <label class="checkbox-group">
+        <input type="checkbox" name="newsletter" checked>
+        <span>Yes, I'd like to receive occasional emails from Raysimz.</span>
+    </label>
+    <button type="submit" class="btn-submit">Let's Build <i class="fas fa-arrow-right"></i></button>
+</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- REQUEST QUOTE PAGE (Mobile-friendly – same as Contact) -->
+<div class="page" id="page-request-quote">
+    <section class="hero-secondary">
+        <div class="hero-content">
+            <h1>Request a <span>Quote</span></h1>
+            <p>Tell us about your project – we'll reply within 24 hours.</p>
+        </div>
+    </section>
+
+    <div class="section" style="padding-top: 2rem;">
+        <div class="contact-page-wrapper">   <!-- reuses existing responsive grid -->
+            <!-- LEFT: Image + info -->
+            <div class="contact-left">
+                <div class="img-placeholder blue-tint" style="min-height: 300px; margin-bottom: 1.5rem;">
+                    <img src="https://i.postimg.cc/VNdSwqd3/Qoute.png" alt="Get a quote" style="width:80%; height:100%; object-fit:cover;">
+                </div>
+                <h2 style="font-size: 1.8rem; color: #021a4f;">Let's Build Something Great</h2>
+                <p style="color: var(--gray-600);">Fill out the form and we'll prepare a detailed, no‑obligation quote tailored to your needs.</p>
+                <ul style="list-style: none; padding: 0; margin-top: 1.5rem;">
+                    <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: var(--yellow);"></i> Transparent pricing & timelines</li>
+                    <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: var(--yellow);"></i> Free initial consultation</li>
+                    <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: var(--yellow);"></i> Customised solution for your business</li>
+                </ul>
+            </div>
+
+            <!-- RIGHT: Form -->
+            <div class="contact-right">
+                <h3>Request Your Custom Quote</h3>
+                <form class="contact-form-new ajax-form" action="https://formspree.io/f/mqaqnqrk" method="POST">
+    <div class="form-row">
+        <input type="text" name="name" placeholder="Full Name *" required>
+        <input type="email" name="email" placeholder="Email Address *" required>
+    </div>
+    <div class="form-row">
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <input type="text" name="company" placeholder="Company Name">
+    </div>
+    <select name="service" required>
+        <option value="">Select Service Needed *</option>
+        <option>Artificial Intelligence</option>
+        <option>Software Development</option>
+        <option>Web Development</option>
+        <option>Mobile Development</option>
+        <option>UI/UX Design</option>
+        <option>IT Consulting</option>
+        <option>Digital Transformation</option>
+        <option>Data Analytics</option>
+        <option>Custom Development</option>
+        <option>Infrastructure Services</option>
+        <option>IT Support</option><option>Cyber Security</option>
+        <option>Other</option>
+    </select>
+    <select name="budget">
+        <option value="">Estimated Budget (optional)</option>
+        <option>$200 – $500</option>
+        <option>$600 - $1000</option>
+        <option>$1100 - $1500</option>
+        <option>$1600 - $2000</option>
+        <option>$2100 - $3500</option>
+        <option>$3600 - $4000</option>
+    </select>
+    <textarea name="description" placeholder="Describe your project, requirements, and timeline..." rows="4" required></textarea>
+    <label class="checkbox-group">
+        <input type="checkbox" name="agreed" checked>
+        <span>I agree to be contacted by Raysimz about this request.</span>
+    </label>
+    <button type="submit" class="btn-submit">Send Quote Request <i class="fas fa-arrow-right"></i></button>
+</form>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
     <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/256760686144" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/256782716016" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
     <!-- ==================== FOOTER ==================== -->
@@ -2016,36 +3324,60 @@
                     <a href="https://github.com/raysimz" title="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://share.google/jXqFxkLHBfY6Uhez0" title="Google"><i class="fab fa-google"></i></a>
                     <a href="https://www.instagram.com/raysimz_info_tech?igsh=MWN0a3I2Zm5iYXpiZg==" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@raysimzinfotech" title="Youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://medium.com/@raysimzug" title="Medium"><i class="fab fa-medium"></i></a>
+                    <a href="https://www.threads.com/@raysimz" title="Threads"><i class="fab fa-threads"></i></a>
+                    
+
                 </div>
             </div>
             <div class="footer-col">
                 <h4>COMPANY</h4>
-                <a onclick="window.location.href='/about.html'">About Company</a>
-                <a onclick="window.location.href='/portfolio.html'">Portfolio</a>
-                <a onclick="window.location.href='/contact.html'">Contact</a>
-                <a onclick="window.location.href='/stem.html'">STEM & Robotics</a>
+                <a onclick="navigateTo('about')">About Company</a>
+                <a onclick="navigateTo('portfolio')">Portfolio</a>
+                <a onclick="navigateTo('contact')">Contact</a>
+                <a onclick="navigateTo('stem')">STEM & Robotics</a>
             </div>
             <div class="footer-col">
                 <h4>SERVICES</h4>
     <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
         <div style="flex:1; min-width:120px;">
-            <a onclick="window.location.href='/ai.html'">AI Solutions</a>
-            <a onclick="window.location.href='/web-dev.html'">Web Development</a>
-            <a onclick="window.location.href='/mobile-dev.html'">Mobile Apps</a>
-            <a onclick="window.location.href='/cyber-security.html'">Cyber Security</a>
-            <a onclick="window.location.href='/software-dev.html'">Software Development</a>
-            <a onclick="window.location.href='/uiux.html'">UI/UX Design</a>
+            <a onclick="navigateTo('ai')">AI Solutions</a>
+            <a onclick="navigateTo('web-dev')">Web Development</a>
+            <a onclick="navigateTo('mobile-dev')">Mobile Apps</a>
+            <a onclick="navigateTo('cyber-security')">Cyber Security</a>
+            <a onclick="navigateTo('software-dev')">Software Development</a>
+            <a onclick="navigateTo('uiux')">UI/UX Design</a>
         </div>
         <div style="flex:1; min-width:120px;">
-            <a onclick="window.location.href='/it-consulting.html'">IT Consulting</a>
-            <a onclick="window.location.href='/digital-transformation.html'">Digital Transformation</a>
-            <a onclick="window.location.href='/data-analytics.html'">Data Analytics</a>
-            <a onclick="window.location.href='/custom-dev.html'">Custom Development</a>
-            <a onclick="window.location.href='/infrastructure.html'">Infrastructure</a>
-            <a onclick="window.location.href='/it-support.html'">IT Support</a>
+            <a onclick="navigateTo('it-consulting')">IT Consulting</a>
+            <a onclick="navigateTo('digital-transformation')">Digital Transformation</a>
+            <a onclick="navigateTo('data-analytics')">Data Analytics</a>
+            <a onclick="navigateTo('custom-dev')">Custom Development</a>
+            <a onclick="navigateTo('infrastructure')">Infrastructure</a>
+            <a onclick="navigateTo('it-support')">IT Support</a>
         </div>
     </div>
-</div>
+            </div>
+    <div class="footer-col">
+    <h4>INDUSTRIES</h4>
+        <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+        <div style="flex:1; min-width:120px;">
+            <a onclick="navigateTo('banking')">Banking & Finance</a>
+            <a onclick="navigateTo('healthcare')">Healthcare</a>
+            <a onclick="navigateTo('education')">Education</a>
+            <a onclick="navigateTo('real-estate')">Real Estate</a>
+            <a onclick="navigateTo('transportation')">Transportation</a>
+        </div>
+        <div style="flex:1; min-width:120px;">
+            <a onclick="navigateTo('government')">Government</a>
+            <a onclick="navigateTo('retail')">Retail</a>
+            <a onclick="navigateTo('manufacturing')">Manufacturing</a>
+            <a onclick="navigateTo('travel')">Travel & Hospitality</a>
+            <a onclick="navigateTo('telecom')">Telecommunications</a>
+        </div>
+    </div>
+            </div>
             <div class="footer-col">
             <h4>CONTACT</h4>
           <a href="https://www.google.com/maps/dir//RAYSIMZ,+Mbarara/@-0.6231749,30.677066,7212m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x19d91b005860b1c5:0x32a8db2b24e36d77!2m2!1d30.6501887!2d-0.614335?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
@@ -2054,10 +3386,10 @@
        <a href="mailto:raysimzug@gmail.com">
         <i class="fas fa-envelope"></i> raysimzug@gmail.com
     </a>
-    <a href="tel:+15551234567">
-        <i class="fas fa-phone"></i> +256 760686144
+    <a href="tel:+256 731564126">
+        <i class="fas fa-phone"></i>  +256 731 564126
     </a>
-        <a href="https://wa.me256760686144">
+        <a href="https://wa.me/256782716016">
         <i class="fab fa-whatsapp"></i> WhatsApp Us
     </a>
 
@@ -2066,7 +3398,20 @@
 
 <script>
 // ============ NAVIGATION ============
-function navigateTo(pageName) { window.location.href = pageName === 'home' ? '/' : '/' + pageName + '.html'; });
+function navigateTo(pageName) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + pageName);
+    if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // update hash for shareable URL
+        if (pageName !== 'home') {
+            history.pushState(null, '', '#' + pageName);
+        } else {
+            history.pushState(null, '', '/');
+        }
+        // trigger animations on the newly active page
+        setTimeout(() => triggerVisibleAnimations(target), 150);
     }
     // Close all mega dropdowns
     document.querySelectorAll('.mega-dropdown').forEach(d => d.classList.remove('show'));
@@ -2188,55 +3533,210 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('load', function() {
     const preloader = document.querySelector('.preloader');
     if (preloader) preloader.style.display = 'none';
-});
-
-// ========== CLEAN URL ROUTING (no hash) – for Cloudflare Worker ==========
-function getPageFromPath() {
-    let path = window.location.pathname;
-    if (path === '/' || path === '/index.html') return 'home';
-    let page = path.replace(/^\//, '').replace(/\.html$/, '');
-    return page;
-}
-
-function updatePageFromPath() {
-    const pageName = getPageFromPath();
-    const targetPage = document.getElementById('page-' + pageName);
-    if (targetPage && !targetPage.classList.contains('active')) {
-        // Use the existing navigateTo to change page, but prevent URL loop
-        navigateTo(pageName);
-    } else if (!targetPage && pageName !== 'home') {
-        // Invalid path – redirect to home
-        history.replaceState(null, '', '/');
-        window.location.href='/';
-    }
-}
-
-// Save original navigateTo (which already updates URL via clean path)
-// We must not redefine navigateTo again – just wrap it
-const originalNav = navigateTo;
-window.navigateTo = function(pageName) {
-    originalNav(pageName);
-    let newPath = pageName === 'home' ? '/' : '/' + pageName;
-    // Update URL only if it's not already the same
-    if (window.location.pathname !== newPath) {
-        history.pushState(null, '', newPath);
-    }
-};
-
-// Listen to back/forward buttons
-window.addEventListener('popstate', updatePageFromPath);
-
-// On initial load, show the correct page based on the URL path
-document.addEventListener('DOMContentLoaded', function() {
-    // If there's a hash (old style) and no clean path, convert it
-    if (window.location.hash && window.location.pathname === '/') {
-        const hashPage = window.location.hash.substring(1);
-        if (hashPage && document.getElementById('page-' + hashPage)) {
-            window.history.replaceState(null, '', '/' + hashPage);
+    // initial animation for home page
+    const homePage = document.getElementById('page-home');
+    if (homePage) setTimeout(() => triggerVisibleAnimations(homePage), 300);
+    // hash-based routing on load
+    if (window.location.hash) {
+        const page = window.location.hash.substring(1);
+        if (document.getElementById('page-' + page)) {
+            navigateTo(page);
         }
     }
-    updatePageFromPath();
 });
+
+// ========== CLEAN URL ROUTING (hash-based for sharing) ==========
+// On hash change, navigate
+window.addEventListener('hashchange', function() {
+    const page = window.location.hash.substring(1);
+    if (page && document.getElementById('page-' + page)) {
+        navigateTo(page);
+    } else if (!page) {
+        navigateTo('home');
+    }
+});
+
+// ==============================================================
+// SCROLL ANIMATIONS – triggers when elements enter viewport
+// ==============================================================
+
+// Function to apply animation to a single element with a delay based on index
+function applyAnimation(el, index) {
+    if (el.dataset.animated === 'true') return; // already animated
+    let animClass = 'anim-fade-up';
+    if (el.tagName === 'P') {
+        animClass = index % 2 === 0 ? 'anim-fade-left' : 'anim-fade-right';
+    }
+    if (el.classList.contains('card') || el.classList.contains('impact-card') || 
+        el.classList.contains('portfolio-card') || el.classList.contains('vmp-card-dark') ||
+        el.classList.contains('philosophy-item') || el.classList.contains('step-item') ||
+        el.classList.contains('testimonial-card')) {
+        animClass = 'anim-fade-scale';
+    }
+    // Determine delay (1-7) based on index to stagger
+    const delay = Math.min((index % 7) + 1, 7);
+    el.classList.add(animClass, 'delay-' + delay);
+    el.dataset.animated = 'true';
+}
+
+// Check all target elements within a container that are visible in the viewport
+function triggerVisibleAnimations(container) {
+    if (!container) container = document;
+    const targets = container.querySelectorAll('h1, h2, h3, p, .card, .impact-card, .portfolio-card, .vmp-card-dark, .philosophy-item, .step-item, .testimonial-card');
+    let index = 0;
+    targets.forEach(el => {
+        // If already animated, skip
+        if (el.dataset.animated === 'true') return;
+        const rect = el.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - 50 && rect.bottom > 0;
+        if (isVisible) {
+            applyAnimation(el, index);
+            index++;
+        }
+    });
+}
+
+// Intersection Observer for scroll-triggered animations
+let observer = null;
+function initScrollObserver() {
+    if (observer) return;
+    observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                if (el.dataset.animated === 'true') return;
+                // Find its index among all unanimated elements in the same container
+                const container = el.closest('.page') || document;
+                const allTargets = container.querySelectorAll('h1, h2, h3, p, .card, .impact-card, .portfolio-card, .vmp-card-dark, .philosophy-item, .step-item, .testimonial-card');
+                let idx = 0;
+                for (let i = 0; i < allTargets.length; i++) {
+                    if (allTargets[i] === el) break;
+                    if (allTargets[i].dataset.animated !== 'true') idx++;
+                }
+                applyAnimation(el, idx);
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+    // Observe all target elements across all pages
+    document.querySelectorAll('h1, h2, h3, p, .card, .impact-card, .portfolio-card, .vmp-card-dark, .philosophy-item, .step-item, .testimonial-card').forEach(el => {
+        if (el.dataset.animated !== 'true') {
+            observer.observe(el);
+        }
+    });
+}
+
+// Re-initialize observer after page changes (new elements might become visible)
+function refreshObserver() {
+    if (observer) {
+        observer.disconnect();
+        observer = null;
+    }
+    initScrollObserver();
+    // Also trigger immediate check for visible elements on the active page
+    const activePage = document.querySelector('.page.active');
+    if (activePage) {
+        triggerVisibleAnimations(activePage);
+    }
+}
+
+// Override navigateTo to refresh observer and trigger animations
+const originalNav = navigateTo;
+navigateTo = function(pageName) {
+    originalNav(pageName);
+    setTimeout(() => {
+        refreshObserver();
+    }, 200);
+};
+
+// Initialize observer and trigger initial animations on load
+document.addEventListener('DOMContentLoaded', function() {
+    initScrollObserver();
+    // Trigger for home page after a slight delay
+    setTimeout(() => {
+        const home = document.getElementById('page-home');
+        if (home) triggerVisibleAnimations(home);
+    }, 400);
+});
+
+// Also re-trigger on scroll (just in case some elements are missed)
+window.addEventListener('scroll', function() {
+    const activePage = document.querySelector('.page.active');
+    if (activePage) {
+        triggerVisibleAnimations(activePage);
+    }
+});
+
+// ==============================================================
+// ANTI-INSPECTION MEASURES
+// ==============================================================
+(function preventInspection() {
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // Disable keyboard shortcuts: F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    document.addEventListener('keydown', function(e) {
+        // F12
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+        // Ctrl+Shift+I (or Cmd+Shift+I on Mac)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
+            e.preventDefault();
+            return false;
+        }
+        // Ctrl+Shift+J (or Cmd+Shift+J on Mac)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
+            e.preventDefault();
+            return false;
+        }
+        // Ctrl+U (or Cmd+U on Mac)
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+            e.preventDefault();
+            return false;
+        }
+        // Ctrl+S (prevent save-as)
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // Disable devtools via console.log tricks (override console methods to prevent devtools detection)
+    const noop = function() {};
+    const methods = ['log', 'debug', 'info', 'warn', 'error', 'table', 'trace', 'group', 'groupCollapsed', 'groupEnd'];
+    methods.forEach(method => {
+        if (console[method]) {
+            console[method] = noop;
+        }
+    });
+
+    // Anti-devtools: detect when devtools is opened (via element size check)
+    (function detectDevTools() {
+        let devtoolsOpen = false;
+        const threshold = 160;
+        const check = function() {
+            const widthDiff = window.outerWidth - window.innerWidth;
+            const heightDiff = window.outerHeight - window.innerHeight;
+            if (widthDiff > threshold || heightDiff > threshold) {
+                if (!devtoolsOpen) {
+                    devtoolsOpen = true;
+                    document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;color:#020f28;font-size:1.2rem;text-align:center;padding:2rem;">Inspection tools are not available on this site.</div>';
+                }
+            } else {
+                devtoolsOpen = false;
+            }
+        };
+        setInterval(check, 1000);
+        window.addEventListener('resize', check);
+    })();
+})();
+
 </script>
 </body>
 </html>
